@@ -1,0 +1,31 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: {{ include "authservice.fullname" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  workloadSelector:
+    labels:
+      protect: {{ .Values.filterLabel | default "keycloak" }}
+  configPatches:
+    - applyTo: HTTP_FILTER
+      match:
+        context: SIDECAR_INBOUND
+        listener:
+          filterChain:
+            filter:
+              name: "envoy.http_connection_manager"
+              subFilter:
+                name: "envoy.router"
+      patch:
+        operation: INSERT_BEFORE
+        value:
+          name: envoy.ext_authz
+          typed_config:
+            "@type": "type.googleapis.com/envoy.config.filter.http.ext_authz.v2.ExtAuthz"
+            stat_prefix: ext_authz
+            grpc_service:
+              timeout: 30s
+              google_grpc:
+                stat_prefix: ext_authz
+                target_uri: {{ include "authservice.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:10003

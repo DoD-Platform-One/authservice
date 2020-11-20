@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "authservice.fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
     {{- include "authservice.labels" . | nindent 4 }}
 spec:
@@ -38,13 +39,11 @@ spec:
               containerPort: 10003
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /
-              port: http
+            tcpSocket:
+              port: 10003
           readinessProbe:
-            httpGet:
-              path: /
-              port: http
+            tcpSocket:
+              port: 10003
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
