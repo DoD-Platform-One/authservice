@@ -6,7 +6,7 @@ metadata:
 spec:
   workloadSelector:
     labels:
-      protect: {{ .Values.filterLabel | default "keycloak" }}
+      {{ .Values.selector.key | default "protect" }}: {{ .Values.selector.value | default "keycloak" | quote }}
   configPatches:
     - applyTo: HTTP_FILTER
       match:
