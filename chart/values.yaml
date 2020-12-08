@@ -69,6 +69,7 @@ affinity: {}
 # TODO: Create this as part of the helmchart?
 config:
   secretName: authservice-config
+  logLevel: info
 
 # Set to "false" if providing your own configuration.
 # NOTE: Ensure your secret exists in the release namespace or authservice will fail.
