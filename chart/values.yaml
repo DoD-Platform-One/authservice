@@ -120,7 +120,7 @@ affinity: {}
 # Name of the secret to source authservices `config.json` from, created outside of helm chart
 # TODO: Create this as part of the helmchart?
 config:
-  loglevel: trace
+  logLevel: trace
 
 # Label to determine what workloads (pods/deployments) should be protected by authservice.
 selector:
