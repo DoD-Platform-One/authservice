@@ -28,4 +28,4 @@ spec:
               timeout: 30s
               google_grpc:
                 stat_prefix: ext_authz
-                target_uri: {{ include "authservice.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:10003
+                target_uri: {{ include "authservice.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.service.port }}
