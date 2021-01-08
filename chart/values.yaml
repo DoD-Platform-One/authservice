@@ -25,6 +25,8 @@ global:
   cookie_name_prefix: "global_prefix"
   # Logout URL for the client
   logout_path: "/globallogout"
+  # CA signing the OIDC provider
+  certificate_authority: ""
   
   oidc:
     # OpenID Connect hostname.  Assumption of Keycloak based on URL construction
@@ -36,32 +38,35 @@ global:
 
 
 # Individual chains.  Must have a `name` value and a `callback_uri`
-chains:
-# - name: idp_filter
-#   match:
-#     header: ":authority"
-#     prefix: "localhost"
-#   client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
-#   client_secret: secret_value
-#   callback_uri: https://localhost/login
-#   cookie_name_prefix: "hello-world"
-#   logout:
-#     path: "/logout"
-#   oidc:
-#     host: local_oidc_host
-#     realm: local_oidc_relm
-#   jwks: local_jwks
-- name: local_filter
-  match:
-    header: ":local"
-    prefix: "localhost"
-  client_id: local_id
-  client_secret: local_secret
-  callback_uri: https://localhost/login
-  cookie_name_prefix: "local_cookie"
-  logout_path: "/local"
-- name: minimal
-  callback_uri: https://minimal.bigbang.dev
+chains: 
+  # minimal:
+  #   callback_uri: https://minimal.bigbang.dev
+  # full: 
+  #   match:
+  #     header: ":authority"
+  #     prefix: "localhost"
+  #   client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
+  #   client_secret: secret_value
+  #   callback_uri: https://localhost/login
+  #   cookie_name_prefix: "hello-world"
+  #   logout:
+  #     path: "/logout"
+  #   oidc:
+  #     host: local_oidc_host
+  #     realm: local_oidc_relm
+  #   jwks: local_jwks
+  #   certificate_authrority: "-----BEGIN CERTIFICATE-----\nMIIE4jCCAsqgAwIBAgIBATANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDEwZzZm8t\nY2EwHhcNMTkxMjIwMDAxNjI1WhcNMjEwNjIwMDAxNjIxWjARMQ8wDQYDVQQDEwZz\n...\nwPAYZhormzV5LxXMSd3BMdyexNvNiGffULhnYEebFI9GouFxV1LPdVu058LRW/db\n6PDm7+GEq/CcQhTgYOELmmcnC89zNxcCXiahxqKIMTuid295N4NldyK/IT4Tn4GN\nVknTT/Hr\n-----END CERTIFICATE-----"
+  # must have at least one entry, so we include this default filter
+  local:
+    match:
+      header: ":local"
+      prefix: "localhost"
+    client_id: local_id
+    client_secret: local_secret
+    callback_uri: https://localhost/login
+    cookie_name_prefix: "local_cookie"
+    logout_path: "/local"
+
 
 nameOverride: "authservice"
 fullnameOverride: "authservice"
