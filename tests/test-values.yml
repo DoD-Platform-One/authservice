@@ -11,7 +11,8 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "redis-beta2"
-imagePullSecrets: [ private-registry-mil ]
+imagePullSecrets:
+- name: private-registry-mil
 
 global:
   # Default client_id to be used in each chain
