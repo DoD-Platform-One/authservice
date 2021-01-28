@@ -7,11 +7,12 @@
 replicaCount: 1
 
 image:
-  repository: registry.dsop.io/platform-one/big-bang/apps/sandbox/authservice
+  repository: registry.dso.mil/platform-one/big-bang/apps/sandbox/authservice
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "redis-beta2"
-imagePullSecrets: []
+imagePullSecrets:
+- name: private-registry-mil
 
 global:
   # Default client_id to be used in each chain
@@ -33,7 +34,7 @@ global:
   # redis_server_uri: tcp://localhost:6379/
   oidc:
     # OpenID Connect hostname.  Assumption of Keycloak based on URL construction
-    host: login.dsop.io
+    host: login.dso.mil
     # Realm for OpenID Connect
     realm: baby-yoda
   # escaped json for the JWKS
