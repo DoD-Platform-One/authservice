@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: EnvoyFilter
 metadata:
   name: {{ include "authservice.fullname" . }}
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ .Values.istio.namespace }}
 spec:
   workloadSelector:
     labels:
