@@ -6,6 +6,9 @@
 # globals.redis_server_uri
 replicaCount: 1
 
+istio:
+  namespace: istio-system
+
 image:
   repository: registry.dso.mil/platform-one/big-bang/apps/sandbox/authservice
   pullPolicy: IfNotPresent
