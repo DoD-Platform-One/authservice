@@ -10,10 +10,10 @@ istio:
   namespace: istio-system
 
 image:
-  repository: registry.dso.mil/platform-one/big-bang/apps/sandbox/authservice
+  repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "redis-beta2"
+  tag: "v0.3.1"
 imagePullSecrets: []
 
 global:
