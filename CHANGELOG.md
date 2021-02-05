@@ -1,6 +1,10 @@
 # Changelog
 
 
+## 0.1.6-bb.3
+### Changed
+- Pointing image to registry1 image from IronBank.
+
 ## 0.1.3-bb.0
 
 Added section of values to allow dynamic creation of secret containing the config.json chains:
