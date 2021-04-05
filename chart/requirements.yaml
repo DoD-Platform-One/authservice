@@ -1,0 +1,7 @@
+dependencies:
+- name: redis
+  version: 12.8.3-bb.0
+  repository: file://external
+  condition: redis-ha.enabled
+  alias: redis-bb
+
