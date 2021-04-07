@@ -140,3 +140,5 @@ config:
 selector:
   key: protect
   value: keycloak
+redis:
+  enabled: false
