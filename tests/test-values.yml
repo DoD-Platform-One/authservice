@@ -1,8 +1,2 @@
-redis:
-  enabled: false
-global:
-  imagePullSecrets:
-    - private-registry
-  redis_server_uri: tcp://authservice@authservice-redis-bb-master.default.svc.cluster.local:6379
 imagePullSecrets:
-- name: private-registry
+- name: private-registry-mil
