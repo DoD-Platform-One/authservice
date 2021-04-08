@@ -1,2 +1,4 @@
 imagePullSecrets:
 - name: private-registry-mil
+global:
+  redis_server_uri: tcp://my-release-redis-master.default.svc:6379
