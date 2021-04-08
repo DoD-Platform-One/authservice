@@ -3,6 +3,6 @@ redis:
 global:
   imagePullSecrets:
     - private-registry-mil
-redis_server_uri: tcp://redis-master.default.svc.cluster.local:6379
+  redis_server_uri: tcp://redis-master.default.svc.cluster.local:6379
 imagePullSecrets:
 - name: private-registry-mil
