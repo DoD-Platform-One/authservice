@@ -1,7 +1,7 @@
 imagePullSecrets:
 - name: private-registry-mil
 redis:
-  enabled: false
+  enabled: true
 global:
   imagePullSecrets:
     - private-registry-mil
