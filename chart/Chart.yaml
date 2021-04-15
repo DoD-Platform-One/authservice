@@ -21,3 +21,9 @@ version: 0.1.6-bb.4
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 1.16.0
+dependencies:
+ - name: postgresql
+   version: "12.8.3-bb.0"
+   repository: "file://./deps/redis"
+   condition: redis.enabled
+   alias: auth-redis

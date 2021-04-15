@@ -1,0 +1,6 @@
+dependencies:
+- name: redis
+  repository: file://external
+  version: 12.8.3-bb.0
+digest: sha256:3e24ade3fda030262fb391fe38958d8ddc1394544aa9c14271f90c18bd6abc05
+generated: "2021-04-15T11:04:37.44543-04:00"
