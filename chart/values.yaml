@@ -34,7 +34,7 @@ global:
   # CA signing the OIDC provider
   certificate_authority: ""
   # URI for Redis instance used for OIDC token storage/retrieval.  This may also be specified per-chain.
-  redis_server_uri: tcp://authservice-auth-redis-master:6379/
+  redis_server_uri: tcp://authservice-auth-redis-master:6379
   oidc:
     # OpenID Connect hostname.  Assumption of Keycloak based on URL construction
     host: login.dso.mil
