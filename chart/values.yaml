@@ -4,8 +4,9 @@
 
 # When setting this above 1, a redis configuration is required.  See
 # globals.redis_server_uri
-replicaCount: 2
-
+replicaCount: 1
+redis:
+  enabled: false
 istio:
   namespace: istio-system
 
