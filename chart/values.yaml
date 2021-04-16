@@ -4,7 +4,7 @@
 
 # When setting this above 1, a redis configuration is required.  See
 # globals.redis_server_uri
-replicaCount: 1
+replicaCount: 2
 
 istio:
   namespace: istio-system
@@ -13,7 +13,7 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.3.1"
+  tag: "v0.4.0"
 imagePullSecrets: []
 
 global:
