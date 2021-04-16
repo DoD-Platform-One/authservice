@@ -1,5 +1,8 @@
 # Changelog
-
+## 0.4.0-bb.4
+### Changed
+- Update to ironbank image to 0.4.0
+- add optional redis deployment with authservice
 
 ## 0.1.6-bb.3
 ### Changed
