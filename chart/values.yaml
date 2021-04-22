@@ -13,7 +13,7 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v0.3.1"
+  tag: "v0.4.0"
 imagePullSecrets: []
 
 global:
