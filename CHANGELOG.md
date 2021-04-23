@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.0-bb.1
+
+- update changelog
+
+## 0.4.0-bb.0
+
+- update authservice to 0.4.0
+- change secret to use `default_oidc_config` and `oidc_override`
 
 ## 0.1.6-bb.3
 ### Changed
