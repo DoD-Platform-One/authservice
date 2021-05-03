@@ -30,6 +30,8 @@ global:
   cookie_name_prefix: "global_prefix"
   # Logout URL for the client
   logout_path: "/globallogout"
+  # Logout Redirect URI for the client
+  logout_redirect_uri: ""
   # CA signing the OIDC provider
   certificate_authority: ""
   # URI for Redis instance used for OIDC token storage/retrieval.  This may also be specified per-chain.

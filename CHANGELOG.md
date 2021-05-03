@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0-bb.2
+### Added
+- Fixing skipping templating out Keycloak formatted URL when certain URIs are explicitly specified for an authservice chain.
+
 ## 0.4.0-bb.1
 
 - update changelog
