@@ -6,7 +6,7 @@
 # globals.redis_server_uri
 replicaCount: 1
 redis:
-  enabled: true
+  enabled: false
 global:
   usePassword: false
   passord:
@@ -39,7 +39,7 @@ global:
   # CA signing the OIDC provider
   certificate_authority: ""
   # URI for Redis instance used for OIDC token storage/retrieval.  This may also be specified per-chain.
-  redis_server_uri:  tcp://authservice-auth-redis-master:6379
+  # redis_server_uri: tcp://{{ .Release.Name }}-{{ .Release.Namespace }}-auth-redis-master:6379/
   oidc:
     # OpenID Connect hostname.  Assumption of Keycloak based on URL construction
     host: login.dso.mil
@@ -145,3 +145,11 @@ config:
 selector:
   key: protect
   value: keycloak
+
+redis-bb:
+  # pass throughs to BigBang's redis
+  # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
+  usePassword: false
+  istio:
+    redis:
+      enabled: false
