@@ -26,4 +26,4 @@ dependencies:
    version: "12.8.3-bb.0"
    repository: "file://./deps/redis"
    condition: redis.enabled
-   alias: auth-redis
+   alias: bb-redis
