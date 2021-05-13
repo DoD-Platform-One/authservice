@@ -7,7 +7,9 @@
 replicaCount: 1
 redis:
   enabled: true
+global:
   usePassword: false
+  passord:
 istio:
   namespace: istio-system
 
