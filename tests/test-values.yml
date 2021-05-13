@@ -7,4 +7,3 @@ global:
   imagePullSecrets:
     - private-registry-mil
   redis_server_uri:  tcp://authservice-auth-redis-master:6379
-

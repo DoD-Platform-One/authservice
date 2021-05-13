@@ -76,7 +76,7 @@ sentinel:
   ## Require password authentication on the sentinel itself
   ## ref: https://redis.io/topics/sentinel
   ##
-  usePassword: true
+  usePassword: false
   ## Bitnami Redis(TM) Sentintel image version
   ## ref: https://hub.docker.com/r/bitnami/redis-sentinel/tags/
   ##
