@@ -1,2 +1,11 @@
-imagePullSecrets:
-- name: private-registry-mil
+global: 
+  imagePullSecrets: 
+    - private-registry-mil
+  usePassword: false
+  password: 
+  redis_server_uri: "tcp://authservice-auth-redis-master:6379"
+imagePullSecrets: 
+  - 
+    name: private-registry-mil
+redis: 
+  enabled: false

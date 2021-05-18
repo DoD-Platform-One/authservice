@@ -1,15 +1,18 @@
 # Changelog
 
+## 0.4.0-bb.4
+### Changed
+- Update to ironbank image to 0.4.0
+- add optional redis deployment with authservice
+
 ## 0.4.0-bb.2
 ### Added
 - Fixing skipping templating out Keycloak formatted URL when certain URIs are explicitly specified for an authservice chain.
 
 ## 0.4.0-bb.1
-
 - update changelog
 
 ## 0.4.0-bb.0
-
 - update authservice to 0.4.0
 - change secret to use `default_oidc_config` and `oidc_override`
 
