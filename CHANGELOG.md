@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.0-bb.5
+### Added
+- networkPolicies values and boolean
+- BigBang specific Network Policy Templates
+
 ## 0.4.0-bb.4
 ### Changed
 - Update to ironbank image to 0.4.0
