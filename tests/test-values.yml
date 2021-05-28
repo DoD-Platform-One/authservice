@@ -9,3 +9,6 @@ imagePullSecrets:
     name: private-registry-mil
 redis: 
   enabled: false
+
+networkPolicies:
+  enabled: true
