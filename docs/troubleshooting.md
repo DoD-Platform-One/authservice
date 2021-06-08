@@ -6,10 +6,12 @@ Authservice consists of two Pods in the `authservice` namespace, `authservice` a
 
 #### Get Pod status
 Authservice: `kubectl describe pod -l app.kubernetes.io/name=authservice -n authservice`
+
 HAProxy: `kubectl describe pod -l app.kubernetes.io/name=haproxy -n authservice`
 
 #### Get Pod logs
 Authservice: `kubectl logs -l app.kubernetes.io/name=authservice -c authservice -n authservice`
+
 HAProxy: `kubectl get pod -l app.kubernetes.io/name=haproxy -c haproxy -n authservice`
 
 ## Authservice Configuration
