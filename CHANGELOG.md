@@ -2,6 +2,10 @@
 
 ## 0.4.0-bb.5
 ### Added
+- networkPolicies for HA Authservice (Redis)
+
+## 0.4.0-bb.5
+### Added
 - networkPolicies values and boolean
 - BigBang specific Network Policy Templates
 
