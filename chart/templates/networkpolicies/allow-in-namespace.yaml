@@ -15,5 +15,4 @@ spec:
   egress:
     - to:
         - podSelector: {}
-
 {{ end }}
