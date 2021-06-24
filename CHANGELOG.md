@@ -1,35 +1,40 @@
 # Changelog
 
-## 0.4.0-bb.5
+## [0.4.0-bb.7]
+### Update
+- Redis Dependency chart update to 6.2.2
+- `redis.enabled` moved to `redis-bb.enabled` for consistency with other packages
+
+## [0.4.0-bb.6]
 ### Added
 - networkPolicies for HA Authservice (Redis)
 
-## 0.4.0-bb.5
+## [0.4.0-bb.5]
 ### Added
 - networkPolicies values and boolean
 - BigBang specific Network Policy Templates
 
-## 0.4.0-bb.4
+## [0.4.0-bb.4]
 ### Changed
 - Update to ironbank image to 0.4.0
 - add optional redis deployment with authservice
 
-## 0.4.0-bb.2
+## [0.4.0-bb.2]
 ### Added
 - Fixing skipping templating out Keycloak formatted URL when certain URIs are explicitly specified for an authservice chain.
 
-## 0.4.0-bb.1
+## [0.4.0-bb.1]
 - update changelog
 
-## 0.4.0-bb.0
+## [0.4.0-bb.0]
 - update authservice to 0.4.0
 - change secret to use `default_oidc_config` and `oidc_override`
 
-## 0.1.6-bb.3
+## [0.1.6-bb.3]
 ### Changed
 - Pointing image to registry1 image from IronBank.
 
-## 0.1.3-bb.0
+## [0.1.3-bb.0]
 
 Added section of values to allow dynamic creation of secret containing the config.json chains:
 

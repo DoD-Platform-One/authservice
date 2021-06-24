@@ -1,16 +1,20 @@
 {{ if .Values.networkPolicies.enabled }}
-#For kube-dns
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: egress-to-cluster-haproxy
+  name: egress-to-sso
   namespace: {{ .Release.Namespace }}
 spec:
   podSelector:
     matchLabels:
-      app.kubernetes.io/name: haproxy
+      app.kubernetes.io/name: authservice
   policyTypes:
     - Egress
   egress:
-  - {}
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        # ONLY Block requests to cloud metadata IP
+        except:
+        - 169.254.169.254/32
 {{- end }}

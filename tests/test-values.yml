@@ -1,14 +1,20 @@
 global: 
   imagePullSecrets: 
-    - private-registry-mil
+    - private-registry
   usePassword: false
-  password: 
-  redis_server_uri: "tcp://authservice-auth-redis-master:6379"
-imagePullSecrets: 
-  - 
-    name: private-registry-mil
+  redis_server_uri: "tcp://authservice-redis-bb-master:6379"
+
+replicaCount: 3
+
+imagePullSecrets:
+  - name: private-registry
+
 redis: 
-  enabled: false
+  enabled: true
+redis-bb:
+  networkPolicies:
+    enabled: true
+    controlPlaneCidr: 172.16.0.0/12
 
 networkPolicies:
   enabled: true

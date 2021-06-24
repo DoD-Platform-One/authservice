@@ -5,11 +5,7 @@
 # When setting this above 1, a redis configuration is required.  See
 # globals.redis_server_uri
 replicaCount: 1
-redis:
-  enabled: false
-global:
-  usePassword: false
-  passord:
+
 istio:
   namespace: istio-system
 
@@ -152,10 +148,17 @@ selector:
   key: protect
   value: keycloak
 
+# Conditional for enabling Redis Subchart
+redis:
+  enabled: true
+# Pass throughs to BigBang's redis
+# https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
-  # pass throughs to BigBang's redis
-  # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
-  usePassword: false
+  auth:
+    enabled: false
   istio:
     redis:
       enabled: false
+  networkPolicies:
+    enabled: true
+    controlPlaneCidr: 0.0.0.0/0
