@@ -1,9 +1,12 @@
 # Changelog
 
+## [0.4.0-bb.8]
+### Fixed
+- Turned redis off by default
+
 ## [0.4.0-bb.7]
 ### Update
 - Redis Dependency chart update to 6.2.2
-- `redis.enabled` moved to `redis-bb.enabled` for consistency with other packages
 
 ## [0.4.0-bb.6]
 ### Added
