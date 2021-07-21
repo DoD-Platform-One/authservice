@@ -22,7 +22,7 @@ monitoring:
 # REQUIRED for Chart v14 upgrade
 cleanUpgrade:
   enabled: true
-  image: "registry1.dso.mil/ironbank/gitlab/gitlab/kubectl:13.9.0"
+  image: "registry1.dso.mil/ironbank/big-bang/base:8.4"
 
 # NOTE: We default this to true in case packages consuming Redis forget to turn it on and have API traffic blocked
 networkPolicies:
