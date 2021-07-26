@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.9]
+### Update
+- Updated redis to big bang base image
+
 ## [0.4.0-bb.8]
 ### Fixed
 - Turned redis off by default
