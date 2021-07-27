@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.10]
+### Added
+- Add openshift toggle. If it's set, add port 5353 egress rule.
+
 ## [0.4.0-bb.9]
 ### Update
 - Updated redis to big bang base image

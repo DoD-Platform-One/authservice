@@ -162,3 +162,5 @@ redis-bb:
   networkPolicies:
     enabled: true
     controlPlaneCidr: 0.0.0.0/0
+
+openshift: false
