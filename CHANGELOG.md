@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.11]
+### Update
+- Istio 1.9 update
+
 ## [0.4.0-bb.10]
 ### Added
 - Add openshift toggle. If it's set, add port 5353 egress rule.
