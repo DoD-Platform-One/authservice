@@ -1,7 +1,11 @@
 # Changelog
 
+## [0.4.0-bb.12]
+### Changed
+- Templating for all `trusted_certificate_authority` values. Better readability for both humans and helm.
+
 ## [0.4.0-bb.11]
-### Update
+### Changed
 - Istio 1.9 update
 
 ## [0.4.0-bb.10]
@@ -9,15 +13,15 @@
 - Add openshift toggle. If it's set, add port 5353 egress rule.
 
 ## [0.4.0-bb.9]
-### Update
-- Updated redis to big bang base image
+### Changed
+- Changedd redis to big bang base image
 
 ## [0.4.0-bb.8]
 ### Fixed
 - Turned redis off by default
 
 ## [0.4.0-bb.7]
-### Update
+### Changed
 - Redis Dependency chart update to 6.2.2
 
 ## [0.4.0-bb.6]
@@ -31,7 +35,7 @@
 
 ## [0.4.0-bb.4]
 ### Changed
-- Update to ironbank image to 0.4.0
+- Changed to ironbank image to 0.4.0
 - add optional redis deployment with authservice
 
 ## [0.4.0-bb.2]

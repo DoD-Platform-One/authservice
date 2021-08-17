@@ -86,7 +86,12 @@ chains:
       host: local_oidc_host
       realm: local_oidc_relm
     jwks: local_jwks
-    certificate_authrority: "-----BEGIN CERTIFICATE-----\nMIIE4jCCAsqgAwIBAgIBATANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDEwZzZm8t\nY2EwHhcNMTkxMjIwMDAxNjI1WhcNMjEwNjIwMDAxNjIxWjARMQ8wDQYDVQQDEwZz\n...\nwPAYZhormzV5LxXMSd3BMdyexNvNiGffULhnYEebFI9GouFxV1LPdVu058LRW/db\n6PDm7+GEq/CcQhTgYOELmmcnC89zNxcCXiahxqKIMTuid295N4NldyK/IT4Tn4GN\nVknTT/Hr\n-----END CERTIFICATE-----"
+    certificate_authority: |
+      -----BEGIN CERTIFICATE-----
+      MIIE4jCCAsqgAwIBAgIBATANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDEwZzZm8t
+      Y2EwHhcNMTkxMjIwMDAxNjI1WhcNMjEwNjIwMDAxNjIxWjARMQ8wDQYDVQQDEwZz
+      ...
+      -----END CERTIFICATE-----
 ```
 
 
