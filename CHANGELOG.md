@@ -14,7 +14,7 @@
 
 ## [0.4.0-bb.9]
 ### Changed
-- Changedd redis to big bang base image
+- Changed redis to big bang base image
 
 ## [0.4.0-bb.8]
 ### Fixed
