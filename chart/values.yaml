@@ -57,7 +57,7 @@ global:
 # Individual chains.  Must have a `name` value and a `callback_uri`
 chains:
   # minimal:
-  #  callback_uri: https://minimal.bigbang.dev
+  #   callback_uri: https://minimal.bigbang.dev
   # full:
   #   match:
   #     header: ":authority"
@@ -70,8 +70,8 @@ chains:
   #   logout:
   #     path: "/logout"
   #   oidc:
-  #     host: keycloak.rgarcia.dev
-  #     realm: yep
+  #     host: local_oidc_host
+  #     realm: local_oidc_realm
   #   jwks: local_jwks
   #   certificate_authority: |
   #     -----BEGIN CERTIFICATE-----
