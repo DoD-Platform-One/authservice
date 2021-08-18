@@ -14,7 +14,7 @@
 
 ## [0.4.0-bb.9]
 ### Changed
-- Changed redis to big bang base image
+- Updated redis to big bang base image
 
 ## [0.4.0-bb.8]
 ### Fixed
@@ -35,7 +35,7 @@
 
 ## [0.4.0-bb.4]
 ### Changed
-- Changed to ironbank image to 0.4.0
+- Update to ironbank image to 0.4.0
 - add optional redis deployment with authservice
 
 ## [0.4.0-bb.2]
