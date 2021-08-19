@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.4.0-bb.12
+version: 0.4.0-bb.13
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -23,7 +23,7 @@ version: 0.4.0-bb.12
 appVersion: 0.4.0
 dependencies:
  - name: redis
-   version: "14.1.0-bb.1"
-   repository: "file://./deps/redis"
+   version: "14.1.0-bb.2"
+   repository: file://deps/redis
    condition: redis.enabled
    alias: redis-bb
