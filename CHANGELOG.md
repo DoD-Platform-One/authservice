@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.0-bb.13]
+### Changed
+- Fixed redis sub-chart and alias mapping so redis-bb values get passed down correctly.
+- Fixed issue with redis deploying by default in handful of latest package version.
+
 ## [0.4.0-bb.12]
 ### Changed
 - Templating for all `trusted_certificate_authority` values. Better readability for both humans and helm.
