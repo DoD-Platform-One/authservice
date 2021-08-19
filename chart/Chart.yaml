@@ -25,5 +25,5 @@ dependencies:
  - name: redis
    version: "14.1.0-bb.1"
    repository: "file://./deps/redis"
-   condition: redis.enabled
+   condition: redis-bb.enabled
    alias: redis-bb
