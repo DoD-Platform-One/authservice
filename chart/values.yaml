@@ -158,10 +158,9 @@ selector:
 # Conditional for enabling Redis Subchart
 redis:
   enabled: false
-# Pass throughs to BigBang's redis
+# Values passthrough for redis Subchart
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
-#  enabled: false
   auth:
     enabled: false
   istio:
