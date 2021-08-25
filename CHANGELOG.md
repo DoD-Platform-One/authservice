@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.14]
+### Update
+- Istio 1.10 update
+
 ## [0.4.0-bb.13]
 ### Changed
 - Fixed redis sub-chart and alias mapping so redis-bb values get passed down correctly.
