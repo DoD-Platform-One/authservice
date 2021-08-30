@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0-bb.15]
+### Changed
+- Added Limits and Requests
+- updated redis to 14.1.0-bb.3 for update pod limits and requests
+- Added in dependencies for new CI
+
 ## [0.4.0-bb.14]
 ### Update
 - Istio 1.10 update

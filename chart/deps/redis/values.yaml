@@ -23,6 +23,13 @@ monitoring:
 cleanUpgrade:
   enabled: true
   image: "registry1.dso.mil/ironbank/big-bang/base:8.4"
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
 
 # NOTE: We default this to true in case packages consuming Redis forget to turn it on and have API traffic blocked
 networkPolicies:
@@ -879,8 +886,12 @@ sentinel:
   ## @param sentinel.resources.requests The requested resources for the Redis(TM) Sentinel containers
   ##
   resources:
-    limits: {}
-    requests: {}
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
   ## Configure Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
   ## @param sentinel.containerSecurityContext.enabled Enabled Redis(TM) Sentinel containers' Security Context
@@ -1123,8 +1134,12 @@ metrics:
   ## @param metrics.resources.requests The requested resources for the Redis(TM) exporter container
   ##
   resources:
-    limits: {}
-    requests: {}
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
   ## @param metrics.podLabels Extra labels for Redis(TM) exporter pods
   ## ref: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   ##
@@ -1209,8 +1224,12 @@ metrics:
     ## @param metrics.sentinel.resources.requests The requested resources for the Redis(TM) Sentinel exporter container
     ##
     resources:
-      limits: {}
-      requests: {}
+      requests:
+        memory: 512Mi
+        cpu: 100m
+      limits:
+        memory: 512Mi
+        cpu: 100m
     ## Redis(TM) Sentinel exporter service parameters
     ##
     service:
@@ -1364,8 +1383,12 @@ volumePermissions:
   ## @param volumePermissions.resources.requests The requested resources for the init container
   ##
   resources:
-    limits: {}
-    requests: {}
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
   ## Init container Container Security Context
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container
   ## @param volumePermissions.containerSecurityContext.runAsUser Set init container's Security Context runAsUser
@@ -1416,5 +1439,9 @@ sysctl:
   ## @param sysctl.resources.requests The requested resources for the init container
   ##
   resources:
-    limits: {}
-    requests: {}
+    requests:
+      memory: 256Mi
+      cpu: 100m
+    limits:
+      memory: 256Mi
+      cpu: 100m
