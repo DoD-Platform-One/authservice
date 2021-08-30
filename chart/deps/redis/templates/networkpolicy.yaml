@@ -24,10 +24,6 @@ spec:
     - ports:
         - port: 53
           protocol: UDP
-        {{- if .Values.openshift }}
-        - port: 5353
-          protocol: UDP
-        {{- end }}
     # Allow outbound connections to other cluster pods
     - ports:
         - port: {{ .Values.master.containerPort }}

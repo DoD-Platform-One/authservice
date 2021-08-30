@@ -124,4 +124,7 @@ spec:
                 echo "No PVCs to clean up."
               fi
               echo "Done with upgrade steps."
+          {{- if .Values.cleanUpgrade.resources }}
+          resources: {{- toYaml .Values.cleanUpgrade.resources | nindent 12 }}
+          {{- end }}
 {{- end }}
