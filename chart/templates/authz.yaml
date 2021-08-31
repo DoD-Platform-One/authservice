@@ -1,0 +1,30 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: authservice
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      {{ .Values.selector.key | default "protect" }}: {{ .Values.selector.value | default "keycloak" | quote }}
+  action: CUSTOM
+  provider:
+    name: authservice
+  rules:
+  - {}
+---
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: jwt-authz
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      {{ .Values.selector.key | default "protect" }}: {{ .Values.selector.value | default "keycloak" | quote }}
+  rules:
+  - from:
+    - source:
+        requestPrincipals:
+        - "https://{{ .Values.global.oidc.host }}/auth/realms/{{ .Values.global.oidc.realm }}/*"
+

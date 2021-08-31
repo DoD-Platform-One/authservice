@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.16]
+### Changed
+- Replaced envoyfilters with authz CUSTOM action
+
 ## [0.4.0-bb.15]
 ### Changed
 - Added Limits and Requests
