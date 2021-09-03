@@ -22,7 +22,15 @@ image:
   tag: "v0.4.0"
 imagePullSecrets: []
 
+# Issuer and jwks URIs if not using Keycloak
+issuer_uri: ""
+jwks_uri: ""
+
 global:
+  # Global Authorization URI value to set if not using Keycloak
+  # authorization_uri: ""
+  # Global Token URI Value to set if not using Keycloak
+  # token_uri: ""
   # Default client_id to be used in each chain
   client_id: "global_id"
   # default client_secret to be used in each chain
@@ -63,6 +71,8 @@ chains:
   #   match:
   #     header: ":authority"
   #     prefix: "localhost"
+  #   authorization_uri: "https://example.com/auth"
+  #   token_uri: "https://example.com/token"
   #   client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
   #   client_secret: secret_value
   #   callback_uri: https://localhost/login
