@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.17]
+### Changed
+- Auto-generate the cookie_name_prefix to be the name of the chain
+
 ## [0.4.0-bb.16]
 ### Changed
 - Replaced envoyfilters with authz CUSTOM action
