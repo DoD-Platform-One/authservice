@@ -9,7 +9,7 @@ Helm chart to deploy authservice from the istio-ecosystem.
 - [Values](#values-authservice)
 - [Chains](#chains-authservice)
 - [Istio configuration](docs/README.md)
-- [Keycloak configuration](docs/KEYCLOAK.md)
+- [Keycloak configuration](docs/keycloak.md)
 
 ## Pre-Requisites
 
