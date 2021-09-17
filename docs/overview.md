@@ -8,10 +8,6 @@ This package is a bundle of applications which create an OIDC proxy to provide S
 
 [Authservice](https://github.com/istio-ecosystem/authservice) is an implementation of [Envoy External Authorization](https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/ext_authz_filter), focused on delivering authN/Z solutions for Istio and Kubernetes. Authservice handles incoming authN/Z requests and delegates part of the OIDC token-granting workflow to the backend SSO provider.
 
-#### HAProxy
-
-[HAProxy](http://www.haproxy.org/) is a commonly-used TCP/HTTP load balancer. Its function in this chart is to handle incoming HTTP requests and forward them to Authservice for authN/Z.
-
 #### Redis
 
 [Redis](https://redis.io/) is an in-memory data structure store, used as a database, cache, and message broker. It is optional to deploy and is used by Authservice to cache session data. See [backup.md](backup.md) for more details.
@@ -22,4 +18,6 @@ This package depends on the [istio-controlplane](https://repo1.dso.mil/platform-
 
 ## How it works
 
-First, Authservice must be [enabled](https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/8ea3e68ae2b431a5f60d0a6c6a5453bfd2a3fa16/chart/values.yaml#L511) through the addons functionality of Big Bang. This will cause an instance of Authservice and HAProxy to be deployed into the `authservice` namespace. For every other Big Bang package that has SSO enabled ([e.g.](https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/8ea3e68ae2b431a5f60d0a6c6a5453bfd2a3fa16/chart/values.yaml#L208), the respective application will redirect all unauthenticated requests to HAProxy which will then delegate the authN/Z request to Authservice and ultimately the backend SSO provider. All unauthenticated requests will ultimately be redirected to either the [authentication URL](https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/8ea3e68ae2b431a5f60d0a6c6a5453bfd2a3fa16/chart/values.yaml#L75) specified in the Big Bang values file or in an [individual chain](https://repo1.dso.mil/platform-one/big-bang/apps/core/authservice/-/blob/078f3c457b9aeb4cc5ce38b7f939f4a08c81a496/README.md#chains).
+First, Authservice must be [enabled](https://repo1.dso.mil/platform-one/big-bang/bigbang/-/tree/master/chart/values.yaml#L511) through the addons functionality of Big Bang. This will cause an instance of Authservice to be deployed into the `authservice` namespace. For every workload in the cluster that is labeled with the value of the [selector](https://repo1.dso.mil/platform-one/big-bang/apps/core/authservice/-/blob/main/chart/values.yaml#L160), the respective application will then redirect all requests through Authservice which will then validate a user through the backend SSO provider and then foward to the workload as normal. Each workload placed behind authservice must have a matching [individual chain](https://repo1.dso.mil/platform-one/big-bang/apps/core/authservice/-/tree/main/README.md#chains).
+
+Please review the BigBang [Architecture Document](https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/master/charter/packages/authservice/Architecture.md) for more information about it's role within BigBang.
