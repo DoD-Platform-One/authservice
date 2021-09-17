@@ -4,7 +4,7 @@ This chart is meant to insert an authN/Z proxy in front of services in the clust
 
 ## Example Configurations
 
-- https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/581b82a530603f055a22d833ca544576c7b550b0/chart/values.yaml#L51
-- https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/581b82a530603f055a22d833ca544576c7b550b0/chart/dev-sso-values.yaml
-- https://repo1.dso.mil/platform-one/big-bang/bigbang/-/blob/581b82a530603f055a22d833ca544576c7b550b0/chart/google-auth-example-values.yaml
+- https://repo1.dso.mil/platform-one/big-bang/bigbang/-/tree/master/chart/values.yaml#L51
+- https://repo1.dso.mil/platform-one/big-bang/bigbang/-/tree/master/chart/dev-sso-values.yaml
+- https://repo1.dso.mil/platform-one/big-bang/bigbang/-/tree/master/chart/google-auth-example-values.yaml
 
