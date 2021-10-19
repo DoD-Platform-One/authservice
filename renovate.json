@@ -1,0 +1,28 @@
+{
+    "baseBranches": ["main"],
+    "configWarningReuseIssue": false,
+    "dependencyDashboard": "true",
+    "dependencyDashboardAutoclose": "true",
+    "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
+    "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
+    "draftPR": true,
+    "labels": ["authservice","Big Bang Core","Package Sustainment","kind::chore"],
+    "ignorePaths": ["chart/charts/**", "chart/deps/**"],
+    "packageRules": [
+      {
+        "matchDatasources": ["docker"],
+        "groupName": "Ironbank",
+        "registryUrls": ["https://registry1.dso.mil"]
+      }
+    ],
+    "regexManagers": [
+      {
+        "fileMatch": ["^chart/values\\.yaml$"],
+        "matchStrings": [
+           "tag:\\s+(?<currentValue>.+)"
+        ],
+        "depNameTemplate": "ironbank/istio-ecosystem/authservice",
+        "datasourceTemplate": "docker"
+      }
+    ]
+  }
