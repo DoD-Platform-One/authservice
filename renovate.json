@@ -6,6 +6,7 @@
     "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
     "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
     "draftPR": true,
+    "dependencyDashboardLabels": ["authservice","Big Bang Core","Package Sustainment","kind::chore"],
     "labels": ["authservice","Big Bang Core","Package Sustainment","kind::chore"],
     "ignorePaths": ["chart/charts/**", "chart/deps/**"],
     "packageRules": [
