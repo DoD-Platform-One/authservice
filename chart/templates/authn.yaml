@@ -14,7 +14,7 @@ spec:
     - issuer: https://{{ .Values.global.oidc.host }}/auth/realms/{{ .Values.global.oidc.realm }}
     {{- end }}
     {{- if .Values.global.jwks }}
-      jwks: {{ .Values.global.jwks }}
+      jwks: {{ .Values.global.jwks | quote }}
     {{- else if .Values.jwks_uri }}
       jwksUri: {{ .Values.jwks_uri}}
     {{- else }}
