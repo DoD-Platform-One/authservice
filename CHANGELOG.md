@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.18]
+### Changed
+- RequestAuthentication resource use jwks value if present over jwksUri
+
 ## [0.4.0-bb.17]
 ### Changed
 - Auto-generate the cookie_name_prefix to be the name of the chain

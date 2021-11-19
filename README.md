@@ -1,15 +1,12 @@
-# Authservice
+# authservice
 
-Helm chart to deploy authservice from the istio-ecosystem.
+![Version: 0.4.0-bb.18](https://img.shields.io/badge/Version-0.4.0--bb.18-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
 
-# Table of Contents
-- [Prerequisites](#pre-requisites)
-- [Iron Bank](#iron-bank-authservice)
-- [Deployment](#deploy-authservice)
-- [Values](#values-authservice)
-- [Chains](#chains-authservice)
-- [Istio configuration](docs/README.md)
-- [Keycloak configuration](docs/keycloak.md)
+A Helm chart for Kubernetes
+
+## Learn More
+* [Application Overview](docs/overview.md)
+* [Other Documentation](docs/)
 
 ## Pre-Requisites
 
@@ -21,85 +18,76 @@ Install Helm
 
 https://helm.sh/docs/intro/install/
 
-
-## Iron Bank
-
-You can `pull` the registry1 image(s) [here](https://registry1.dso.mil/harbor/projects/3/repositories/istio-ecosystem%2Fauthservice) and view the container approval [here](https://ironbank.dso.mil/repomap/istio-ecosystem/authservice).
-
 ## Deployment
 
+* Clone down the repository
+* cd into directory
 ```bash
-git clone https://repo1.dso.mil/platform-one/big-bang/apps/core/authservice.git
-cd authservice
-helm install authservice chart
+helm install authservice chart/
 ```
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| affinity | object | `{}` | Configurable [affinity][] for the authservice pod(s)
-| chains | object | `{}` | Configurable chains for the authservice daemon to act on, see [Chains](#chains-authservice) & [values.yaml](./chart/values.yaml)
-| fullnameOverride | string | `authservice` | Configurable override used when templating out fully qulified app name
-| global | object | ` ` | Configurable global settings to apply to each generated authservice chain see [values.yaml](./chart/values.yaml)
-| istio.namespace | string | `istio-system` | Configurable namespace where istio is deployed
-| image.repository | string | `registry1.dso.mil/ironbank/istio-ecosystem/authservice` | Configurable repository from where to pull the image (first half of image from docker pull command)
-| image.pullPolicy | string | `IfNotPresent` | Configurable [imagePullPolicy][] setting 
-| image.tag | string | `v0.3.1` | Configurable setting for specifying what tag for the repository above
-| imagePullSecrets | string | `[ ]` | Configurable [imagePullSecrets][] setting for specifying name of kubernetes secret used to pull from private registry
-| nameOverride | string | `authservice` | Configurable name used when creating name of helm chart install
-| nodeSelector | object | `{}` | Configurable [nodeSelector][] to target specific nodes to run on based on resource labels
-| podAnnotations | object | `{}` | Configurable annotations to apply to authservice pod(s)
-| podSecurityContext | object | `{}` | Configurable [securityContext][] to set for authservice pod(s)
-| replicaCount | string | `1` | Configurable number of replicas (pods) to run
-| resources | object | `{}` | Configurable settings for setting container [resource][] limits and requests
-| serviceAccount.create | boolean | `true` | Configurable setting to create service account for deployment
-| serviceAccount.annotations | object | `{}` | Configurable annotations to add to metadata of service account for deployment
-| serviceAccount.name | string | `""` | Configurable name of service account for deployment, if not set, it's populated from the fullNameOverride set
-| service.type | string | `ClusterIP` | Configurable type of [service][] resource to create for authservice
-| service.port | string | `10003` | Configurable port for the service resource
-| selector.key | string | `protect` | Configurable key of a label on a pod which enovy will use to place authservice in routing chain eg: label: protect=keycloak
-| selector.value | string| `keycloak` | Configurable value of a label on a pod which envoy will use to place authservice in routing chain eg: label: protect=keycloak
-| tolerations | object | `{}` | Configurable [tolerations][] for the authservice pod(s)
+| replicaCount | int | `1` |  |
+| istio.namespace | string | `"istio-system"` |  |
+| networkPolicies.enabled | bool | `false` |  |
+| networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
+| networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
+| image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
+| image.pullPolicy | string | `"IfNotPresent"` |  |
+| image.tag | string | `"v0.4.0"` |  |
+| imagePullSecrets | list | `[]` |  |
+| issuer_uri | string | `""` |  |
+| jwks_uri | string | `""` |  |
+| global.client_id | string | `"global_id"` |  |
+| global.client_secret | string | `"global_secret"` |  |
+| global.match.header | string | `":authority"` |  |
+| global.match.prefix | string | `"bigbang"` |  |
+| global.logout_path | string | `"/globallogout"` |  |
+| global.logout_redirect_uri | string | `""` |  |
+| global.certificate_authority | string | `""` |  |
+| global.oidc.host | string | `"login.dso.mil"` |  |
+| global.oidc.realm | string | `"baby-yoda"` |  |
+| global.jwks | string | `"{\"keys\":[{\"kid\":\"4CK69bW66HE2wph9VuBs0fTc1MaETSTpU1iflEkBHR4\",\"kty\":\"RSA\",\"alg\":\"RS256\",\"use\":\"sig\",\"n\":\"hiML1kjw-sw25BgaZI1AyfgcCRBPJKPE-wwttqa7NNxptr_5RCBGuJXqDyo3p1vjcbb8KjdKnXI7kWer8b2Pz_RP1m_QcPrKOxSluk7GZF8ARsc6FPGbzYgi8o8cBVSsaml6HZzpN3ZnH4DFZ27ifM-Ul_PyMxZ2aweohIaizXp-rgF7Rqpav5NXUwmcSyH8LP92NVIuFlD3HYTDGosVbfA_u_H25Z4XCGKW_vLDTNrl8PcA3HqIoD-vNavysdxAq_KNw7iLLc0KLsjFYSdJL_54H7QubsGR0AyIrLLurJbqAtvttGJK38k5XYWKIwYGtu6iiJwjSb7UtonVdPh8Vw\",\"e\":\"AQAB\",\"x5c\":[\"MIICoTCCAYkCBgFyLIEqUjANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAliYWJ5LXlvZGEwHhcNMjAwNTE5MTAzNDIyWhcNMzAwNTE5MTAzNjAyWjAUMRIwEAYDVQQDDAliYWJ5LXlvZGEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCGIwvWSPD6zDbkGBpkjUDJ+BwJEE8ko8T7DC22prs03Gm2v/lEIEa4leoPKjenW+NxtvwqN0qdcjuRZ6vxvY/P9E/Wb9Bw+so7FKW6TsZkXwBGxzoU8ZvNiCLyjxwFVKxqaXodnOk3dmcfgMVnbuJ8z5SX8/IzFnZrB6iEhqLNen6uAXtGqlq/k1dTCZxLIfws/3Y1Ui4WUPcdhMMaixVt8D+78fblnhcIYpb+8sNM2uXw9wDceoigP681q/Kx3ECr8o3DuIstzQouyMVhJ0kv/ngftC5uwZHQDIissu6sluoC2+20YkrfyTldhYojBga27qKInCNJvtS2idV0+HxXAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAIVkoDYkM6ryBcuchdAL5OmyKbmmY4WDrMlatfa3uniK5jvFXrmVaJ3rcu0apdY/NhBeLSOLFVlC5w1QroGUhWm0EjAA4zyuU63Pk0sro0vyHrxztBrGPQrGXI3kjXEssaehZZvYP4b9VtYpus6oGP6bTmaDw94Zu+WrDsWdFs+27VEYwBuU0D6E+ENDGlfR+9ADEW53t6H2M3H0VsOtbArEutYgb4gmQcOIBygC7L1tGJ4IqbnhTYLh9DMKNklU+tq8TMHacps9FxELpeAib3O0J0E5zYXdraQobCCe+ao1Y7sA/wqcGQBCVuoFgty7Y37nNL7LMvygcafgqVDqw5U=\"],\"x5t\":\"mxFIwx7EdgxyC3Y6ODLx8yr8Bx8\",\"x5t#S256\":\"SdT7ScKVOnBW6qs_MuYdTGVtMGwYK_-nmQF9a_8lXco\"}]}"` |  |
+| chains.local.match.header | string | `":local"` |  |
+| chains.local.match.prefix | string | `"localhost"` |  |
+| chains.local.client_id | string | `"local_id"` |  |
+| chains.local.client_secret | string | `"local_secret"` |  |
+| chains.local.callback_uri | string | `"https://localhost/login"` |  |
+| chains.local.logout_path | string | `"/local"` |  |
+| nameOverride | string | `"authservice"` |  |
+| fullnameOverride | string | `"authservice"` |  |
+| serviceAccount.create | bool | `true` |  |
+| serviceAccount.annotations | object | `{}` |  |
+| serviceAccount.name | string | `""` |  |
+| podAnnotations | object | `{}` |  |
+| podSecurityContext | object | `{}` |  |
+| securityContext | object | `{}` |  |
+| service.type | string | `"ClusterIP"` |  |
+| service.port | int | `10003` |  |
+| resources.limits.cpu | string | `"100m"` |  |
+| resources.limits.memory | string | `"512Mi"` |  |
+| resources.requests.cpu | string | `"100m"` |  |
+| resources.requests.memory | string | `"512Mi"` |  |
+| autoscaling.enabled | bool | `false` |  |
+| autoscaling.minReplicas | int | `1` |  |
+| autoscaling.maxReplicas | int | `3` |  |
+| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| nodeSelector | object | `{}` |  |
+| tolerations | list | `[]` |  |
+| affinity | object | `{}` |  |
+| config.logLevel | string | `"trace"` |  |
+| selector.key | string | `"protect"` |  |
+| selector.value | string | `"keycloak"` |  |
+| redis.enabled | bool | `false` |  |
+| redis-bb.auth.enabled | bool | `false` |  |
+| redis-bb.istio.redis.enabled | bool | `false` |  |
+| redis-bb.networkPolicies.enabled | bool | `true` |  |
+| redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| openshift | bool | `false` |  |
 
-## Chains
+## Contributing
 
-# Individual chains.  Must have a `name` value (in this case `minimal`) and a `callback_uri`
-```yaml
-chains:
-  minimal:
-    # Inherits other settings from global: block in values
-    callback_uri: https://minimal.bigbang.dev/
-  full:
-    # Has all settings laid out
-    match:
-      header: ":authority"
-      prefix: "localhost"
-    client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
-    client_secret: secret_value
-    callback_uri: https://localhost/login
-    cookie_name_prefix: "hello-world"
-    redis_server_uri: tcp://localhost:6379/
-    logout:
-      path: "/logout"
-    oidc:
-      host: local_oidc_host
-      realm: local_oidc_relm
-    jwks: local_jwks
-    certificate_authority: |
-      -----BEGIN CERTIFICATE-----
-      MIIE4jCCAsqgAwIBAgIBATANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDEwZzZm8t
-      Y2EwHhcNMTkxMjIwMDAxNjI1WhcNMjEwNjIwMDAxNjIxWjARMQ8wDQYDVQQDEwZz
-      ...
-      -----END CERTIFICATE-----
-```
-
-
-[affinity]: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity
-[imagePullPolicy]: https://kubernetes.io/docs/concepts/containers/images/#updating-images
-[imagePullSecrets]: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/#create-a-pod-that-uses-your-secret
-[securityContext]: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod
-[service]: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-[resource]: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container
-[nodeSelector]: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
-[tolerations]: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
