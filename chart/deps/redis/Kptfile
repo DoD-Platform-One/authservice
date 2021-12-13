@@ -1,11 +1,11 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-  name: chart
+    name: chart
 upstream:
-  type: git
-  git:
-    commit: f24af16a6d583e9e125f519127ffab11f48f42f8
-    repo: https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis
-    directory: /chart
-    ref: 14.1.0-bb.3
+    type: git
+    git:
+        commit: f24af16a6d583e9e125f519127ffab11f48f42f8
+        repo: https://repo1.dso.mil/platform-one/big-bang/apps/application-utilities/redis
+        directory: /chart
+        ref: 14.1.0-bb.3
