@@ -1225,10 +1225,10 @@ metrics:
     ##
     resources:
       requests:
-        memory: 512Mi
+        memory: 256Mi
         cpu: 100m
       limits:
-        memory: 512Mi
+        memory: 256Mi
         cpu: 100m
     ## Redis(TM) Sentinel exporter service parameters
     ##
