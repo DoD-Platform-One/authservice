@@ -1,4 +1,4 @@
-{{- if .Values.networkPolicies.enabled }}
+{{- if and .Values.networkPolicies.enabled .Values.monitoring.enabled }}
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -19,4 +19,8 @@ spec:
     ports:
     - port: 15020
       protocol: TCP
+    {{- if .Values.redis.enabled }}
+    - port: 9121
+      protocol: TCP
+    {{- end }}
 {{- end }}
