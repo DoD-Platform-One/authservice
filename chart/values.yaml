@@ -9,6 +9,9 @@ replicaCount: 1
 istio:
   namespace: istio-system
 
+monitoring:
+  enabled: false
+
 networkPolicies:
   enabled: false
   ingressLabels:

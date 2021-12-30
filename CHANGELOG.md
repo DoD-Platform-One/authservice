@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0-bb.19]
+### Added
+- `monitoring.enabled` value, to be passed down from BigBang installation.
+### Changed
+- Added monitoring value flags to related NetworkPolicy templates.
+
 ## [0.4.0-bb.18]
 ### Changed
 - RequestAuthentication resource use jwks value if present over jwksUri
@@ -70,9 +76,11 @@
 - Fixing skipping templating out Keycloak formatted URL when certain URIs are explicitly specified for an authservice chain.
 
 ## [0.4.0-bb.1]
+### Changed
 - update changelog
 
 ## [0.4.0-bb.0]
+### Changed
 - update authservice to 0.4.0
 - change secret to use `default_oidc_config` and `oidc_override`
 
@@ -81,7 +89,7 @@
 - Pointing image to registry1 image from IronBank.
 
 ## [0.1.3-bb.0]
-
+### Added
 Added section of values to allow dynamic creation of secret containing the config.json chains:
 
 ```yaml
