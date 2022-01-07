@@ -84,8 +84,6 @@ spec:
   template:
     metadata:
       name: redis-clean-upgrade
-      annotations:
-        sidecar.istio.io/inject: 'false'
       labels:
         app.kubernetes.io/name: bigbang-redis-upgrade-job
     spec:
@@ -124,6 +122,11 @@ spec:
                 echo "No PVCs to clean up."
               fi
               echo "Done with upgrade steps."
+
+              {{- if .Values.istio.enabled }}
+              echo "Terminating istio sidecar container..."
+              curl -X POST http://localhost:15020/quitquitquit
+              {{- end }}
           {{- if .Values.cleanUpgrade.resources }}
           resources: {{- toYaml .Values.cleanUpgrade.resources | nindent 12 }}
           {{- end }}
