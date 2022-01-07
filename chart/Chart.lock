@@ -1,6 +1,6 @@
 dependencies:
 - name: redis
   repository: file://deps/redis
-  version: 14.1.0-bb.3
-digest: sha256:b64524116cb405a08681b16e507c82ab24c1329c7666d0f1af2830fe467aeab5
-generated: "2021-08-23T13:02:32.194302-05:00"
+  version: 14.1.0-bb.7
+digest: sha256:7a009e1a240118bc64629294950552f2f4815d379c7824c11b386d3276b3bf7e
+generated: "2022-01-07T10:32:25.6479596-07:00"

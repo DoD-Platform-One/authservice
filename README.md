@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.4.0-bb.19](https://img.shields.io/badge/Version-0.4.0--bb.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
+![Version: 0.4.0-bb.20](https://img.shields.io/badge/Version-0.4.0--bb.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -87,6 +87,7 @@ helm install authservice chart/
 | redis-bb.istio.redis.enabled | bool | `false` |  |
 | redis-bb.networkPolicies.enabled | bool | `true` |  |
 | redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| redis-bb.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
 
 ## Contributing

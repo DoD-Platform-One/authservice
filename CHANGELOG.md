@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0-bb.20]
+### Changed
+- Updated redis dependency to version `14.1.0-bb.7`
+- Adding `redis-bb` commonConfiguration option to set:
+  - `maxmemory` to `200mb` (default pod resource limits/requests=256mb)
+  - `maxmemory-policy allkeys-lru` setting recommended for caches: This sets every key within the cache to have an exire set. Once the 200MB of cache is taken up, tokens will automatically be expired (starting with the oldest set)
+
 ## [0.4.0-bb.19]
 ### Added
 - `monitoring.enabled` value, to be passed down from BigBang installation.

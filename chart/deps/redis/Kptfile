@@ -5,7 +5,7 @@ metadata:
 upstream:
     type: git
     git:
-        commit: f24af16a6d583e9e125f519127ffab11f48f42f8
+        commit: 2adcf4a0134c85fb5d36227d76054ed226837056
         repo: https://repo1.dso.mil/platform-one/big-bang/apps/application-utilities/redis
         directory: /chart
-        ref: 14.1.0-bb.3
+        ref: 14.1.0-bb.7
