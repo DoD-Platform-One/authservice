@@ -1,0 +1,200 @@
+component-definition:
+  uuid: 96D90418-4CF5-40F1-9AB3-777F81B39C7E
+  metadata: 
+    title: Authservice Component
+    last-modified: '2021-10-19T12:00:00Z'
+    version: 20211019
+    oscal-version: 1.0.0
+    parties:
+      # Should be consistent across all of the packages, but where is ground truth?
+    - uuid: 72134592-08C2-4A77-ABAD-C880F109367A 
+      type: organization
+      name: Platform One
+      links:
+      - href: <https://p1.dso.mil>
+        rel: website
+  components: # for BB, this would be all the pieces of big bang
+  - uuid: E70A5057-3BA4-4E62-8C74-ED19122BBA9E
+    type: software
+    title: Authservice
+    description: |
+      an implementation of thee Envoy External Authorization focused on handling AuthN/AuthZ 
+      for Istio and Kubernetes.
+    purpose: Provides authn/authz capabilites to applications via Istio Service Mesh
+    responsible-roles:
+    - role-id: provider
+      party-uuid: 72134592-08C2-4A77-ABAD-C880F109367A # matches parties entry for p1
+    control-implementations:
+    - uuid: 5108E5FC-C45F-477B-A542-9C5611A92485
+      source: https://raw.githubusercontent.com/usnistgov/oscal-content/master/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json
+      description:
+        Controls implemented by authservice for inheritance by applications
+      implemented-requirements:
+      - uuid: 6EC9C476-9C9D-4EF6-854B-A5B799D8AED1
+        control-id: ac-2.1
+        description: >-
+          Authservice allows the use of an extenrral idtntiy OIDC provider for application login
+          by configuring filter chain matching for hostname (headers) for applications.  This control can then
+          be inherited by the Identity Provider
+      - uuid: 373074CC-F1EA-40CB-AD17-DB8F199D0600
+        control-id: ac-2.2
+        description: >-
+          Authservice allows the use of an extenrral idtntiy OIDC provider for application login
+          by configuring filter chain matching for hostname (headers) for applications.  This control can then
+          be inherited by the Identity Provider
+      - uuid: 90FFF3BA-3E88-47AD-88B7-B50A92833A45
+        control-id: ac-2.3
+        description: >-
+          Authservice allows the use of an extenrral idtntiy OIDC provider for application login
+          by configuring filter chain matching for hostname (headers) for applications.  This control can then
+          be inherited by the Identity Provider
+      - uuid: 3230D443-A18C-4F9B-A0DE-DC89CE5D01C8
+        control-id: ac-2.4
+        description: >-
+          Authservice allows the use of an extenrral idtntiy OIDC provider for application login
+          by configuring filter chain matching for hostname (headers) for applications.  This control can then
+          be inherited by the Identity Provider
+      - uuid: 98DE555D-1B90-475F-9C2E-954438172B39
+        control-id: ac-8
+        description: >-
+          Authservice allows the use of an extenrral idtntiy OIDC provider for application login
+          by configuring filter chain matching for hostname (headers) for applications.  This control can then
+          be inherited by the Identity Provider
+      - uuid: 6ED4D692-F65F-40AB-AC3F-C056C2F41BD9
+        control-id: ac-10
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain 
+          matching hostname for application.
+
+          By restricting the lifetime of the JWT, Authservice will reauthenticate the user when it expires. The 
+          IdP can then implement concurrent session control, enforced during reauthentication. This control can 
+          then be inherited from the IdP. 
+
+      - uuid: 5D737AC5-0841-480E-87C0-DBBDE4F61F8E
+        control-id: ac-12
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain 
+          matching hostname for application.
+
+          By restricting the lifetime of the JWT, Authservice will reauthenticate the user when it expires. The 
+          IdP can then implement concurrent session control, enforced during reauthentication. This control can 
+          then be inherited from the IdP. 
+      - uuid: CBBAA8D3-276F-40C2-8E55-02C883201123
+        control-id: ac-14
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain 
+          matching hostname for application.
+
+          By restricting the lifetime of the JWT, Authservice will reauthenticate the user when it expires. The 
+          IdP can then implement concurrent session control, enforced during reauthentication. This control can 
+          then be inherited from the IdP. 
+      - uuid: 085E711D-A3E8-4CC2-B2E4-F1F0D1E9CE87
+        control-id: ia-2
+        description: >-
+          Authservice maps user sessions to user identities in an IdP.
+      - uuid: FB487DED-D360-4988-BD1B-4FCFA351258A
+        control-id: ia-2.1
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain 
+          matching hostname for application. The IdP can enforce multi-factor authentication for the client used 
+          by authservice. This control can then be inherited from the IdP. 
+      - uuid: EC6FF902-2E29-4FEC-A5B7-F3DD1573F61A
+        control-id: ia-2.2
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain 
+          matching hostname for application. The IdP can enforce multi-factor authentication for the client used 
+          by authservice. This control can then be inherited from the IdP. 
+      - uuid: B41B29FF-131D-4CD8-9275-9E0391BA35C5
+        control-id: ia-2.8
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain matching hostname for application. The IdP and OIDC protocol use "nonce" and "state" fields for replay resistance. This control can then be inherited from the IdP. 
+      - uuid: 8BD41F8B-3072-4AAD-A7E2-1DFC24F6D0C5
+        control-id: ia-3
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain matching hostname for application. The IdP can be configured to uniquely idenfify and authenticate devices before establishing connections. This control can then be inherited from the IdP. 
+      - uuid: 2519BEBB-327B-4E03-BA47-423D96114EE4
+        control-id: ia-4
+        description: >-
+          Authservice retreives JWT identfiers from the IdP which include various "claims" including the username of individuals, and a list of "groups" (roles) the user has access to. This control can then be inherited from the IdP. 
+      - uuid: F391AA9E-5EDB-483E-8EC2-60CA9602B1EF
+        control-id: ia-4.4
+        description: >-
+          Authservice retreives JWT identfiers from the IdP, which include various "claims" and such as  a list of "groups" (status) that apply to the user. This control can then be inherited from the IdP. 
+      - uuid: 59AECD61-0244-4930-897C-EAFA9D423F7F
+        control-id: ia-5
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: FF69FC29-C3E0-4B02-948E-CF375F93AF05
+        control-id: ia-5.1
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+
+          Authservice does NOT use the OAuth Resource Owner Password Credentials Flow, no passwords are transmitted by Authservice.
+      - uuid: 1489616B-8A08-437A-8EE8-E86E10C64D94
+        control-id: ia-5.2
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 2B01945F-2793-4CA1-BD40-B236A190EE66
+        control-id: ia-5.6
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: B48BD91F-5A89-4653-89C5-45EC55267049
+        control-id: ia-6
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: BC78A59A-7E43-4F27-8961-7DD8957499D7
+        control-id: ia-8.1
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 13E81A49-24C1-4E05-8E5F-F50402FEEE54
+        control-id: ia-8.2
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 475636F6-74AC-4E12-938C-BA92999A34AF
+        control-id: ia-8.5
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 63130DA3-52C8-402A-9CB9-1DE9AF62DE5E
+        control-id: ia-10
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 9DA88C51-E81D-4D02-8B51-33CF15F5C46C
+        control-id: ia-11
+        description: >-
+          Allows the use of an external identiy OIDC provider for application login by configuring filter chain matching hostname for application.
+
+          By restricting the lifetime of the JWT, Authservice will reauthenticate the user when it expires. The IdP can then implement concurrent session control, enforced during reauthentication. This control can then be inherited from the IdP. 
+      - uuid: 86C613C9-D6AC-4DF1-B8A2-5C51654CB933
+        control-id: ia-12
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: FA83073D-77E5-4DAA-A1A3-88FAD126ED50
+        control-id: ia-12.2
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: AFA5160F-11C1-471E-94E0-8B8E5D2C9050
+        control-id: ia-12.3
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 4284CA32-4CB9-484B-A769-34D6C1364F22
+        control-id: ia-12.4
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: 1906F9E4-6E82-46A5-A575-70FA0F2E131E
+        control-id: ia-12.4
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+      - uuid: C9C67A58-CBA4-4F9D-92A6-B73068C7F3AD
+        control-id: ia-12.5
+        description: >-
+          Authservice does not manage authenticators, they are managed by the IdP. This control can then be inherited from the IdP. 
+  back-matter: 
+    resources:
+    - uuid: 97FF87A0-EB34-4001-839A-32FF0815D896
+      title: Github Repo - Authservice
+      rlinks:
+      - href: https://github.com/istio-ecosystem/authservice
+    - uuid: B66A99BD-680E-48AF-B81B-D2113155331E
+      title: Big Bang Authservice package
+      rlinks:
+        - href: https://repo1.dso.mil/platform-one/big-bang/apps/core/authservice
