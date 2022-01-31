@@ -22,6 +22,14 @@
         ],
         "depNameTemplate": "ironbank/istio-ecosystem/authservice",
         "datasourceTemplate": "docker"
+      },
+      {
+        "fileMatch": ["^chart/Chart\\.yaml$"],
+        "matchStrings": [
+           "- Auth Service:\\s+(?<currentValue>.+)"
+        ],
+        "depNameTemplate": "ironbank/istio-ecosystem/authservice",
+        "datasourceTemplate": "docker"
       }
     ]
   }

@@ -1,4 +1,8 @@
 # Changelog
+## [0.4.0-bb.22]
+### Update
+- Update Chart.yaml to follow new standardization for release automation
+- Added renovate check to update new standardization
 
 ## [0.4.0-bb.21]
 ### Changed
