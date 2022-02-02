@@ -1,4 +1,8 @@
 # Changelog
+## [0.4.0-bb.23]
+### Changed
+- Enable istio mtls
+
 ## [0.4.0-bb.22]
 ### Update
 - Update Chart.yaml to follow new standardization for release automation
