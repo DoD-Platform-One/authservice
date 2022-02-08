@@ -8,7 +8,7 @@ replicaCount: 1
 
 istio:
   namespace: istio-system
-  mtls: enabled
+  mtls: true
 monitoring:
   enabled: false
 
