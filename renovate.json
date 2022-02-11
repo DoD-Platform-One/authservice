@@ -1,35 +1,47 @@
 {
-    "baseBranches": ["main"],
-    "configWarningReuseIssue": false,
-    "dependencyDashboard": "true",
-    "dependencyDashboardHeader": "- [ ] Sync upstream helm chart version with updated dependencies.",
-    "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
-    "draftPR": true,
-    "labels": ["authservice","Big Bang Core","Package Sustainment","kind::chore"],
-    "ignorePaths": ["chart/charts/**", "chart/deps/**"],
-    "packageRules": [
-      {
-        "matchDatasources": ["docker"],
-        "groupName": "Ironbank",
-        "registryUrls": ["https://registry1.dso.mil"]
-      }
-    ],
-    "regexManagers": [
-      {
-        "fileMatch": ["^chart/values\\.yaml$"],
-        "matchStrings": [
-           "tag:\\s+(?<currentValue>.+)"
-        ],
-        "depNameTemplate": "ironbank/istio-ecosystem/authservice",
-        "datasourceTemplate": "docker"
-      },
-      {
-        "fileMatch": ["^chart/Chart\\.yaml$"],
-        "matchStrings": [
-           "- Auth Service:\\s+(?<currentValue>.+)"
-        ],
-        "depNameTemplate": "ironbank/istio-ecosystem/authservice",
-        "datasourceTemplate": "docker"
-      }
-    ]
-  }
+  "baseBranches": ["main"],
+  "configWarningReuseIssue": false,
+  "dependencyDashboard": "true",
+  "dependencyDashboardHeader": "- [ ] For Redis Updates Only: Use kpt to update to redis subchart (under `chart/deps`) to the latest available.",
+  "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
+  "draftPR": true,
+  "labels": ["authservice","Big Bang Core","Package Sustainment","kind::chore"],
+  "includePaths": ["chart/values.yaml","chart/Chart.yaml","chart/deps/redis/Chart.yaml"],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "groupName": "Ironbank",
+      "registryUrls": ["https://registry1.dso.mil"]
+    },
+    {
+      "matchDatasources": ["git-tags"],
+      "groupName": "Redis"
+    }
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["^chart/values\\.yaml$"],
+      "matchStrings": [
+         "tag:\\s+(?<currentValue>.+)"
+      ],
+      "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^chart/Chart\\.yaml$"],
+      "matchStrings": [
+         "- Authservice:\\s+(?<currentValue>.+)"
+      ],
+      "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "fileMatch": ["^chart/deps/redis/Chart\\.yaml$"],
+      "matchStrings": [
+        "version:\\s+(?<currentValue>.+)"
+      ],
+      "depNameTemplate": "https://repo1.dso.mil/platform-one/big-bang/apps/application-utilities/redis.git",
+      "datasourceTemplate": "git-tags"
+    }
+  ]
+}
