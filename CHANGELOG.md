@@ -1,4 +1,9 @@
 # Changelog
+
+## [0.4.0-bb.24]
+### Changed
+- Modified PeerAuthentication to allow for passing in mode
+
 ## [0.4.0-bb.23]
 ### Changed
 - Enable istio mtls
