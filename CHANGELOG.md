@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.25]
+### Added
+- Added network policy for Redis clients
+
 ## [0.4.0-bb.24]
 ### Changed
 - Modified PeerAuthentication to allow for passing in mode
