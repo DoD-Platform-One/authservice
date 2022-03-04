@@ -5,7 +5,7 @@
   "dependencyDashboardHeader": "- [ ] For Redis Updates Only: Use kpt to update to redis subchart (under `chart/deps`) to the latest available.",
   "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
   "draftPR": true,
-  "labels": ["authservice","Big Bang Core","Package Sustainment","kind::chore"],
+  "labels": ["authservice","Big Bang Core","Package Sustainment","kind::maintenance"],
   "includePaths": ["chart/values.yaml","chart/Chart.yaml","chart/deps/redis/Chart.yaml"],
   "packageRules": [
     {
