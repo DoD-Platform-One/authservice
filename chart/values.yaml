@@ -52,6 +52,8 @@ global:
   logout_path: "/globallogout"
   # Logout Redirect URI for the client
   logout_redirect_uri: ""
+  absolute_session_timeout: 0
+  idle_session_timeout: 0
   # CA signing the OIDC provider. Passed through as a Helm multi-line string. See README for example.
   certificate_authority: ""
   # certificate_authority: |
@@ -85,6 +87,8 @@ chains:
   #   redis_server_uri: tcp://localhost:6379/
   #   logout:
   #     path: "/logout"
+  #   absolute_session_timeout: timeout_value
+  #   idle_session_timeout: timeout_value
   #   oidc:
   #     host: local_oidc_host
   #     realm: local_oidc_realm
