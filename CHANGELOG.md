@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.26]
+### Added
+- Added support for `absolute_session_timeout` and `idle_session_timeout`
+
 ## [0.4.0-bb.25]
 ### Added
 - Added network policy for Redis clients

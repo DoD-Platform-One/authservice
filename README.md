@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.4.0-bb.25](https://img.shields.io/badge/Version-0.4.0--bb.25-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
+![Version: 0.4.0-bb.26](https://img.shields.io/badge/Version-0.4.0--bb.26-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.0](https://img.shields.io/badge/AppVersion-0.4.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -49,6 +49,8 @@ helm install authservice chart/
 | global.match.prefix | string | `"bigbang"` |  |
 | global.logout_path | string | `"/globallogout"` |  |
 | global.logout_redirect_uri | string | `""` |  |
+| global.absolute_session_timeout | int | `0` |  |
+| global.idle_session_timeout | int | `0` |  |
 | global.certificate_authority | string | `""` |  |
 | global.oidc.host | string | `"login.dso.mil"` |  |
 | global.oidc.realm | string | `"baby-yoda"` |  |
