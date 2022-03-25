@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.4.0-bb.27]
+### Changed
+- Updated `renovate.json` to have renovate automatically update appVersion in `Chart.yaml`
+
 ## [0.4.0-bb.26]
 ### Added
 - Added support for `absolute_session_timeout` and `idle_session_timeout`
