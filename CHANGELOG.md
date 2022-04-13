@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1-bb.0]
+### Changed
+- Updated to 0.5.1 Authservice image version
+
 ## [0.4.0-bb.27]
 ### Changed
 - Updated `renovate.json` to have renovate automatically update appVersion in `Chart.yaml`
