@@ -15,7 +15,7 @@ data:
     #!/bin/bash
 
     [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -33,6 +33,10 @@ data:
 {{- end }}
         ping
     )
+    if [ "$?" -eq "124" ]; then
+      echo "Timed out"
+      exit 1
+    fi
     if [ "$response" != "PONG" ]; then
       echo "$response"
       exit 1
@@ -41,7 +45,7 @@ data:
     #!/bin/bash
 
     [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -59,7 +63,12 @@ data:
 {{- end }}
         ping
     )
-    if [ "$response" != "PONG" ] && [ "$response" != "LOADING Redis is loading the dataset in memory" ]; then
+    if [ "$?" -eq "124" ]; then
+      echo "Timed out"
+      exit 1
+    fi
+    responseFirstWord=$(echo $response | head -n1 | awk '{print $1;}')
+    if [ "$response" != "PONG" ] && [ "$responseFirstWord" != "LOADING" ] && [ "$responseFirstWord" != "MASTERDOWN" ]; then
       echo "$response"
       exit 1
     fi
@@ -67,8 +76,10 @@ data:
   ping_sentinel.sh: |-
     #!/bin/bash
 
+{{- if .Values.auth.sentinel }}
     [[ -f $REDIS_PASSWORD_FILE ]] && export REDIS_PASSWORD="$(< "${REDIS_PASSWORD_FILE}")"
-    export REDISCLI_AUTH="$REDIS_PASSWORD"
+    [[ -n "$REDIS_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_PASSWORD"
+{{- end }}
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -76,16 +87,20 @@ data:
 {{- if .Values.tls.enabled }}
         -p $REDIS_SENTINEL_TLS_PORT_NUMBER \
         --tls \
-        --cacert {{ template "redis.tlsCACert" . }} \
+        --cacert "$REDIS_SENTINEL_TLS_CA_FILE" \
         {{- if .Values.tls.authClients }}
-          --cert {{ template "redis.tlsCert" . }} \
-          --key {{ template "redis.tlsCertKey" . }} \
+          --cert "$REDIS_SENTINEL_TLS_CERT_FILE" \
+          --key "$REDIS_SENTINEL_TLS_KEY_FILE" \
         {{- end }}
 {{- else }}
         -p $REDIS_SENTINEL_PORT \
 {{- end }}
         ping
     )
+    if [ "$?" -eq "124" ]; then
+      echo "Timed out"
+      exit 1
+    fi
     if [ "$response" != "PONG" ]; then
       echo "$response"
       exit 1
@@ -110,7 +125,7 @@ data:
     #!/bin/bash
 
     [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
-    export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
+    [[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -126,6 +141,10 @@ data:
 {{- end }}
         ping
     )
+    if [ "$?" -eq "124" ]; then
+      echo "Timed out"
+      exit 1
+    fi
     if [ "$response" != "PONG" ]; then
       echo "$response"
       exit 1
@@ -134,7 +153,7 @@ data:
     #!/bin/bash
 
     [[ -f $REDIS_MASTER_PASSWORD_FILE ]] && export REDIS_MASTER_PASSWORD="$(< "${REDIS_MASTER_PASSWORD_FILE}")"
-    export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
+    [[ -n "$REDIS_MASTER_PASSWORD" ]] && export REDISCLI_AUTH="$REDIS_MASTER_PASSWORD"
     response=$(
       timeout -s 3 $1 \
       redis-cli \
@@ -150,7 +169,12 @@ data:
 {{- end }}
         ping
     )
-    if [ "$response" != "PONG" ] && [ "$response" != "LOADING Redis is loading the dataset in memory" ]; then
+    if [ "$?" -eq "124" ]; then
+      echo "Timed out"
+      exit 1
+    fi
+    responseFirstWord=$(echo $response | head -n1 | awk '{print $1;}')
+    if [ "$response" != "PONG" ] && [ "$responseFirstWord" != "LOADING" ]; then
       echo "$response"
       exit 1
     fi

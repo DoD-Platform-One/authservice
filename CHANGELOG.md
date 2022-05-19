@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1-bb.1]
+### Changed
+- Updated Redis sub-chart to version `16.9.2-bb.0` appVersion `6.2.6`
+
 ## [0.5.1-bb.0]
 ### Changed
 - Updated to 0.5.1 Authservice image version
