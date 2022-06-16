@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.1-bb.1](https://img.shields.io/badge/Version-0.5.1--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.1](https://img.shields.io/badge/AppVersion-0.5.1-informational?style=flat-square)
+![Version: 0.5.1-bb.2](https://img.shields.io/badge/Version-0.5.1--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.1](https://img.shields.io/badge/AppVersion-0.5.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -64,7 +64,9 @@ helm install authservice chart/
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | podAnnotations | object | `{}` |  |
-| podSecurityContext | object | `{}` |  |
+| podSecurityContext.runAsUser | int | `1000` |  |
+| podSecurityContext.runAsGroup | int | `1000` |  |
+| podSecurityContext.runAsNonRoot | bool | `true` |  |
 | securityContext | object | `{}` |  |
 | service.type | string | `"ClusterIP"` |  |
 | service.port | int | `10003` |  |

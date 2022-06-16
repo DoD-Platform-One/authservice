@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1-bb.2]
+### Changed
+- Update Authservice to run as non root user
+
 ## [0.5.1-bb.1]
 ### Changed
 - Updated Redis sub-chart to version `16.9.2-bb.0` appVersion `6.2.6`
