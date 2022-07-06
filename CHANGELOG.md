@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1-bb.3]
+### Changed
+- Updated redis to 16.12.3-bb.1
+
 ## [0.5.1-bb.2]
 ### Changed
 - Update Authservice to run as non root user
