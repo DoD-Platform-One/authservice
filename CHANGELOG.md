@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.5.1-bb.4]
+### Added
+- Added contributing document
+
 ## [0.5.1-bb.3]
 ### Changed
 - Updated redis to 16.12.3-bb.1
