@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.1-bb.4](https://img.shields.io/badge/Version-0.5.1--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.1](https://img.shields.io/badge/AppVersion-0.5.1-informational?style=flat-square)
+![Version: 0.5.1-bb.5](https://img.shields.io/badge/Version-0.5.1--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.1](https://img.shields.io/badge/AppVersion-0.5.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -67,7 +67,10 @@ helm install authservice chart/
 | podSecurityContext.runAsUser | int | `1000` |  |
 | podSecurityContext.runAsGroup | int | `1000` |  |
 | podSecurityContext.runAsNonRoot | bool | `true` |  |
-| securityContext | object | `{}` |  |
+| securityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| securityContext.readOnlyRootFilesystem | bool | `true` |  |
+| securityContext.runAsNonRoot | bool | `true` |  |
+| securityContext.runAsUser | int | `1000` |  |
 | service.type | string | `"ClusterIP"` |  |
 | service.port | int | `10003` |  |
 | resources.limits | object | `{"cpu":"100m","memory":"512Mi"}` | We usually recommend not to specify default resources and to leave this as a conscious choice for the user. This also increases chances charts run on environments with little resources, such as Minikube. If you do want to specify resources, uncomment the following lines, adjust them as necessary, and remove the curly braces after 'resources:'. |

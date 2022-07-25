@@ -1,5 +1,11 @@
 # Changelog
 
+---
+## [0.5.1-bb.5]
+### Added
+- Added capabilities: drop: ALL
+- updated redis to 16.12.3-bb.2
+
 ## [0.5.1-bb.4]
 ### Added
 - Added contributing document
