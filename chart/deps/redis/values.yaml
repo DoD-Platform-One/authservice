@@ -314,6 +314,9 @@ master:
   containerSecurityContext:
     enabled: true
     runAsUser: 1001
+    capabilities:
+      drop:
+      - ALL
   ## @param master.kind Use either Deployment or StatefulSet (default)
   ## ref: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
   ##
@@ -696,6 +699,9 @@ replica:
   containerSecurityContext:
     enabled: true
     runAsUser: 1001
+    capabilities:
+      drop:
+      - ALL
   ## @param replica.schedulerName Alternate scheduler for Redis&reg; replicas pods
   ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
   ##
@@ -1160,6 +1166,9 @@ sentinel:
   containerSecurityContext:
     enabled: true
     runAsUser: 1001
+    capabilities:
+      drop:
+      - ALL
   ## @param sentinel.lifecycleHooks for the Redis&reg; sentinel container(s) to automate configuration before or after startup
   ##
   lifecycleHooks: {}
@@ -1430,6 +1439,9 @@ metrics:
   containerSecurityContext:
     enabled: true
     runAsUser: 1001
+    capabilities:
+      drop:
+      - ALL
   ## @param metrics.extraVolumes Optionally specify extra list of additional volumes for the Redis&reg; metrics sidecar
   ##
   extraVolumes: []
@@ -1529,6 +1541,9 @@ metrics:
     containerSecurityContext:
       enabled: true
       runAsUser: 1001
+      capabilities:
+        drop:
+        - ALL
     ## Redis(TM) Sentinel exporter resource requests and limits
     ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
     ## @param metrics.sentinel.resources.limits The resources limits for the Redis(TM) Sentinel exporter container
@@ -1713,6 +1728,9 @@ volumePermissions:
   ##
   containerSecurityContext:
     runAsUser: 0
+    capabilities:
+      drop:
+      - ALL
 
 ## init-sysctl container parameters
 ## used to perform sysctl operation to modify Kernel settings (needed sometimes to avoid warnings)
