@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.1-bb.5](https://img.shields.io/badge/Version-0.5.1--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.1](https://img.shields.io/badge/AppVersion-0.5.1-informational?style=flat-square)
+![Version: 0.5.2-bb.0](https://img.shields.io/badge/Version-0.5.2--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.2](https://img.shields.io/badge/AppVersion-0.5.2-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -40,10 +40,11 @@ helm install authservice chart/
 | networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.tag | string | `"0.5.1"` | Overrides the image tag whose default is the chart appVersion. |
+| image.tag | string | `"0.5.2"` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` |  |
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
+| allow_unmatched_requests | bool | `true` | If true will allow the requests even no filter chain match is found |
 | global.client_id | string | `"global_id"` | Global Authorization URI value to set if not using Keycloak authorization_uri: "" Global Token URI Value to set if not using Keycloak token_uri: "" Default client_id to be used in each chain |
 | global.client_secret | string | `"global_secret"` | default client_secret to be used in each chain |
 | global.match.header | string | `":authority"` | Header to match.  The value ":authority" is used to match the requested hostname |

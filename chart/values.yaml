@@ -28,12 +28,15 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: "0.5.1"
+  tag: "0.5.2"
 imagePullSecrets: []
 
 # -- Issuer and jwks URIs if not using Keycloak
 issuer_uri: ""
 jwks_uri: ""
+
+# -- If true will allow the requests even no filter chain match is found
+allow_unmatched_requests: true
 
 global:
   # -- Global Authorization URI value to set if not using Keycloak

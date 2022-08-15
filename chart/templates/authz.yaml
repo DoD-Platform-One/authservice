@@ -11,7 +11,14 @@ spec:
   provider:
     name: authservice
   rules:
+  {{- if .Values.allow_unmatched_requests }}
   - {}
+  {{- else }}
+  - to:
+    - operation:
+        hosts:
+        - "*.{{ .Values.domain }}"
+  {{- end }}
 ---
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
@@ -31,4 +38,3 @@ spec:
         {{- else }}
         - "https://{{ .Values.global.oidc.host }}/auth/realms/{{ .Values.global.oidc.realm }}/*"
         {{- end }}
-
