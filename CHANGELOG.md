@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [0.5.2-bb.0]
+### Changed
+- Updated to 0.5.2 Authservice image version
+- Add allow_unmatched_requests toggle with corresponding change to CUSTOM authz policy
+
 ## [0.5.1-bb.5]
 ### Added
 - Added capabilities: drop: ALL
