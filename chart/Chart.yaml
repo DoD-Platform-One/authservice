@@ -29,4 +29,4 @@ dependencies:
    alias: redis-bb
 annotations:
   bigbang.dev/applicationVersions: |
-    - Authservice: v0.5.2
+    - Authservice: 0.5.2
