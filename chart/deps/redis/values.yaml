@@ -31,6 +31,7 @@ cleanUpgrade:
       memory: 256Mi
       cpu: 100m
 
+
 # NOTE: We default this to true in case packages consuming Redis forget to turn it on and have API traffic blocked
 networkPolicies:
   enabled: true
@@ -1625,6 +1626,10 @@ metrics:
     ## @param metrics.serviceMonitor.additionalLabels Additional labels that can be used so ServiceMonitor resource(s) can be discovered by Prometheus
     ##
     additionalLabels: {}
+    # scheme and tlsConfig values, allows for mTLS configuration
+    #
+    scheme: ""
+    tlsConfig: {}
   ## Custom PrometheusRule to be defined
   ## ref: https://github.com/coreos/prometheus-operator#customresourcedefinitions
   ##
