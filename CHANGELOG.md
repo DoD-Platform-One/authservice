@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.2-bb.1]
+### Changed
+- Updated mTLS mode for metrics
+
 ## [0.5.2-bb.0]
 ### Changed
 - Updated to 0.5.2 Authservice image version
