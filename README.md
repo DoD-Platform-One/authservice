@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.2-bb.1](https://img.shields.io/badge/Version-0.5.2--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.2](https://img.shields.io/badge/AppVersion-0.5.2-informational?style=flat-square)
+![Version: 0.5.3-bb.0](https://img.shields.io/badge/Version-0.5.3--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -40,7 +40,7 @@ helm install authservice chart/
 | networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.tag | string | `"0.5.2"` | Overrides the image tag whose default is the chart appVersion. |
+| image.tag | string | `"0.5.3"` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` |  |
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
@@ -57,7 +57,10 @@ helm install authservice chart/
 | global.oidc | object | `{"host":"login.dso.mil","realm":"baby-yoda"}` | URI for Redis instance used for OIDC token storage/retrieval. This may also be specified per-chain. redis_server_uri: tcp://{{ .Release.Name }}-{{ .Release.Namespace }}-auth-redis-master:6379/ |
 | global.oidc.host | string | `"login.dso.mil"` | OpenID Connect hostname.  Assumption of Keycloak based on URL construction |
 | global.oidc.realm | string | `"baby-yoda"` | Realm for OpenID Connect |
-| global.jwks | string | `"{\"keys\":[{\"kid\":\"4CK69bW66HE2wph9VuBs0fTc1MaETSTpU1iflEkBHR4\",\"kty\":\"RSA\",\"alg\":\"RS256\",\"use\":\"sig\",\"n\":\"hiML1kjw-sw25BgaZI1AyfgcCRBPJKPE-wwttqa7NNxptr_5RCBGuJXqDyo3p1vjcbb8KjdKnXI7kWer8b2Pz_RP1m_QcPrKOxSluk7GZF8ARsc6FPGbzYgi8o8cBVSsaml6HZzpN3ZnH4DFZ27ifM-Ul_PyMxZ2aweohIaizXp-rgF7Rqpav5NXUwmcSyH8LP92NVIuFlD3HYTDGosVbfA_u_H25Z4XCGKW_vLDTNrl8PcA3HqIoD-vNavysdxAq_KNw7iLLc0KLsjFYSdJL_54H7QubsGR0AyIrLLurJbqAtvttGJK38k5XYWKIwYGtu6iiJwjSb7UtonVdPh8Vw\",\"e\":\"AQAB\",\"x5c\":[\"MIICoTCCAYkCBgFyLIEqUjANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAliYWJ5LXlvZGEwHhcNMjAwNTE5MTAzNDIyWhcNMzAwNTE5MTAzNjAyWjAUMRIwEAYDVQQDDAliYWJ5LXlvZGEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCGIwvWSPD6zDbkGBpkjUDJ+BwJEE8ko8T7DC22prs03Gm2v/lEIEa4leoPKjenW+NxtvwqN0qdcjuRZ6vxvY/P9E/Wb9Bw+so7FKW6TsZkXwBGxzoU8ZvNiCLyjxwFVKxqaXodnOk3dmcfgMVnbuJ8z5SX8/IzFnZrB6iEhqLNen6uAXtGqlq/k1dTCZxLIfws/3Y1Ui4WUPcdhMMaixVt8D+78fblnhcIYpb+8sNM2uXw9wDceoigP681q/Kx3ECr8o3DuIstzQouyMVhJ0kv/ngftC5uwZHQDIissu6sluoC2+20YkrfyTldhYojBga27qKInCNJvtS2idV0+HxXAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAIVkoDYkM6ryBcuchdAL5OmyKbmmY4WDrMlatfa3uniK5jvFXrmVaJ3rcu0apdY/NhBeLSOLFVlC5w1QroGUhWm0EjAA4zyuU63Pk0sro0vyHrxztBrGPQrGXI3kjXEssaehZZvYP4b9VtYpus6oGP6bTmaDw94Zu+WrDsWdFs+27VEYwBuU0D6E+ENDGlfR+9ADEW53t6H2M3H0VsOtbArEutYgb4gmQcOIBygC7L1tGJ4IqbnhTYLh9DMKNklU+tq8TMHacps9FxELpeAib3O0J0E5zYXdraQobCCe+ao1Y7sA/wqcGQBCVuoFgty7Y37nNL7LMvygcafgqVDqw5U=\"],\"x5t\":\"mxFIwx7EdgxyC3Y6ODLx8yr8Bx8\",\"x5t#S256\":\"SdT7ScKVOnBW6qs_MuYdTGVtMGwYK_-nmQF9a_8lXco\"}]}"` | escaped json for the JWKS |
+| global.jwks | string | `""` | escaped json for the JWKS |
+| global.jwks_uri | string | `""` | Request URI that has the JWKs. If neither jwks or jwks_uri are specified the jwks_uri is computed based on the provided OIDC realm and and host" |
+| global.periodic_fetch_interval_sec | int | `60` | Request interval to check whether new JWKs are available. |
+| global.skip_verify_peer_cert | bool | `false` | If set to true, the verification of the destination certificate will be skipped when making a request to the JWKs URI. This option is useful when you want to use a self-signed certificate for testing purposes, but basically should not be set to true in any other cases. |
 | chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"}}}` | Individual chains.  Must have a `name` value and a `callback_uri` |
 | nameOverride | string | `"authservice"` |  |
 | fullnameOverride | string | `"authservice"` |  |
