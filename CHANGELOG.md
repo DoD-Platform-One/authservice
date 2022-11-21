@@ -1,6 +1,13 @@
 # Changelog
 
 ---
+## [0.5.3-bb.0]
+### Added
+- Added support for `jwks_uri`
+
+### Changed
+- Updated to 0.5.3 AuthService image version
+
 ## [0.5.2-bb.1]
 ### Changed
 - Updated mTLS mode for metrics
