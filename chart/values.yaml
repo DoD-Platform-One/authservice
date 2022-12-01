@@ -87,6 +87,7 @@ global:
   skip_verify_peer_cert: false
 
 # -- Individual chains.  Must have a `name` value and a `callback_uri`
+# NOTE: if using "match" can only specify `prefix` OR `equality`, not both
 chains:
   # minimal:
   #   callback_uri: https://minimal.bigbang.dev
@@ -94,6 +95,7 @@ chains:
   #   match:
   #     header: ":authority"
   #     prefix: "localhost"
+  #     equality: "localhost.localdomain"
   #   authorization_uri: "https://example.com/auth"
   #   token_uri: "https://example.com/token"
   #   client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
