@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.1]
+### Added
+- Added support for `equality` chain matching
+
 ## [0.5.3-bb.0]
 ### Added
 - Added support for `jwks_uri`
