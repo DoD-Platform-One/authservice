@@ -13,6 +13,8 @@ spec:
   rules:
   {{- if .Values.allow_unmatched_requests }}
   - {}
+  {{- else if .Values.custom_authpolicy_rules }}
+{{ .Values.custom_authpolicy_rules | toYaml | indent 2 }}
   {{- else }}
   - to:
     - operation:

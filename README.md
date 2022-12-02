@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.1](https://img.shields.io/badge/Version-0.5.3--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.2](https://img.shields.io/badge/Version-0.5.3--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -45,6 +45,7 @@ helm install authservice chart/
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
 | allow_unmatched_requests | bool | `true` | If true will allow the requests even no filter chain match is found |
+| custom_authpolicy_rules | list | `[{"when":[{"key":"request.headers[authorization]","notValues":["*"]}]}]` | Extra Ruleset for AuthorizationPolicy CUSTOM action to forward to Authservice. To enable `allow_unmatched_requests` must be `false`. These custom rules mean that only these requests will be routed and will break default BigBang setup for `prometheus/alertmanager/tempo` unless added. Path specific Operations are not supported, it is recommended to use only hosts, notHosts, & method operations. See reference: https://istio.io/latest/docs/reference/config/security/authorization-policy/ |
 | global.client_id | string | `"global_id"` | Global Authorization URI value to set if not using Keycloak authorization_uri: "" Global Token URI Value to set if not using Keycloak token_uri: "" Default client_id to be used in each chain |
 | global.client_secret | string | `"global_secret"` | default client_secret to be used in each chain |
 | global.match.header | string | `":authority"` | Header to match.  The value ":authority" is used to match the requested hostname |
@@ -61,7 +62,7 @@ helm install authservice chart/
 | global.jwks_uri | string | `""` | Request URI that has the JWKs. If neither jwks or jwks_uri are specified the jwks_uri is computed based on the provided OIDC realm and and host" |
 | global.periodic_fetch_interval_sec | int | `60` | Request interval to check whether new JWKs are available. |
 | global.skip_verify_peer_cert | bool | `false` | If set to true, the verification of the destination certificate will be skipped when making a request to the JWKs URI. This option is useful when you want to use a self-signed certificate for testing purposes, but basically should not be set to true in any other cases. |
-| chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"}},"test-equality":{"callback_uri":"https://test/login","match":{"equality":"header_setting","header":"testheader"}}}` | Individual chains.  Must have a `name` value and a `callback_uri` |
+| chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"}}}` | Individual chains.  Must have a `name` value and a `callback_uri` NOTE: if using "match" can only specify `prefix` OR `equality`, not both |
 | nameOverride | string | `"authservice"` |  |
 | fullnameOverride | string | `"authservice"` |  |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
