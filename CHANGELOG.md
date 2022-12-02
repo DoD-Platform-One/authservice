@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.2]
+### Added
+- Added AuthorizationPolicy custom ruleset value and logic
+
 ## [0.5.3-bb.1]
 ### Added
 - Added support for `equality` chain matching
