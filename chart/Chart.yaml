@@ -30,3 +30,9 @@ dependencies:
 annotations:
   bigbang.dev/applicationVersions: |
     - Authservice: 0.5.3
+  helm.sh/images: |
+    - name: authservice
+      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:0.5.3
+    - name: redis
+      condition: redis.enabled
+      image: registry1.dso.mil/ironbank/bitnami/redis:7.0.0-debian-10-r3
