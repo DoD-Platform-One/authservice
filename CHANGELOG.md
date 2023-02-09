@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.3]
+### Changed
+- Updated redis to latest version 
+
 ## [0.5.3-bb.2]
 ### Added
 - Added AuthorizationPolicy custom ruleset value and logic
