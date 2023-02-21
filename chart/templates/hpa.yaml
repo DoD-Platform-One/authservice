@@ -1,5 +1,10 @@
 {{- if .Values.autoscaling.enabled }}
+{{- if (semverCompare ">=1.23" .Capabilities.KubeVersion.GitVersion) }}
+# Change default HPA apiVersion to ensure generated HPA uses autoscaling/v2
+apiVersion: autoscaling/v2
+{{- else }}
 apiVersion: autoscaling/v2beta1
+{{- end }}
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "authservice.fullname" . }}
