@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [0.5.3-bb.4]
+### Added
+- NetworkPolicy template to facilitate tracing engine communication
+- HPA update to support apiVersion v2 for k8s 1.23+
+
 ## [0.5.3-bb.3]
 ### Changed
 - Updated redis to latest version 
