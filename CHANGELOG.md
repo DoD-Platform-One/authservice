@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.6]
+### Changed
+- Update HPA template syntax to support apiVersion v2 for AWS-EKS 1.23+
+
 ## [0.5.3-bb.5]
 ### Changed
 - HPA template syntax update to support apiVersion v2 for k8s 1.23+
