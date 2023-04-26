@@ -95,7 +95,7 @@ global:
   # -- Request interval to check whether new JWKs are available.
   periodic_fetch_interval_sec: 60
 
-  # -- If set to true, the verification of the destination certificate will be skipped when making a request to the JWKs URI. This option is useful when you want to use a self-signed certificate for testing purposes, but basically should not be set to true in any other cases.
+  # -- If set to true, the verification of the destination certificate will be skipped when making a request to the JWKs URI and the token endpoint. This option is useful when you want to use a self-signed certificate for testing purposes, but basically should not be set to true in any other cases.
   skip_verify_peer_cert: false
 
 # -- Individual chains.  Must have a `name` value and a `callback_uri`

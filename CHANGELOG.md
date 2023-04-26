@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.7]
+### Changed
+- skip_verify_peer_cert fixed to also work with the token endpoint and chain jwks_uri calls.
+
 ## [0.5.3-bb.6]
 ### Changed
 - Update HPA template syntax to support apiVersion v2 for AWS-EKS 1.23+
