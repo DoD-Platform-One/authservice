@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.8]
+### Changed
+- Bumped Redis chart dependency to `17.10.2-bb.0` 
+
 ## [0.5.3-bb.7]
 ### Changed
 - skip_verify_peer_cert fixed to also work with the token endpoint and chain jwks_uri calls.
