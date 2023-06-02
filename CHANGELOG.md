@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.9]
+### Changed
+- Fixes a double quoting bug in `jwks_uri` setting.
+
 ## [0.5.3-bb.8]
 ### Changed
 - Bumped Redis chart dependency to `17.10.2-bb.0` 
