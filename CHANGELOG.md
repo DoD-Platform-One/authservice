@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.10]
+### Changed
+- Added `sso-tls-ca` volume mount to the deployment to enable JWKS URI usage even if the OIDC IdP uses a custom CA.
+
 ## [0.5.3-bb.9]
 ### Changed
 - Fixes a double quoting bug in `jwks_uri` setting.
