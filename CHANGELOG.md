@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.11]
+### Changed
+- Allow for passing templates inside templates for chains prefixes and callback uris.
+
 ## [0.5.3-bb.10]
 ### Changed
 - Added `sso-tls-ca` volume mount to the deployment to enable JWKS URI usage even if the OIDC IdP uses a custom CA.
