@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.12]
+### Changed
+- Fixed egress-istiod network policy to match correctly.
+
 ## [0.5.3-bb.11]
 ### Changed
 - Allow for passing templates inside templates for chains prefixes and callback uris.
