@@ -13,7 +13,7 @@ spec:
     - namespaceSelector:
         matchLabels:
           app.kubernetes.io/name: istio-controlplane
-    - podSelector:
+      podSelector:
         matchLabels:
           app: istiod
     ports:
