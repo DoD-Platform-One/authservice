@@ -128,6 +128,9 @@ chains:
   #     MIIE4jCCAsqgAwIBAgIBATANBgkqhkiG9w0BAQsFADARMQ8wDQYDVQQDEwZzZm8t
   #     Y2EwHhcNMTkxMjIwMDAxNjI1WhcNMjEwNjIwMDAxNjIxWjARMQ8wDQYDVQQDEwZz
   #     -----END CERTIFICATE-----
+  #   scopes:
+  #     - additionalScope1
+  #     - additionalScope2
   # must have at least one entry, so we include this default filter
   local:
     match:

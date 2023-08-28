@@ -14,6 +14,9 @@ addons:
         client_id: <redacted>
         client_secret: ""
         callback_uri: https://helloworld.{{ .Values.domain }}/login/generic_oauth
+        scopes:
+          - additionalScope1
+          - additionalScope2
 ```
 
 This will then use the value you set in `domain` as part of your URI / Prefix.
