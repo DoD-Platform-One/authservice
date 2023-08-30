@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [0.5.3-bb.13] - 2023-08-30
+### Changed
+- redis updated from 17.10.2 to 17.15.4
+- ironbank/bitnami/redis updated from 7.0.11 to 7.2.0
+
 ## [0.5.3-bb.12]
 ### Changed
 - Fixed egress-istiod network policy to match correctly.
