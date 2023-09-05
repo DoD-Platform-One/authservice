@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.14]
+### Changed
+- Allow configuration of additional scopes.
+
 ## [0.5.3-bb.13] - 2023-08-30
 ### Changed
 - redis updated from 17.10.2 to 17.15.4

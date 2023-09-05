@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.13](https://img.shields.io/badge/Version-0.5.3--bb.13-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.14](https://img.shields.io/badge/Version-0.5.3--bb.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -62,7 +62,7 @@ helm install authservice chart/
 | global.jwks_uri | string | `""` | Request URI that has the JWKs. If neither jwks or jwks_uri are specified the jwks_uri is computed based on the provided OIDC realm and and host" |
 | global.periodic_fetch_interval_sec | int | `60` | Request interval to check whether new JWKs are available. |
 | global.skip_verify_peer_cert | bool | `false` | If set to true, the verification of the destination certificate will be skipped when making a request to the JWKs URI and the token endpoint. This option is useful when you want to use a self-signed certificate for testing purposes, but basically should not be set to true in any other cases. |
-| chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"}}}` | Individual chains.  Must have a `name` value and a `callback_uri` NOTE: if using "match" can only specify `prefix` OR `equality`, not both |
+| chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"},"scopes":[]}}` | Individual chains.  Must have a `name` value and a `callback_uri` NOTE: if using "match" can only specify `prefix` OR `equality`, not both |
 | nameOverride | string | `"authservice"` |  |
 | fullnameOverride | string | `"authservice"` |  |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
