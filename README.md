@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.14](https://img.shields.io/badge/Version-0.5.3--bb.14-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.15](https://img.shields.io/badge/Version-0.5.3--bb.15-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -62,7 +62,7 @@ helm install authservice chart/
 | global.jwks_uri | string | `""` | Request URI that has the JWKs. If neither jwks or jwks_uri are specified the jwks_uri is computed based on the provided OIDC realm and and host" |
 | global.periodic_fetch_interval_sec | int | `60` | Request interval to check whether new JWKs are available. |
 | global.skip_verify_peer_cert | bool | `false` | If set to true, the verification of the destination certificate will be skipped when making a request to the JWKs URI and the token endpoint. This option is useful when you want to use a self-signed certificate for testing purposes, but basically should not be set to true in any other cases. |
-| chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"},"scopes":[]}}` | Individual chains.  Must have a `name` value and a `callback_uri` NOTE: if using "match" can only specify `prefix` OR `equality`, not both |
+| chains | object | `{"local":{"callback_uri":"https://localhost/login","client_id":"local_id","client_secret":"local_secret","logout_path":"/local","match":{"header":":local","prefix":"localhost"}}}` | Individual chains.  Must have a `name` value and a `callback_uri` NOTE: if using "match" can only specify `prefix` OR `equality`, not both |
 | nameOverride | string | `"authservice"` |  |
 | fullnameOverride | string | `"authservice"` |  |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
@@ -90,8 +90,13 @@ helm install authservice chart/
 | affinity | object | `{}` |  |
 | config | object | `{"logLevel":"trace"}` | Name of the secret to source authservices `config.json` from, created outside of helm chart TODO: Create this as part of the helmchart? |
 | selector | object | `{"key":"protect","value":"keycloak"}` | Label to determine what workloads (pods/deployments) should be protected by authservice. |
-| redis | object | `{"enabled":false}` | Conditional for enabling Redis Subchart |
-| redis-bb | object | `{"auth":{"enabled":false},"commonConfiguration":"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\"","istio":{"redis":{"enabled":false}},"networkPolicies":{"controlPlaneCidr":"0.0.0.0/0","enabled":true}}` | Values passthrough for redis Subchart https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml |
+| redis | object | `{"enabled":false,"image":{"tag":"7.2.0"}}` | Conditional for enabling Redis Subchart |
+| redis.image | object | `{"tag":"7.2.0"}` | Values passthrough for redis Subchart |
+| redis-bb.auth.enabled | bool | `false` |  |
+| redis-bb.istio.redis.enabled | bool | `false` |  |
+| redis-bb.networkPolicies.enabled | bool | `true` |  |
+| redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| redis-bb.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
 
 ## Contributing
