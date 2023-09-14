@@ -113,6 +113,7 @@ chains:
   #   client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
   #   client_secret: secret_value
   #   callback_uri: https://localhost/login
+  #   cookie_name_prefix: differentThanFull # Override the cookie name prefix in case you need it to be something else (ex. two apps share the same cookie) 
   #   redis_server_uri: tcp://localhost:6379/
   #   logout:
   #     path: "/logout"
@@ -233,3 +234,12 @@ redis-bb:
 
 
 openshift: false
+
+# -- Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io 
+# and requestauthentications.security.istio.io for certain endpoints.
+trigger_rules: []
+# - excluded_paths:
+#     - exact: /api/healthcheck
+#   included_paths:
+#     - prefix: /
+# See reference: https://github.com/istio-ecosystem/authservice/blob/master/docs/README.md
