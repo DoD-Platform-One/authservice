@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.15](https://img.shields.io/badge/Version-0.5.3--bb.15-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.16](https://img.shields.io/badge/Version-0.5.3--bb.16-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -98,6 +98,7 @@ helm install authservice chart/
 | redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | redis-bb.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
+| triggerRules | list | `[]` | Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io  and requestauthentications.security.istio.io for certain endpoints. |
 
 ## Contributing
 

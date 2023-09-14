@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.16]
+### Changed
+- Added optional trigger-rules configuration.
+
 ## [0.5.3-bb.15]
 ### Fixed
 - Bug fix. Run helm dependency update to pull latest redis subchart
