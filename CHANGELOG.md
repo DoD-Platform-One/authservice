@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.17] - 2023-09-14
+### Fixed
+- Fixed an issue with the `global.certificate_authority` value and the system CA bundle.
+
 ## [0.5.3-bb.16]
 ### Changed
 - Added optional trigger-rules configuration.

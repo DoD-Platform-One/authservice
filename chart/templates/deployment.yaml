@@ -35,6 +35,11 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.global.certificate_authority }}
+          env:
+            - name: SSL_CERT_FILE
+              value: /mnt/ca-bundle/ca-bundle.crt
+          {{- end}}
           ports:
             - name: http
               containerPort: 10003
@@ -51,15 +56,28 @@ spec:
             - name: {{ include "authservice.name" . }}
               mountPath: /etc/authservice
             {{- if .Values.global.certificate_authority }}
+            - name: ca-bundle
+              mountPath: /mnt/ca-bundle              
+            {{- end }}
+      {{- if .Values.global.certificate_authority }}
+      initContainers:
+        - name: update-ca-bundle
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          command:
+            - sh
+            - -c
+            - |
+              cat /etc/pki/tls/certs/* > /mnt/ca-bundle/ca-bundle.crt
+          volumeMounts:
             - name: sso-tls-ca
               mountPath: /etc/pki/tls/certs/oidc-ca.crt
               subPath: oidc-ca.crt
-              readOnly: true
-            - name: sso-tls-ca
-              mountPath: /etc/ssl/oidc-ca.crt
-              subPath: oidc-ca.crt
-              readOnly: true
-            {{- end }}
+              readOnly: true              
+            - name: ca-bundle
+              mountPath: /mnt/ca-bundle
+      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -80,4 +98,7 @@ spec:
         - name: sso-tls-ca
           secret:
             secretName: {{ include "authservice.fullname" . }}-sso-tls-ca
+        - name: ca-bundle
+          emptyDir:
+            sizeLimit: 5Mi
         {{- end}}
