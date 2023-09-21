@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.18]
+### Changed
+- redis updated from 17.15.4-bb.0 to 18.0.4-bb.0
+
 ## [0.5.3-bb.17] - 2023-09-14
 ### Fixed
 - Fixed an issue with the `global.certificate_authority` value and the system CA bundle.
