@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [0.5.3-bb.20] - 2023-10-25
+### Changed
+- redis updated from 18.0.4-bb.0 to 18.2.0-bb.0
+- registry1.dso.mil/ironbank/bitnami/redis 7.2.1 -> 7.2.2
+
 ## [0.5.3-bb.19] - 2023-10-17
 ### Changed
 - OSCAL update from 1.0.0 to 1.1.1
