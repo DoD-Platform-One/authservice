@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.20](https://img.shields.io/badge/Version-0.5.3--bb.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.21](https://img.shields.io/badge/Version-0.5.3--bb.21-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -94,8 +94,23 @@ helm install authservice chart/
 | redis.image | object | `{"tag":"7.2.2"}` | Values passthrough for redis Subchart |
 | redis-bb.auth.enabled | bool | `false` |  |
 | redis-bb.istio.redis.enabled | bool | `false` |  |
+| redis-bb.image.pullSecrets[0] | string | `"private-registry"` |  |
 | redis-bb.networkPolicies.enabled | bool | `true` |  |
 | redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| redis-bb.master.containerSecurityContext.enabled | bool | `true` |  |
+| redis-bb.master.containerSecurityContext.runAsUser | int | `1001` |  |
+| redis-bb.master.containerSecurityContext.runAsGroup | int | `1001` |  |
+| redis-bb.master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
+| redis-bb.master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| redis-bb.replica.containerSecurityContext.enabled | bool | `true` |  |
+| redis-bb.replica.containerSecurityContext.runAsUser | int | `1001` |  |
+| redis-bb.replica.containerSecurityContext.runAsGroup | int | `1001` |  |
+| redis-bb.replica.containerSecurityContext.runAsNonRoot | bool | `true` |  |
+| redis-bb.replica.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| redis-bb.metrics.enabled | bool | `false` |  |
+| redis-bb.metrics.containerSecurityContext.enabled | bool | `true` |  |
+| redis-bb.metrics.containerSecurityContext.runAsUser | int | `1001` |  |
+| redis-bb.metrics.containerSecurityContext.runAsGroup | int | `1001` |  |
 | redis-bb.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
 | trigger_rules | list | `[]` | Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io  and requestauthentications.security.istio.io for certain endpoints. |
