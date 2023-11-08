@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.21] - 2023-11-03
+### Changed
+- add non-root-group for redis subchart
+
 ## [0.5.3-bb.20] - 2023-10-25
 ### Changed
 - redis updated from 18.0.4-bb.0 to 18.2.0-bb.0
