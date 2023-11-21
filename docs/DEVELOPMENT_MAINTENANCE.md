@@ -141,5 +141,10 @@ Most of the renovate work is going to be bumping the redis or authservice versio
 1. Go to prometheus.bigbang.dev, you should be redirected to your local instance of keycloak for SSO (make sure it's not login.dso.mil).
 1. If you have the appropriate persmissions you should be able to login and then get redirected back to prometheus.bigbang.dev.
 
+### automountServiceAccountToken
+The mutating Kyverno policy named [update-automountserviceaccounttokens](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads#L679) is leveraged to harden all ServiceAccounts in this package with `automountServiceAccountToken: false`. 
+
+This policy revokes access to the K8s API for Pods utilizing said ServiceAccounts. If a Pod truly requires access to the K8s API (for app functionality), the Pod is added to the `pods:` array of the same mutating policy. This grants the Pod access to the API, and creates a Kyverno PolicyException to prevent an alert.
+
 # Modifications made to upstream chart
 This section has nothing in it because this chart is basically all custom.
