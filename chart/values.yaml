@@ -7,6 +7,24 @@
 replicaCount: 1
 
 istio:
+  enabled: false
+  hardened:
+    enabled: false
+    customAuthorizationPolicies: []
+    # - name: "allow-nothing"
+    #   enabled: true
+    #   spec: {}
+    monitoring:
+      enabled: true
+      namespaces:
+        - monitoring
+      principals:
+        - cluster.local/ns/monitoring/sa/monitoring-grafana
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-alertmanager
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-operator
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-state-metrics
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-prometheus-node-exporter
   namespace: istio-system
   # -- Default authservice peer authentication
   mtls:
