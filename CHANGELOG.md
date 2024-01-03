@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.22] - 2023-12-22
+### Added
+- support for istio authorization policies and hardening
+
 ## [0.5.3-bb.21] - 2023-11-03
 ### Changed
 - add non-root-group for redis subchart
