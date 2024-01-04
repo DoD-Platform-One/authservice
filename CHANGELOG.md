@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.23] - 2024-01-04
+### Changed
+- Bumped Redis chart dependency to `18.3.2-bb.2`
+
 ## [0.5.3-bb.22] - 2023-12-22
 ### Added
 - support for istio authorization policies and hardening
