@@ -137,7 +137,7 @@ Most of the renovate work is going to be bumping the redis or authservice versio
                   - name: plugin
                     mountPath: "/init"
         ```
-1. Connect to keycloak.bigbang.dev and setup a user that can log into monitoring. You can find basic keycloak admin instructions [here](https://repo1.dso.mil/big-bang/product/packages/keycloak/-/blob/main/docs/DEVELOPMENT_MAINTENANCE.md?ref_type=heads).
+1. Login to https://keycloak.bigbang.dev/auth/admin/master/console/ as the default admin user and set up a user account that can log into monitoring. You can find basic keycloak admin instructions [here](https://repo1.dso.mil/big-bang/product/packages/keycloak/-/blob/main/docs/DEVELOPMENT_MAINTENANCE.md?ref_type=heads).
 1. Go to prometheus.bigbang.dev, you should be redirected to your local instance of keycloak for SSO (make sure it's not login.dso.mil).
 1. If you have the appropriate persmissions you should be able to login and then get redirected back to prometheus.bigbang.dev.
 
