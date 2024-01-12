@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.24] - 2024-01-12
+### Changed
+- Enabled istio hardening during testing
+
 ## [0.5.3-bb.23] - 2024-01-04
 ### Changed
 - Bumped Redis chart dependency to `18.3.2-bb.2`
