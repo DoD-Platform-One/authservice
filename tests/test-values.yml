@@ -21,6 +21,6 @@ networkPolicies:
 
 # enable istio hardening
 istio:
-  enabled: true
+  enabled: false
   hardened:
     enabled: true

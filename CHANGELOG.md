@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.25] - 2024-01-16
+### Changed
+-  Disabled istio
+
 ## [0.5.3-bb.24] - 2024-01-12
 ### Changed
 - Enabled istio hardening during testing
