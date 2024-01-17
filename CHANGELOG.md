@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.26] - 2024-01-17
+### Changed
+-  removed istio.enabled during testing
+
 ## [0.5.3-bb.25] - 2024-01-16
 ### Changed
 -  Disabled istio
