@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.26](https://img.shields.io/badge/Version-0.5.3--bb.26-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.27](https://img.shields.io/badge/Version-0.5.3--bb.27-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -101,8 +101,8 @@ helm install authservice chart/
 | affinity | object | `{}` |  |
 | config | object | `{"logLevel":"trace"}` | Name of the secret to source authservices `config.json` from, created outside of helm chart TODO: Create this as part of the helmchart? |
 | selector | object | `{"key":"protect","value":"keycloak"}` | Label to determine what workloads (pods/deployments) should be protected by authservice. |
-| redis | object | `{"enabled":false,"image":{"tag":"7.2.2"}}` | Conditional for enabling Redis Subchart |
-| redis.image | object | `{"tag":"7.2.2"}` | Values passthrough for redis Subchart |
+| redis | object | `{"enabled":false,"image":{"tag":"7.2.4"}}` | Conditional for enabling Redis Subchart |
+| redis.image | object | `{"tag":"7.2.4"}` | Values passthrough for redis Subchart |
 | redis-bb.auth.enabled | bool | `false` |  |
 | redis-bb.istio.redis.enabled | bool | `false` |  |
 | redis-bb.image.pullSecrets[0] | string | `"private-registry"` |  |

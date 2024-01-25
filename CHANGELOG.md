@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.27] - 2024-01-11
+### Changed
+- ironbank/bitnami/redis updated from 7.2.3 to 7.2.4
+
 ## [0.5.3-bb.26] - 2024-01-17
 ### Changed
 -  removed istio.enabled during testing

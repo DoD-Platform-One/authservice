@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.5.3-bb.26
+version: 0.5.3-bb.27
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -23,7 +23,7 @@ version: 0.5.3-bb.26
 appVersion: 0.5.3
 dependencies:
   - name: redis
-    version: 18.3.2-bb.2
+    version: 18.7.1-bb.0
     repository: "oci://registry1.dso.mil/bigbang"
     condition: redis.enabled
     alias: redis-bb
@@ -35,4 +35,4 @@ annotations:
       image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:0.5.3
     - name: redis
       condition: redis.enabled
-      image: registry1.dso.mil/ironbank/bitnami/redis:7.2.3
+      image: registry1.dso.mil/ironbank/bitnami/redis:7.2.4

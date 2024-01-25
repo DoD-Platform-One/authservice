@@ -232,7 +232,7 @@ redis:
   enabled: false
   # -- Values passthrough for redis Subchart
   image:
-    tag: 7.2.2
+    tag: 7.2.4
   
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
