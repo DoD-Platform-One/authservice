@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.29] - 2024-02-13
+### Changed
+- Added istio Sidecar and ServiceEntry resources
+
 ## [0.5.3-bb.28] - 2024-01-26
 ### Changed
 - Updated redis chart to 18.7.1-bb.1
@@ -85,7 +89,7 @@
 
 ## [0.5.3-bb.8]
 ### Changed
-- Bumped Redis chart dependency to `17.10.2-bb.0` 
+- Bumped Redis chart dependency to `17.10.2-bb.0`
 
 ## [0.5.3-bb.7]
 ### Changed
@@ -106,7 +110,7 @@
 
 ## [0.5.3-bb.3]
 ### Changed
-- Updated redis to latest version 
+- Updated redis to latest version
 
 ## [0.5.3-bb.2]
 ### Added

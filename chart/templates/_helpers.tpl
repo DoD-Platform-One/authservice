@@ -60,3 +60,13 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Find hostname from uri
+*/}}
+{{- define "authservice.hostnameFromUri" -}}
+{{- $match := . | toString | regexFind "//.*" -}}
+{{- $hostWithPort := regexSplit "/" ($match | trimAll "//") -1 -}}
+{{- $host := regexSplit ":" (first $hostWithPort) -1 -}}
+{{- printf "%s" (first $host) -}}
+{{- end -}}

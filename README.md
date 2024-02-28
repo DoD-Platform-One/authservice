@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 0.5.3-bb.28](https://img.shields.io/badge/Version-0.5.3--bb.28-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
+![Version: 0.5.3-bb.29](https://img.shields.io/badge/Version-0.5.3--bb.29-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.5.3](https://img.shields.io/badge/AppVersion-0.5.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -33,6 +33,8 @@ helm install authservice chart/
 | replicaCount | int | `1` | When setting this above 1, a redis configuration is required.  See globals.redis_server_uri |
 | istio.enabled | bool | `false` |  |
 | istio.hardened.enabled | bool | `false` |  |
+| istio.hardened.outboundTrafficPolicyMode | string | `"REGISTRY_ONLY"` |  |
+| istio.hardened.customServiceEntries | list | `[]` |  |
 | istio.hardened.customAuthorizationPolicies | list | `[]` |  |
 | istio.hardened.monitoring.enabled | bool | `true` |  |
 | istio.hardened.monitoring.namespaces[0] | string | `"monitoring"` |  |
@@ -124,7 +126,7 @@ helm install authservice chart/
 | redis-bb.metrics.containerSecurityContext.runAsGroup | int | `1001` |  |
 | redis-bb.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
-| trigger_rules | list | `[]` | Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io  and requestauthentications.security.istio.io for certain endpoints. |
+| trigger_rules | list | `[]` | Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io and requestauthentications.security.istio.io for certain endpoints. |
 
 ## Contributing
 
