@@ -10,6 +10,19 @@ istio:
   enabled: false
   hardened:
     enabled: false
+    outboundTrafficPolicyMode: "REGISTRY_ONLY"
+    customServiceEntries: []
+      # - name: "allow-google"
+      #   enabled: true
+      #   spec:
+      #     hosts:
+      #       - google.com
+      #     location: MESH_EXTERNAL
+      #     ports:
+      #       - number: 443
+      #         protocol: TLS
+      #         name: https
+      #     resolution: DNS
     customAuthorizationPolicies: []
     # - name: "allow-nothing"
     #   enabled: true
@@ -131,7 +144,7 @@ chains:
   #   client_id: platform1_a8604cc9-f5e9-4656-802d-d05624370245_hello-world-authservice
   #   client_secret: secret_value
   #   callback_uri: https://localhost/login
-  #   cookie_name_prefix: differentThanFull # Override the cookie name prefix in case you need it to be something else (ex. two apps share the same cookie) 
+  #   cookie_name_prefix: differentThanFull # Override the cookie name prefix in case you need it to be something else (ex. two apps share the same cookie)
   #   redis_server_uri: tcp://localhost:6379/
   #   logout:
   #     path: "/logout"
@@ -180,7 +193,7 @@ podSecurityContext:
   runAsGroup: 1000
   runAsNonRoot: true
 
-securityContext: 
+securityContext:
   capabilities:
     drop:
     - ALL
@@ -192,7 +205,7 @@ service:
   type: ClusterIP
   port: 10003
 
-resources: 
+resources:
   # -- We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
@@ -233,7 +246,7 @@ redis:
   # -- Values passthrough for redis Subchart
   image:
     tag: 7.2.4
-  
+
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
   auth:
@@ -265,7 +278,7 @@ redis-bb:
       capabilities:
         drop:
           - ALL
-  metrics: 
+  metrics:
     enabled: false
     containerSecurityContext:
       enabled: true
@@ -281,7 +294,7 @@ redis-bb:
 
 openshift: false
 
-# -- Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io 
+# -- Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io
 # and requestauthentications.security.istio.io for certain endpoints.
 trigger_rules: []
 # - excluded_paths:
