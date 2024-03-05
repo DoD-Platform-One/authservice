@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [0.5.3-bb.30] - 2024-03-04
+### Changed
+- Added Openshift update for deploying authservice into Openshift cluster
+
 ## [0.5.3-bb.29] - 2024-02-13
 ### Changed
 - Added istio Sidecar and ServiceEntry resources
