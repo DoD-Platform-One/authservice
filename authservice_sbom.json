@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:99b7e31f-1196-4b8c-a224-a1e846062977",
+  "serialNumber": "urn:uuid:5149fa13-541e-4735-8f56-f806c9c21efc",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -15,7 +15,7 @@
   "components": [
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:3520bbef5867ad8a",
+      "bom-ref": "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:1d3f6c565fa69da0",
       "name": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
       "version": "1.0.0-ubi9",
       "components": [
@@ -1439,7 +1439,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1489,7 +1489,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1539,7 +1539,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1593,7 +1593,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1647,7 +1647,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1701,7 +1701,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1755,7 +1755,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1809,7 +1809,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1863,7 +1863,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1913,7 +1913,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -1971,7 +1971,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2029,7 +2029,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2087,7 +2087,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2145,7 +2145,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2195,7 +2195,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2245,7 +2245,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2295,7 +2295,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2349,7 +2349,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2403,7 +2403,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2453,7 +2453,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2503,7 +2503,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2553,7 +2553,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2611,7 +2611,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2657,7 +2657,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2715,7 +2715,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2773,7 +2773,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2831,7 +2831,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2889,7 +2889,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -2947,7 +2947,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3005,7 +3005,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3063,7 +3063,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3089,11 +3089,11 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:pkg:golang/github.com/logrusorgru/aurora@v2.0.3\u002Bincompatible?package-id=91004a035063dfd7",
+          "bom-ref": "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:pkg:golang/github.com/logrusorgru/aurora@v2.0.3%2Bincompatible?package-id=91004a035063dfd7",
           "name": "github.com/logrusorgru/aurora",
           "version": "v2.0.3\u002Bincompatible",
           "cpe": "cpe:2.3:a:logrusorgru:aurora:v2.0.3\\\u002Bincompatible:*:*:*:*:*:*:*",
-          "purl": "pkg:golang/github.com/logrusorgru/aurora@v2.0.3\u002Bincompatible",
+          "purl": "pkg:golang/github.com/logrusorgru/aurora@v2.0.3%2Bincompatible",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -3113,7 +3113,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3163,7 +3163,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3221,7 +3221,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3279,7 +3279,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3329,7 +3329,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3379,7 +3379,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3433,7 +3433,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3487,7 +3487,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3537,7 +3537,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3587,7 +3587,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3641,7 +3641,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3691,7 +3691,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3741,7 +3741,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3791,7 +3791,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -3841,7 +3841,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4571,7 +4571,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4621,7 +4621,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4671,7 +4671,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4721,7 +4721,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4771,7 +4771,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4821,7 +4821,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4871,7 +4871,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4921,7 +4921,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -4971,7 +4971,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5021,7 +5021,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5071,7 +5071,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5121,7 +5121,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5170,7 +5170,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5219,7 +5219,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5268,7 +5268,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5711,7 +5711,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5760,7 +5760,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5809,7 +5809,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5858,7 +5858,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5907,7 +5907,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -5957,7 +5957,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -6006,7 +6006,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -6055,7 +6055,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -8259,7 +8259,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:pkg:rpm/rhel/libstdc\u002B\u002B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3\u0026package-id=67a908dedb55a534",
+          "bom-ref": "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:pkg:rpm/rhel/libstdc%2B%2B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3\u0026package-id=67a908dedb55a534",
           "publisher": "Red Hat, Inc.",
           "name": "libstdc\u002B\u002B",
           "version": "11.4.1-2.1.el9",
@@ -8271,7 +8271,7 @@
             }
           ],
           "cpe": "cpe:2.3:a:libstdc\\\u002B\\\u002B:libstdc\\\u002B\\\u002B:11.4.1-2.1.el9:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/libstdc\u002B\u002B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3",
+          "purl": "pkg:rpm/rhel/libstdc%2B%2B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -10968,7 +10968,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -11017,7 +11017,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -11083,7 +11083,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -11132,7 +11132,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -11263,7 +11263,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:1b003b912e282b50caabee906643eb7febadac99c8907b395ed206588aa1c4fe"
+              "value": "sha256:3338016d27b32955640dfa566424a0e561508c09cfa2770cfd76cb101baae4b3"
             },
             {
               "name": "syft:location:0:path",
@@ -11664,7 +11664,7 @@
     },
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:4051a2a7b90786df",
+      "bom-ref": "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:11a34efbce1335a8",
       "name": "registry1.dso.mil/ironbank/bitnami/redis",
       "version": "7.2.4",
       "components": [
@@ -11702,7 +11702,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -11780,7 +11780,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -11834,7 +11834,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -11888,7 +11888,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -11966,7 +11966,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12044,7 +12044,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12122,7 +12122,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12204,7 +12204,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12282,7 +12282,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12376,7 +12376,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12454,7 +12454,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12548,7 +12548,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12642,7 +12642,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12720,7 +12720,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12774,7 +12774,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12852,7 +12852,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12906,7 +12906,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -12984,7 +12984,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13042,7 +13042,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13120,7 +13120,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13174,7 +13174,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13224,7 +13224,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13282,7 +13282,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13336,7 +13336,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13414,7 +13414,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13508,7 +13508,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13562,7 +13562,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13620,7 +13620,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13674,7 +13674,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13752,7 +13752,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13830,7 +13830,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13908,7 +13908,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -13954,7 +13954,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14027,7 +14027,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14092,7 +14092,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14142,7 +14142,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14196,7 +14196,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14274,7 +14274,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14352,7 +14352,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14430,7 +14430,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14508,7 +14508,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14602,7 +14602,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14712,7 +14712,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14790,7 +14790,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14844,7 +14844,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14898,7 +14898,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -14952,7 +14952,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15006,7 +15006,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15060,7 +15060,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15114,7 +15114,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15192,7 +15192,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15270,7 +15270,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15348,7 +15348,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15402,7 +15402,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15456,7 +15456,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15510,7 +15510,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15564,7 +15564,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15618,7 +15618,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15696,7 +15696,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15750,7 +15750,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15804,7 +15804,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15858,7 +15858,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15912,7 +15912,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -15966,7 +15966,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16020,7 +16020,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16074,7 +16074,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16152,7 +16152,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16206,7 +16206,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16260,7 +16260,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16314,7 +16314,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16368,7 +16368,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16422,7 +16422,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16476,7 +16476,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16530,7 +16530,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16552,7 +16552,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:pkg:rpm/rhel/libstdc\u002B\u002B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3\u0026package-id=67a908dedb55a534",
+          "bom-ref": "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:pkg:rpm/rhel/libstdc%2B%2B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3\u0026package-id=67a908dedb55a534",
           "publisher": "Red Hat, Inc.",
           "name": "libstdc\u002B\u002B",
           "version": "11.4.1-2.1.el9",
@@ -16564,7 +16564,7 @@
             }
           ],
           "cpe": "cpe:2.3:a:libstdc\\\u002B\\\u002B:libstdc\\\u002B\\\u002B:11.4.1-2.1.el9:*:*:*:*:*:*:*",
-          "purl": "pkg:rpm/rhel/libstdc\u002B\u002B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3",
+          "purl": "pkg:rpm/rhel/libstdc%2B%2B@11.4.1-2.1.el9?arch=x86_64\u0026upstream=gcc-11.4.1-2.1.el9.src.rpm\u0026distro=rhel-9.3",
           "properties": [
             {
               "name": "syft:package:foundBy",
@@ -16584,7 +16584,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16638,7 +16638,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16692,7 +16692,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16746,7 +16746,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16800,7 +16800,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16854,7 +16854,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16908,7 +16908,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -16986,7 +16986,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17040,7 +17040,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17094,7 +17094,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17148,7 +17148,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17226,7 +17226,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17304,7 +17304,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17358,7 +17358,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17412,7 +17412,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17490,7 +17490,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17568,7 +17568,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17622,7 +17622,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17676,7 +17676,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17730,7 +17730,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17808,7 +17808,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17890,7 +17890,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -17984,7 +17984,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18038,7 +18038,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18092,7 +18092,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18170,7 +18170,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18224,7 +18224,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18302,7 +18302,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18396,7 +18396,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18450,7 +18450,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18528,7 +18528,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18622,7 +18622,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18716,7 +18716,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18770,7 +18770,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18840,7 +18840,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18894,7 +18894,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -18948,7 +18948,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19026,7 +19026,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19080,7 +19080,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19134,7 +19134,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19212,7 +19212,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19294,7 +19294,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19343,7 +19343,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19413,7 +19413,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19467,7 +19467,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19545,7 +19545,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19623,7 +19623,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19677,7 +19677,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:20fd1cd7b783e42065f1f2ff13d7c1401d41faa792b717a95514df92fb153aa9"
+              "value": "sha256:e76904071f65aad546c2dd451b29a10989df09b1b7f104edf0a938e808a074d0"
             },
             {
               "name": "syft:location:0:path",
@@ -19747,8 +19747,8 @@
     {
       "ref": "authservice@0.0.1",
       "dependsOn": [
-        "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:3520bbef5867ad8a",
-        "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:4051a2a7b90786df"
+        "registry1.dso.mil/ironbank/istio-ecosystem/authservice@1.0.0-ubi9:1d3f6c565fa69da0",
+        "registry1.dso.mil/ironbank/bitnami/redis@7.2.4:11a34efbce1335a8"
       ]
     }
   ]
