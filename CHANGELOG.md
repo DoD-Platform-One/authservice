@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [1.0.0-bb.1] - 2024-04-29
+### Added
+- Added the ability to deploy additional network policies from the values yaml
+
 ## [1.0.0-bb.0] - 2024-03-27
 ### Changed
 - Updated authservice to 1.0.0
