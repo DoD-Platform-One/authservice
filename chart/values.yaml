@@ -54,6 +54,9 @@ networkPolicies:
   ingressLabels:
     app: istio-ingressgateway
     istio: ingressgateway
+  # Additional network policies
+  # ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
+  additionalPolicies: []
 
 image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
