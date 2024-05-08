@@ -12,6 +12,7 @@ Most of the renovate work is going to be bumping the redis or authservice versio
     ```bash
     helm dependency update ./chart
     ```
+    1. If you haven't authorized helm to access the Harbor registry, you can do so with `helm registry login registry1.dso.mil`.
 1. In `chart/Chart.yaml` update `annotations.'helm.sh/image'` entries to to the new versions. Renovate might have already done this for you.
     1. [Redis image on harbor.](https://registry1.dso.mil/harbor/projects/3/repositories/bitnami%2Fredis/artifacts-tab)
     1. [Authservice image on harbor.](https://registry1.dso.mil/harbor/projects/3/repositories/istio-ecosystem%2Fauthservice/artifacts-tab)
@@ -97,7 +98,7 @@ Most of the renovate work is going to be bumping the redis or authservice versio
           saml:
             # Retrieve from https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/descriptor
             metadata: <md:EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ds=http://www.w3.org/2000/09/xmldsig# entityID=https://login.dso.mil/auth/realms/baby-yoda><md:IDPSSODescriptor WantAuthnRequestsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo><ds:KeyName>4CK69bW66HE2wph9VuBs0fTc1MaETSTpU1iflEkBHR4</ds:KeyName><ds:X509Data><ds:X509Certificate>MIICoTCCAYkCBgFyLIEqUjANBgkqhkiG9w0BAQsFADAUMRIwEAYDVQQDDAliYWJ5LXlvZGEwHhcNMjAwNTE5MTAzNDIyWhcNMzAwNTE5MTAzNjAyWjAUMRIwEAYDVQQDDAliYWJ5LXlvZGEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCGIwvWSPD6zDbkGBpkjUDJ+BwJEE8ko8T7DC22prs03Gm2v/lEIEa4leoPKjenW+NxtvwqN0qdcjuRZ6vxvY/P9E/Wb9Bw+so7FKW6TsZkXwBGxzoU8ZvNiCLyjxwFVKxqaXodnOk3dmcfgMVnbuJ8z5SX8/IzFnZrB6iEhqLNen6uAXtGqlq/k1dTCZxLIfws/3Y1Ui4WUPcdhMMaixVt8D+78fblnhcIYpb+8sNM2uXw9wDceoigP681q/Kx3ECr8o3DuIstzQouyMVhJ0kv/ngftC5uwZHQDIissu6sluoC2+20YkrfyTldhYojBga27qKInCNJvtS2idV0+HxXAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAIVkoDYkM6ryBcuchdAL5OmyKbmmY4WDrMlatfa3uniK5jvFXrmVaJ3rcu0apdY/NhBeLSOLFVlC5w1QroGUhWm0EjAA4zyuU63Pk0sro0vyHrxztBrGPQrGXI3kjXEssaehZZvYP4b9VtYpus6oGP6bTmaDw94Zu+WrDsWdFs+27VEYwBuU0D6E+ENDGlfR+9ADEW53t6H2M3H0VsOtbArEutYgb4gmQcOIBygC7L1tGJ4IqbnhTYLh9DMKNklU+tq8TMHacps9FxELpeAib3O0J0E5zYXdraQobCCe+ao1Y7sA/wqcGQBCVuoFgty7Y37nNL7LMvygcafgqVDqw5U=</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/resolve index="0"/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/><md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location=https://login.dso.mil/auth/realms/baby-yoda/protocol/saml/></md:IDPSSODescriptor></md:EntityDescriptor>
-        
+
         monitoring:
           enabled: true
           sso:
@@ -107,7 +108,7 @@ Most of the renovate work is going to be bumping the redis or authservice versio
               client_id: dev_00eb8904-5b88-4c68-ad67-cec0d2e07aa6_prometheus
             alertmanager:
               client_id: dev_00eb8904-5b88-4c68-ad67-cec0d2e07aa6_alertmanager
-        
+
         addons:
           authservice:
             enabled: true
@@ -130,7 +131,7 @@ Most of the renovate work is going to be bumping the redis or authservice versio
                   command:
                   - sh
                   - -c
-                  - | 
+                  - |
                     cp /app/p1-keycloak-plugin.jar /init
                     ls -l /init
                   volumeMounts:
@@ -138,13 +139,13 @@ Most of the renovate work is going to be bumping the redis or authservice versio
                     mountPath: "/init"
         ```
 1. Login to https://keycloak.bigbang.dev/auth/admin/master/console/ as the default admin user and set up a user account that can log into monitoring. You can find basic keycloak admin instructions [here](https://repo1.dso.mil/big-bang/product/packages/keycloak/-/blob/main/docs/DEVELOPMENT_MAINTENANCE.md?ref_type=heads). IMPORTANT: To perform the next testing step successfully you must:
-- Create this account in the baby-yoda realm, not in the master realm. 
-- Add the user to the "Impact Level 2 Authorized" group. 
+- Create this account in the baby-yoda realm, not in the master realm.
+- Add the user to the "Impact Level 2 Authorized" group.
 7. Go to prometheus.bigbang.dev, you should be redirected to your local instance of keycloak for SSO (make sure it's not login.dso.mil).
 7. If you have the appropriate persmissions you should be able to login and then get redirected back to prometheus.bigbang.dev.
 
 ### automountServiceAccountToken
-The mutating Kyverno policy named [update-automountserviceaccounttokens](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads#L679) is leveraged to harden all ServiceAccounts in this package with `automountServiceAccountToken: false`. 
+The mutating Kyverno policy named [update-automountserviceaccounttokens](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads#L679) is leveraged to harden all ServiceAccounts in this package with `automountServiceAccountToken: false`.
 
 This policy revokes access to the K8s API for Pods utilizing said ServiceAccounts. If a Pod truly requires access to the K8s API (for app functionality), the Pod is added to the `pods:` array of the same mutating policy. This grants the Pod access to the API, and creates a Kyverno PolicyException to prevent an alert.
 

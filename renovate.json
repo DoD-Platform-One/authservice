@@ -2,11 +2,12 @@
   "baseBranches": ["main"],
   "configWarningReuseIssue": false,
   "dependencyDashboard": "true",
-  "dependencyDashboardHeader": "- [ ] For Redis Updates Only: Use kpt to update to redis subchart (under `chart/deps`) to the latest available.",
+  "dependencyDashboardHeader": "- [ ] Follow upgrade instructions in this repo at docs/DEVELOPMENT_MAINTENANCE.md",
   "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
   "draftPR": true,
   "labels": ["authservice","Big Bang Core","Package Sustainment","kind::maintenance"],
-  "includePaths": ["chart/values.yaml","chart/Chart.yaml","chart/deps/redis/Chart.yaml"],
+  "enabledManagers": ["regex", "helmv3"],
+  "ignorePaths": ["chart/charts/**"],
   "packageRules": [
     {
       "matchDatasources": ["docker"],
@@ -20,10 +21,6 @@
         ],
         "fileFilters": ["chart/Chart.yaml", "README.md", "CHANGELOG.md"]
       }
-    },
-    {
-      "matchDatasources": ["git-tags"],
-      "groupName": "Redis"
     }
   ],
   "regexManagers": [
@@ -50,15 +47,6 @@
       ],
       "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
       "datasourceTemplate": "docker"
-    },
-    {
-      "fileMatch": ["^chart/deps/redis/Chart\\.yaml$"],
-      "matchStrings": [
-        "version:\\s+(?<currentValue>.+)"
-      ],
-      "depNameTemplate": "https://repo1.dso.mil/platform-one/big-bang/apps/application-utilities/redis.git",
-      "datasourceTemplate": "git-tags",
-      "versioningTemplate": "regex:^(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)-bb\\.(?<build>\\d+)$"
     },
     {
       "fileMatch": ["^chart/Chart\\.yaml$"],
