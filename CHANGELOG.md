@@ -1,6 +1,12 @@
 # Changelog
 
 ---
+## [1.0.1-bb.0] - 2024-05-21
+### Changed
+- redis updated from 18.7.1 to 18.15.0
+- ironbank/bitnami/redis updated from 7.2.4 to 7.2.5
+- ironbank/istio-ecosystem/authservice updated from 1.0.0 to 1.0.1
+
 ## [1.0.0-bb.1] - 2024-04-29
 ### Added
 - Added the ability to deploy additional network policies from the values yaml
