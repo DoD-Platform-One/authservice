@@ -1,9 +1,9 @@
 # Changelog
 
 ---
-## [1.0.1-bb.0] - 2024-05-21
+## [1.0.1-bb.0] - 2024-05-28
 ### Changed
-- redis updated from 18.7.1 to 18.15.0
+- redis updated from 18.7.1 to 19.5.0
 - ironbank/bitnami/redis updated from 7.2.4 to 7.2.5
 - ironbank/istio-ecosystem/authservice updated from 1.0.0 to 1.0.1
 
