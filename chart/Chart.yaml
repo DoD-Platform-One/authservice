@@ -15,24 +15,24 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.0-bb.1
+version: 1.0.1-bb.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: 1.0.0
+appVersion: 1.0.1
 dependencies:
   - name: redis
-    version: 18.7.1-bb.1
+    version: 19.5.0-bb.0
     repository: "oci://registry1.dso.mil/bigbang"
     condition: redis.enabled
     alias: redis-bb
 annotations:
   bigbang.dev/applicationVersions: |
-    - Authservice: 1.0.0
+    - Authservice: 1.0.1
   helm.sh/images: |
     - name: authservice
-      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.0.0-ubi9
+      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.0.1-ubi9
     - name: redis
       condition: redis.enabled
-      image: registry1.dso.mil/ironbank/bitnami/redis:7.2.4
+      image: registry1.dso.mil/ironbank/bitnami/redis:7.2.5
