@@ -31,7 +31,8 @@ monitoring:
 addons:
   authservice:
     enabled: true
-    # Uncomment to add git branch or tag information to test against a specific branch or tag instead of using `main` (or more likely whatever is latest in bigbang/helm)
+    # Add git branch or tag information to test against a specific branch or tag instead of using `main`
+    # Must set the unused label to null
     # sourceType: "git"
     # git:
     #   tag: null

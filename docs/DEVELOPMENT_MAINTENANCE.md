@@ -52,6 +52,26 @@ Most of the renovate work is going to be bumping the redis or authservice versio
 
 # Testing new Authservice version
 
+## Branch/Tag Config
+
+If you'd like to install from a specific branch or tag, then the code block under authservice needs to be uncommented and used to target your changes.
+
+For example, this would target the `renovate/ironbank` branch.
+
+```
+addons:
+  authservice:
+    <other config/labels>
+    ...
+    ...
+
+    # Add git branch or tag information to test against a specific branch or tag instead of using `main`
+    # Must set the unused label to null
+    git:
+      tag: null
+      branch: "renovate/ironbank"
+```
+
 ## Cluster setup
 
 ⚠️ Always make sure your local bigbang repo is current before deploying.
