@@ -17,6 +17,9 @@ sso:
 
 istio:
   enabled: true
+  ingressGateways:
+    passthrough-ingressgateway:
+      enabled: false
 
 istioOperator:
   enabled: true
