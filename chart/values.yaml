@@ -38,6 +38,12 @@ istio:
         - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus
         - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-state-metrics
         - cluster.local/ns/monitoring/sa/monitoring-monitoring-prometheus-node-exporter
+    kiali:
+      enabled: true
+      namespaces:
+        - kiali
+      principals:
+        - cluster.local/ns/kiali/sa/kiali-service-account
   namespace: istio-system
   # -- Default authservice peer authentication
   mtls:
