@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [1.0.1-bb.1] - 2024-05-31
+### Changed
+- Moved the shared kiali policy into authservice
+
 ## [1.0.1-bb.0] - 2024-05-28
 ### Changed
 - redis updated from 18.7.1 to 19.5.0
