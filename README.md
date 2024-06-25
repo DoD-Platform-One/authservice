@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 1.0.1-bb.1](https://img.shields.io/badge/Version-1.0.1--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
+![Version: 1.0.1-bb.2](https://img.shields.io/badge/Version-1.0.1--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -44,6 +44,9 @@ helm install authservice chart/
 | istio.hardened.monitoring.principals[3] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus"` |  |
 | istio.hardened.monitoring.principals[4] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-state-metrics"` |  |
 | istio.hardened.monitoring.principals[5] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-prometheus-node-exporter"` |  |
+| istio.hardened.kiali.enabled | bool | `true` |  |
+| istio.hardened.kiali.namespaces[0] | string | `"kiali"` |  |
+| istio.hardened.kiali.principals[0] | string | `"cluster.local/ns/kiali/sa/kiali-service-account"` |  |
 | istio.namespace | string | `"istio-system"` |  |
 | istio.mtls | object | `{"mode":"STRICT"}` | Default authservice peer authentication |
 | istio.mtls.mode | string | `"STRICT"` | Two mtls modes allowed STRICT = Allow only mutual TLS traffic PERMISSIVE = Allow both plain text and mutual TLS traffic |

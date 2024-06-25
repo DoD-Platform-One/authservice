@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [1.0.1-bb.2] - 2024-06-21
+### Changed
+- Removed shared authorization policies
+
 ## [1.0.1-bb.1] - 2024-05-31
 ### Changed
 - Moved the shared kiali policy into authservice
