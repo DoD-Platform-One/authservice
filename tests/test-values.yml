@@ -19,7 +19,3 @@ redis-bb:
 networkPolicies:
   enabled: true
 
-# enable istio hardening
-istio:
-  hardened:
-    enabled: true
