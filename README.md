@@ -5,6 +5,7 @@
 A Helm chart for Kubernetes
 
 ## Learn More
+
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -16,12 +17,13 @@ A Helm chart for Kubernetes
 
 Install Helm
 
-https://helm.sh/docs/intro/install/
+<https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
+
 ```bash
 helm install authservice chart/
 ```
@@ -62,7 +64,7 @@ helm install authservice chart/
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
 | allow_unmatched_requests | bool | `true` | If true will allow the requests even no filter chain match is found |
-| custom_authpolicy_rules | list | `[{"when":[{"key":"request.headers[authorization]","notValues":["*"]}]}]` | Extra Ruleset for AuthorizationPolicy CUSTOM action to forward to Authservice. To enable `allow_unmatched_requests` must be `false`. These custom rules mean that only these requests will be routed and will break default BigBang setup for `prometheus/alertmanager/tempo` unless added. Path specific Operations are not supported, it is recommended to use only hosts, notHosts, & method operations. See reference: https://istio.io/latest/docs/reference/config/security/authorization-policy/ |
+| custom_authpolicy_rules | list | `[{"when":[{"key":"request.headers[authorization]","notValues":["*"]}]}]` | Extra Ruleset for AuthorizationPolicy CUSTOM action to forward to Authservice. To enable `allow_unmatched_requests` must be `false`. These custom rules mean that only these requests will be routed and will break default BigBang setup for `prometheus/alertmanager/tempo` unless added. Path specific Operations are not supported, it is recommended to use only hosts, notHosts, & method operations. See reference: <https://istio.io/latest/docs/reference/config/security/authorization-policy/> |
 | global.client_id | string | `"global_id"` | Global Authorization URI value to set if not using Keycloak authorization_uri: "" Global Token URI Value to set if not using Keycloak token_uri: "" Default client_id to be used in each chain |
 | global.client_secret | string | `"global_secret"` | default client_secret to be used in each chain |
 | global.match.header | string | `":authority"` | Header to match.  The value ":authority" is used to match the requested hostname |
