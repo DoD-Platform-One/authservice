@@ -1,228 +1,336 @@
 # Changelog
 
 ---
+
 ## [1.0.1-bb.2] - 2024-06-21
+
 ### Changed
+
 - Removed shared authorization policies
 
 ## [1.0.1-bb.1] - 2024-05-31
+
 ### Changed
+
 - Moved the shared kiali policy into authservice
 
 ## [1.0.1-bb.0] - 2024-05-28
+
 ### Changed
+
 - redis updated from 18.7.1 to 19.5.0
 - ironbank/bitnami/redis updated from 7.2.4 to 7.2.5
 - ironbank/istio-ecosystem/authservice updated from 1.0.0 to 1.0.1
 
 ## [1.0.0-bb.1] - 2024-04-29
+
 ### Added
+
 - Added the ability to deploy additional network policies from the values yaml
 
 ## [1.0.0-bb.0] - 2024-03-27
+
 ### Changed
+
 - Updated authservice to 1.0.0
 
 ## [0.5.3-bb.30] - 2024-03-04
+
 ### Changed
+
 - Added Openshift update for deploying authservice into Openshift cluster
 
 ## [0.5.3-bb.29] - 2024-02-13
+
 ### Changed
+
 - Added istio Sidecar and ServiceEntry resources
 
 ## [0.5.3-bb.28] - 2024-01-26
+
 ### Changed
+
 - Updated redis chart to 18.7.1-bb.1
 
 ## [0.5.3-bb.27] - 2024-01-11
+
 ### Changed
+
 - ironbank/bitnami/redis updated from 7.2.3 to 7.2.4
 
 ## [0.5.3-bb.26] - 2024-01-17
+
 ### Changed
--  removed istio.enabled during testing
+
+- removed istio.enabled during testing
 
 ## [0.5.3-bb.25] - 2024-01-16
+
 ### Changed
--  Disabled istio
+
+- Disabled istio
 
 ## [0.5.3-bb.24] - 2024-01-12
+
 ### Changed
+
 - Enabled istio hardening during testing
 
 ## [0.5.3-bb.23] - 2024-01-04
+
 ### Changed
+
 - Bumped Redis chart dependency to `18.3.2-bb.2`
 
 ## [0.5.3-bb.22] - 2023-12-22
+
 ### Added
+
 - support for istio authorization policies and hardening
 
 ## [0.5.3-bb.21] - 2023-11-03
+
 ### Changed
+
 - add non-root-group for redis subchart
 
 ## [0.5.3-bb.20] - 2023-10-25
+
 ### Changed
+
 - redis updated from 18.0.4-bb.0 to 18.2.0-bb.0
 - registry1.dso.mil/ironbank/bitnami/redis 7.2.1 -> 7.2.2
 
 ## [0.5.3-bb.19] - 2023-10-17
+
 ### Changed
+
 - OSCAL update from 1.0.0 to 1.1.1
 
 ## [0.5.3-bb.18]
+
 ### Changed
+
 - redis updated from 17.15.4-bb.0 to 18.0.4-bb.0
 
 ## [0.5.3-bb.17] - 2023-09-14
+
 ### Fixed
+
 - Fixed an issue with the `global.certificate_authority` value and the system CA bundle.
 
 ## [0.5.3-bb.16]
+
 ### Changed
+
 - Added optional trigger-rules configuration.
 
 ## [0.5.3-bb.15]
+
 ### Fixed
+
 - Bug fix. Run helm dependency update to pull latest redis subchart
 
 ## [0.5.3-bb.14]
+
 ### Changed
+
 - Allow configuration of additional scopes.
 
 ## [0.5.3-bb.13] - 2023-08-30
+
 ### Changed
+
 - redis updated from 17.10.2 to 17.15.4
 - ironbank/bitnami/redis updated from 7.0.11 to 7.2.0
 
 ## [0.5.3-bb.12]
+
 ### Changed
+
 - Fixed egress-istiod network policy to match correctly.
 
 ## [0.5.3-bb.11]
+
 ### Changed
+
 - Allow for passing templates inside templates for chains prefixes and callback uris.
 
 ## [0.5.3-bb.10]
+
 ### Changed
+
 - Added `sso-tls-ca` volume mount to the deployment to enable JWKS URI usage even if the OIDC IdP uses a custom CA.
 
 ## [0.5.3-bb.9]
+
 ### Changed
+
 - Fixes a double quoting bug in `jwks_uri` setting.
 
 ## [0.5.3-bb.8]
+
 ### Changed
+
 - Bumped Redis chart dependency to `17.10.2-bb.0`
 
 ## [0.5.3-bb.7]
+
 ### Changed
+
 - skip_verify_peer_cert fixed to also work with the token endpoint and chain jwks_uri calls.
 
 ## [0.5.3-bb.6]
+
 ### Changed
+
 - Update HPA template syntax to support apiVersion v2 for AWS-EKS 1.23+
 
 ## [0.5.3-bb.5]
+
 ### Changed
+
 - HPA template syntax update to support apiVersion v2 for k8s 1.23+
 
 ## [0.5.3-bb.4]
+
 ### Added
+
 - NetworkPolicy template to facilitate tracing engine communication
 - HPA update to support apiVersion v2 for k8s 1.23+
 
 ## [0.5.3-bb.3]
+
 ### Changed
+
 - Updated redis to latest version
 
 ## [0.5.3-bb.2]
+
 ### Added
+
 - Added AuthorizationPolicy custom ruleset value and logic
 
 ## [0.5.3-bb.1]
+
 ### Added
+
 - Added support for `equality` chain matching
 
 ## [0.5.3-bb.0]
+
 ### Added
+
 - Added support for `jwks_uri`
 
 ### Changed
+
 - Updated to 0.5.3 AuthService image version
 
 ## [0.5.2-bb.1]
+
 ### Changed
+
 - Updated mTLS mode for metrics
 
 ## [0.5.2-bb.0]
+
 ### Changed
+
 - Updated to 0.5.2 Authservice image version
 - Add allow_unmatched_requests toggle with corresponding change to CUSTOM authz policy
 
 ## [0.5.1-bb.5]
+
 ### Added
+
 - Added capabilities: drop: ALL
 - updated redis to 16.12.3-bb.2
 
 ## [0.5.1-bb.4]
+
 ### Added
+
 - Added contributing document
 
 ## [0.5.1-bb.3]
+
 ### Changed
+
 - Updated redis to 16.12.3-bb.1
 
 ## [0.5.1-bb.2]
+
 ### Changed
+
 - Update Authservice to run as non root user
 
 ## [0.5.1-bb.1]
+
 ### Changed
+
 - Updated Redis sub-chart to version `16.9.2-bb.0` appVersion `6.2.6`
 
 ## [0.5.1-bb.0]
+
 ### Changed
+
 - Updated to 0.5.1 Authservice image version
 
 ## [0.4.0-bb.27]
+
 ### Changed
+
 - Updated `renovate.json` to have renovate automatically update appVersion in `Chart.yaml`
 
 ## [0.4.0-bb.26]
+
 ### Added
+
 - Added support for `absolute_session_timeout` and `idle_session_timeout`
 
 ## [0.4.0-bb.25]
+
 ### Added
+
 - Added network policy for Redis clients
 
 ## [0.4.0-bb.24]
+
 ### Changed
+
 - Modified PeerAuthentication to allow for passing in mode
 
 ## [0.4.0-bb.23]
+
 ### Changed
+
 - Enable istio mtls
 
 ## [0.4.0-bb.22]
+
 ### Update
+
 - Update Chart.yaml to follow new standardization for release automation
 - Added renovate check to update new standardization
 
 ## [0.4.0-bb.21]
+
 ### Changed
+
 - Updated redis dependency to version `14.1.0-bb.7`
 - Adding `redis-bb` commonConfiguration option to set:
   - `maxmemory` to `200mb` (default pod resource limits/requests=256mb)
   - `maxmemory-policy allkeys-lru` setting recommended for caches: This sets every key within the cache to have an exire set. Once the 200MB of cache is taken up, tokens will automatically be expired (starting with the oldest set)
 
 ## [0.4.0-bb.19]
+
 ### Added
+
 - `monitoring.enabled` value, to be passed down from BigBang installation.
+
 ### Changed
+
 - Added monitoring value flags to related NetworkPolicy templates.
 
 ## [0.4.0-bb.18]
@@ -327,11 +435,15 @@
 - Fixing skipping templating out Keycloak formatted URL when certain URIs are explicitly specified for an authservice chain.
 
 ## [0.4.0-bb.1]
+
 ### Changed
+
 - update changelog
 
 ## [0.4.0-bb.0]
+
 ### Changed
+
 - update authservice to 0.4.0
 - change secret to use `default_oidc_config` and `oidc_override`
 
@@ -342,7 +454,9 @@
 - Pointing image to registry1 image from IronBank.
 
 ## [0.1.3-bb.0]
+
 ### Added
+
 Added section of values to allow dynamic creation of secret containing the config.json chains:
 
 ```yaml
