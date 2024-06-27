@@ -2,7 +2,6 @@
   "baseBranches": ["main"],
   "configWarningReuseIssue": false,
   "dependencyDashboard": "true",
-  "dependencyDashboardHeader": "- [ ] Follow upgrade instructions in this repo at docs/DEVELOPMENT_MAINTENANCE.md",
   "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
   "draftPR": true,
   "labels": ["authservice","Big Bang Core","Package Sustainment","kind::maintenance"],
