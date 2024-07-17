@@ -259,6 +259,9 @@ redis-bb:
     enabled: true
     controlPlaneCidr: 0.0.0.0/0
   master:
+    podLabels:
+      app: authservice-authservice-redis-bb-master
+      version: "{{ .Chart.AppVersion }}"
     containerSecurityContext:
       enabled: true
       runAsUser: 1001
@@ -268,6 +271,9 @@ redis-bb:
         drop:
           - ALL
   replica:
+    podLabels:
+      app: authservice-authservice-redis-bb-replica
+      version: "{{ .Chart.AppVersion }}"
     containerSecurityContext:
       enabled: true
       runAsUser: 1001
