@@ -2,6 +2,14 @@
 
 ---
 
+## [1.0.1-bb.3] - 2024-07-16
+
+### Added
+
+- Added `bigbang.labels` helper function to authservice under `templates/bigbang`
+- Added call to `bigbang.labels` function in pod template section of `chart/templates/deployment.yaml`
+- Added `redis-bb.master.podLabels` and `redis-bb.replica.podLabels` entries for `app` and `version` in `chart/values.yaml`
+
 ## [1.0.1-bb.2] - 2024-06-21
 
 ### Changed

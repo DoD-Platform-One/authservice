@@ -1,6 +1,6 @@
 # authservice
 
-![Version: 1.0.1-bb.2](https://img.shields.io/badge/Version-1.0.1--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
+![Version: 1.0.1-bb.3](https://img.shields.io/badge/Version-1.0.1--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -38,14 +38,6 @@ helm install authservice chart/
 | istio.hardened.outboundTrafficPolicyMode | string | `"REGISTRY_ONLY"` |  |
 | istio.hardened.customServiceEntries | list | `[]` |  |
 | istio.hardened.customAuthorizationPolicies | list | `[]` |  |
-| istio.hardened.monitoring.enabled | bool | `true` |  |
-| istio.hardened.monitoring.namespaces[0] | string | `"monitoring"` |  |
-| istio.hardened.monitoring.principals[0] | string | `"cluster.local/ns/monitoring/sa/monitoring-grafana"` |  |
-| istio.hardened.monitoring.principals[1] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-alertmanager"` |  |
-| istio.hardened.monitoring.principals[2] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-operator"` |  |
-| istio.hardened.monitoring.principals[3] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus"` |  |
-| istio.hardened.monitoring.principals[4] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-state-metrics"` |  |
-| istio.hardened.monitoring.principals[5] | string | `"cluster.local/ns/monitoring/sa/monitoring-monitoring-prometheus-node-exporter"` |  |
 | istio.hardened.kiali.enabled | bool | `true` |  |
 | istio.hardened.kiali.namespaces[0] | string | `"kiali"` |  |
 | istio.hardened.kiali.principals[0] | string | `"cluster.local/ns/kiali/sa/kiali-service-account"` |  |
@@ -116,11 +108,15 @@ helm install authservice chart/
 | redis-bb.image.pullSecrets[0] | string | `"private-registry"` |  |
 | redis-bb.networkPolicies.enabled | bool | `true` |  |
 | redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| redis-bb.master.podLabels.app | string | `"authservice-authservice-redis-bb-master"` |  |
+| redis-bb.master.podLabels.version | string | `"{{ .Chart.AppVersion }}"` |  |
 | redis-bb.master.containerSecurityContext.enabled | bool | `true` |  |
 | redis-bb.master.containerSecurityContext.runAsUser | int | `1001` |  |
 | redis-bb.master.containerSecurityContext.runAsGroup | int | `1001` |  |
 | redis-bb.master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | redis-bb.master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| redis-bb.replica.podLabels.app | string | `"authservice-authservice-redis-bb-replica"` |  |
+| redis-bb.replica.podLabels.version | string | `"{{ .Chart.AppVersion }}"` |  |
 | redis-bb.replica.containerSecurityContext.enabled | bool | `true` |  |
 | redis-bb.replica.containerSecurityContext.runAsUser | int | `1001` |  |
 | redis-bb.replica.containerSecurityContext.runAsGroup | int | `1001` |  |

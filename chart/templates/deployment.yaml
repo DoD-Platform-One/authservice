@@ -21,6 +21,7 @@ spec:
         {{- end }}
       labels:
         {{- include "authservice.selectorLabels" . | nindent 8 }}
+        {{- include "bigbang.labels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
