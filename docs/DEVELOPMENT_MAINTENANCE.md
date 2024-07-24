@@ -176,7 +176,26 @@ This will deploy the following apps for testing (while disabling non-essential a
 
 - If you deployed with local keycloak enabled, make sure it's `keycloak.dev.bigbang.mil` and not `login.dso.mil`.
 
-### automountServiceAccountToken
+## Files That Require Integration Testing
+
+- ./chart/templates/bigbang/authservice-clusterrolebinding-openshift-scc.yaml
+- ./chart/templates/bigbang/istio/authorizationPolicies/allow-any-to-auth-authz-policy.yaml
+- ./chart/templates/bigbang/istio/authorizationPolicies/allow-intranamespace.yaml
+- ./chart/templates/bigbang/istio/authorizationPolicies/shared-kiali-authz-policy.yaml
+- ./chart/templates/bigbang/istio/authorizationPolicies/template.yaml
+- ./chart/templates/bigbang/istio/jwksEndpointServiceEntry.yaml
+- ./chart/templates/bigbang/istio/oidcHostServiceEntry.yaml
+- ./chart/templates/bigbang/istio/peerAuthentication.yaml
+- ./chart/templates/bigbang/istio/serviceEntry.yaml
+- ./chart/templates/bigbang/istio/sidecar.yaml
+- ./chart/templates/bigbang/network-attachment-definition.yaml
+- ./chart/templates/bigbang/networkpolicies/additional-networkpolicies.yaml
+
+### Instructions for Integration Testing
+
+See the [Big Bang Doc](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/docs/developer/test-package-against-bb.md?ref_type=heads)
+
+## automountServiceAccountToken
 
 The mutating Kyverno policy named [update-automountserviceaccounttokens](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads#L679) is leveraged to harden all ServiceAccounts in this package with `automountServiceAccountToken: false`.
 
