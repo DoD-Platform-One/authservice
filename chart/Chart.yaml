@@ -27,6 +27,8 @@ dependencies:
     repository: "oci://registry1.dso.mil/bigbang"
     condition: redis.enabled
     alias: redis-bb
+sources:
+  - https://github.com/istio-ecosystem/authservice
 annotations:
   bigbang.dev/applicationVersions: |
     - Authservice: 1.0.1
@@ -36,3 +38,5 @@ annotations:
     - name: redis
       condition: redis.enabled
       image: registry1.dso.mil/ironbank/bitnami/redis:7.2.5
+  bigbang.dev/upstreamReleaseNotesMarkdown: |
+    - [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
