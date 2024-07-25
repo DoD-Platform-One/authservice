@@ -1,8 +1,17 @@
+<!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
 ![Version: 1.0.1-bb.3](https://img.shields.io/badge/Version-1.0.1--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
+
+## Upstream References
+
+* <https://github.com/istio-ecosystem/authservice>
+
+### Upstream Release Notes
+
+* [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
 
 ## Learn More
 
@@ -133,3 +142,7 @@ helm install authservice chart/
 ## Contributing
 
 Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
+
+---
+
+_This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._
