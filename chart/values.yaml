@@ -34,6 +34,7 @@ istio:
       principals:
         - cluster.local/ns/kiali/sa/kiali-service-account
   namespace: istio-system
+  clusterWideHardeningEnabled: false
   # -- Default authservice peer authentication
   mtls:
     # -- Two mtls modes allowed
