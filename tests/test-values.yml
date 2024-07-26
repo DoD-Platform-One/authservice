@@ -1,7 +1,4 @@
-global: 
-  imagePullSecrets: 
-    - private-registry
-  usePassword: false
+global:
   redis_server_uri: "tcp://authservice-redis-bb-master:6379"
 
 replicaCount: 3
@@ -9,13 +6,11 @@ replicaCount: 3
 imagePullSecrets:
   - name: private-registry
 
-redis: 
+redis:
   enabled: true
 redis-bb:
   networkPolicies:
-    enabled: true
     controlPlaneCidr: 172.16.0.0/12
 
 networkPolicies:
   enabled: true
-
