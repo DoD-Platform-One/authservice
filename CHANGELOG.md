@@ -2,6 +2,13 @@
 
 ---
 
+## [1.0.1-bb.4] - 2024-07-26
+
+### Added
+
+- Fix the issue with sso and kiali when not using hardening
+- Made the jwt-authz policy ACTION explicit
+
 ## [1.0.1-bb.3] - 2024-07-16
 
 ### Added

@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.0.1-bb.3](https://img.shields.io/badge/Version-1.0.1--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
+![Version: 1.0.1-bb.4](https://img.shields.io/badge/Version-1.0.1--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -11,10 +11,9 @@ A Helm chart for Kubernetes
 
 ### Upstream Release Notes
 
-* [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
+- [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
 
 ## Learn More
-
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -26,13 +25,12 @@ A Helm chart for Kubernetes
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
-
 ```bash
 helm install authservice chart/
 ```
@@ -65,7 +63,7 @@ helm install authservice chart/
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
 | allow_unmatched_requests | bool | `true` | If true will allow the requests even no filter chain match is found |
-| custom_authpolicy_rules | list | `[{"when":[{"key":"request.headers[authorization]","notValues":["*"]}]}]` | Extra Ruleset for AuthorizationPolicy CUSTOM action to forward to Authservice. To enable `allow_unmatched_requests` must be `false`. These custom rules mean that only these requests will be routed and will break default BigBang setup for `prometheus/alertmanager/tempo` unless added. Path specific Operations are not supported, it is recommended to use only hosts, notHosts, & method operations. See reference: <https://istio.io/latest/docs/reference/config/security/authorization-policy/> |
+| custom_authpolicy_rules | list | `[{"when":[{"key":"request.headers[authorization]","notValues":["*"]}]}]` | Extra Ruleset for AuthorizationPolicy CUSTOM action to forward to Authservice. To enable `allow_unmatched_requests` must be `false`. These custom rules mean that only these requests will be routed and will break default BigBang setup for `prometheus/alertmanager/tempo` unless added. Path specific Operations are not supported, it is recommended to use only hosts, notHosts, & method operations. See reference: https://istio.io/latest/docs/reference/config/security/authorization-policy/ |
 | global.client_id | string | `"global_id"` | Global Authorization URI value to set if not using Keycloak authorization_uri: "" Global Token URI Value to set if not using Keycloak token_uri: "" Default client_id to be used in each chain |
 | global.client_secret | string | `"global_secret"` | default client_secret to be used in each chain |
 | global.match.header | string | `":authority"` | Header to match.  The value ":authority" is used to match the requested hostname |
@@ -146,3 +144,4 @@ Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in 
 ---
 
 _This file is programatically generated using `helm-docs` and some BigBang-specific templates. The `gluon` repository has [instructions for regenerating package READMEs](https://repo1.dso.mil/big-bang/product/packages/gluon/-/blob/master/docs/bb-package-readme.md)._
+

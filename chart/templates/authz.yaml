@@ -28,6 +28,7 @@ metadata:
   name: jwt-authz
   namespace: istio-system
 spec:
+  action: ALLOW
   selector:
     matchLabels:
       {{ .Values.selector.key | default "protect" }}: {{ .Values.selector.value | default "keycloak" | quote }}
