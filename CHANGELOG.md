@@ -2,6 +2,12 @@
 
 ---
 
+## [1.0.1-bb.5] - 2024-08-23
+
+### Updated
+
+- Removed previous kiali label epic changes and updated to new pattern
+
 ## [1.0.1-bb.4] - 2024-07-26
 
 ### Added
