@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.0.1-bb.4](https://img.shields.io/badge/Version-1.0.1--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
+![Version: 1.0.1-bb.5](https://img.shields.io/badge/Version-1.0.1--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.1](https://img.shields.io/badge/AppVersion-1.0.1-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -11,7 +11,7 @@ A Helm chart for Kubernetes
 
 ### Upstream Release Notes
 
-- [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
+* [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
 
 ## Learn More
 * [Application Overview](docs/overview.md)
@@ -49,6 +49,7 @@ helm install authservice chart/
 | istio.hardened.kiali.namespaces[0] | string | `"kiali"` |  |
 | istio.hardened.kiali.principals[0] | string | `"cluster.local/ns/kiali/sa/kiali-service-account"` |  |
 | istio.namespace | string | `"istio-system"` |  |
+| istio.clusterWideHardeningEnabled | bool | `false` |  |
 | istio.mtls | object | `{"mode":"STRICT"}` | Default authservice peer authentication |
 | istio.mtls.mode | string | `"STRICT"` | Two mtls modes allowed STRICT = Allow only mutual TLS traffic PERMISSIVE = Allow both plain text and mutual TLS traffic |
 | monitoring.enabled | bool | `false` |  |
@@ -87,6 +88,7 @@ helm install authservice chart/
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | podAnnotations | object | `{}` |  |
+| podLabels | object | `{}` |  |
 | podSecurityContext.runAsUser | int | `1000` |  |
 | podSecurityContext.runAsGroup | int | `1000` |  |
 | podSecurityContext.runAsNonRoot | bool | `true` |  |
@@ -115,15 +117,11 @@ helm install authservice chart/
 | redis-bb.image.pullSecrets[0] | string | `"private-registry"` |  |
 | redis-bb.networkPolicies.enabled | bool | `true` |  |
 | redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
-| redis-bb.master.podLabels.app | string | `"authservice-authservice-redis-bb-master"` |  |
-| redis-bb.master.podLabels.version | string | `"{{ .Chart.AppVersion }}"` |  |
 | redis-bb.master.containerSecurityContext.enabled | bool | `true` |  |
 | redis-bb.master.containerSecurityContext.runAsUser | int | `1001` |  |
 | redis-bb.master.containerSecurityContext.runAsGroup | int | `1001` |  |
 | redis-bb.master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
 | redis-bb.master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
-| redis-bb.replica.podLabels.app | string | `"authservice-authservice-redis-bb-replica"` |  |
-| redis-bb.replica.podLabels.version | string | `"{{ .Chart.AppVersion }}"` |  |
 | redis-bb.replica.containerSecurityContext.enabled | bool | `true` |  |
 | redis-bb.replica.containerSecurityContext.runAsUser | int | `1001` |  |
 | redis-bb.replica.containerSecurityContext.runAsGroup | int | `1001` |  |

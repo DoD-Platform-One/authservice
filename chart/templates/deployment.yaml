@@ -21,7 +21,9 @@ spec:
         {{- end }}
       labels:
         {{- include "authservice.selectorLabels" . | nindent 8 }}
-        {{- include "bigbang.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- tpl (toYaml . | nindent 8) $ }}
+        {{- end }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
