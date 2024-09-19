@@ -58,7 +58,7 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.1-ubi9"
+  tag: "1.0.2-ubi9"
 imagePullSecrets: []
 
 # -- Issuer and jwks URIs if not using Keycloak
@@ -245,7 +245,7 @@ redis:
   enabled: false
   # -- Values passthrough for redis Subchart
   image:
-    tag: 7.2.4
+    tag: 7.4.0
 
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
