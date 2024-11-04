@@ -2,6 +2,10 @@
 
 ---
 
+## [1.0.2-bb.1] - 2024-11-04
+### Changed
+- Updated pod labels to use authservice.labels so version will be included
+
 ## [1.0.2-bb.0] - 2024-09-11
 ### Changed
 - redis updated from 19.5.0 to 20.0.1

@@ -20,7 +20,7 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
       labels:
-        {{- include "authservice.selectorLabels" . | nindent 8 }}
+        {{- include "authservice.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- tpl (toYaml . | nindent 8) $ }}
         {{- end }}
