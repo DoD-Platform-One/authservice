@@ -2,6 +2,11 @@
 
 ---
 
+## [1.0.2-bb.2] - 2024-11-04
+### Changed
+- redis updated from 20.0.1-bb.1 to 20.2.1-bb.3
+- ironbank/bitnami/redis updated from 7.4.0 to 7.4.1
+
 ## [1.0.2-bb.1] - 2024-11-04
 ### Changed
 - Updated pod labels to use authservice.labels so version will be included
