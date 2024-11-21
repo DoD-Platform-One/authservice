@@ -2,6 +2,11 @@
 
 ---
 
+## [1.0.3-bb.0] - 2024-11-20
+### Changed
+- ironbank/istio-ecosystem/authservice updated from 1.0.2 to 1.0.3
+- Update Redis chart to 20.2.1-bb.4
+
 ## [1.0.2-bb.2] - 2024-11-04
 ### Changed
 - redis updated from 20.0.1-bb.1 to 20.2.1-bb.3
