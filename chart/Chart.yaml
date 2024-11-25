@@ -30,6 +30,7 @@ dependencies:
 sources:
   - https://github.com/istio-ecosystem/authservice
 annotations:
+  bigbang.dev/maintenanceTrack: bb_integrated
   bigbang.dev/applicationVersions: |
     - Authservice: 1.0.3
   helm.sh/images: |
