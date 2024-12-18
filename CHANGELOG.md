@@ -2,6 +2,12 @@
 
 ---
 
+## [1.0.3-bb.1] - 2024-12-18
+### Added
+- Added the ability to reference Kubernetes secrets in place of the OIDC `client_secret` value by using `client_secret_ref` under `templates/secret.yaml`.
+- Added Role and RoleBinding for the Authservice service account to access secrets in the release namespace under `templates/rbac.yaml`.
+- Added corresponding example `chains.full.client_secret_ref` entry in `chart/values.yaml`.
+
 ## [1.0.3-bb.0] - 2024-11-20
 ### Changed
 - ironbank/istio-ecosystem/authservice updated from 1.0.2 to 1.0.3
