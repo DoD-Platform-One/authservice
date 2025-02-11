@@ -15,15 +15,15 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.3-bb.0
+version: 1.0.4-bb.0
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
-appVersion: 1.0.3
+appVersion: 1.0.4
 dependencies:
   - name: redis
-    version: 20.2.1-bb.4
+    version: 20.6.2-bb.2
     repository: "oci://registry1.dso.mil/bigbang"
     condition: redis.enabled
     alias: redis-bb
@@ -32,12 +32,12 @@ sources:
 annotations:
   bigbang.dev/maintenanceTrack: bb_integrated
   bigbang.dev/applicationVersions: |
-    - Authservice: 1.0.3
+    - Authservice: 1.0.4
   helm.sh/images: |
     - name: authservice
-      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.0.3-ubi9
+      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.0.4-ubi9
     - name: redis
       condition: redis.enabled
-      image: registry1.dso.mil/ironbank/bitnami/redis:7.4.1
+      image: registry1.dso.mil/ironbank/bitnami/redis:7.4.2
   bigbang.dev/upstreamReleaseNotesMarkdown: |
     - [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
