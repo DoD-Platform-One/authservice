@@ -2,6 +2,12 @@
 
 ---
 
+## [1.0.4-bb.1] - 2025-02-11
+
+### Changed
+
+- Updated istio egress newtork policy to be more dynamic
+
 ## [1.0.4-bb.0] - 2025-02-07
 
 ### Changed
