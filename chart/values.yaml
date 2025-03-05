@@ -11,7 +11,8 @@ istio:
   hardened:
     enabled: false
     outboundTrafficPolicyMode: "REGISTRY_ONLY"
-    customServiceEntries: []
+    customServiceEntries:
+      []
       # - name: "allow-google"
       #   enabled: true
       #   spec:
@@ -58,7 +59,7 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.3-ubi9"
+  tag: "1.0.4-ubi9"
 imagePullSecrets: []
 
 # -- Issuer and jwks URIs if not using Keycloak
@@ -75,10 +76,9 @@ allow_unmatched_requests: true
 # See reference: https://istio.io/latest/docs/reference/config/security/authorization-policy/
 custom_authpolicy_rules:
   - when:
-    - key: request.headers[authorization]
-      notValues:
-      - '*'
-
+      - key: request.headers[authorization]
+        notValues:
+          - "*"
 
 global:
   # -- Global Authorization URI value to set if not using Keycloak
@@ -173,7 +173,6 @@ chains:
     callback_uri: https://localhost/login
     logout_path: "/local"
 
-
 nameOverride: "authservice"
 fullnameOverride: "authservice"
 
@@ -197,7 +196,7 @@ podSecurityContext:
 securityContext:
   capabilities:
     drop:
-    - ALL
+      - ALL
   readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 1000
@@ -291,7 +290,6 @@ redis-bb:
     maxmemory 200mb
     maxmemory-policy allkeys-lru
     save ""
-
 
 openshift: false
 

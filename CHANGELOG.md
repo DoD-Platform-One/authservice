@@ -2,29 +2,51 @@
 
 ---
 
-## [1.0.3-bb.1] - 2024-12-18
+## [1.0.4-bb.2] - 2025-03-05
+
 ### Added
 - Added the ability to reference Kubernetes secrets in place of the OIDC `client_secret` value by using `client_secret_ref` under `templates/secret.yaml`.
 - Added Role and RoleBinding for the Authservice service account to access secrets in the release namespace under `templates/rbac.yaml`.
 - Added corresponding example `chains.full.client_secret_ref` entry in `chart/values.yaml`.
 
-## [1.0.3-bb.0] - 2024-11-20
+## [1.0.4-bb.1] - 2025-02-11
+
 ### Changed
+
+- Updated istio egress newtork policy to be more dynamic
+
+## [1.0.4-bb.0] - 2025-02-07
+
+### Changed
+
+- ironbank/bitnami/redis updated from 7.4.1 to 7.4.2
+- ironbank/istio-ecosystem/authservice updated from 1.0.3-ubi9 to 1.0.4-ubi9
+
+## [1.0.3-bb.0] - 2024-11-20
+
+### Changed
+
 - ironbank/istio-ecosystem/authservice updated from 1.0.2 to 1.0.3
 - Update Redis chart to 20.2.1-bb.4
 - Added the maintenance track annotation and badge
 
 ## [1.0.2-bb.2] - 2024-11-04
+
 ### Changed
+
 - redis updated from 20.0.1-bb.1 to 20.2.1-bb.3
 - ironbank/bitnami/redis updated from 7.4.0 to 7.4.1
 
 ## [1.0.2-bb.1] - 2024-11-04
+
 ### Changed
+
 - Updated pod labels to use authservice.labels so version will be included
 
 ## [1.0.2-bb.0] - 2024-09-11
+
 ### Changed
+
 - redis updated from 19.5.0 to 20.0.1
 - ironbank/bitnami/redis updated from 7.2.5 to 7.4.0
 - ironbank/istio-ecosystem/authservice updated from 1.0.1 to 1.0.2

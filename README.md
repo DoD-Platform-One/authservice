@@ -1,13 +1,13 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.0.3-bb.0](https://img.shields.io/badge/Version-1.0.3--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.3](https://img.shields.io/badge/AppVersion-1.0.3-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.0.4-bb.1](https://img.shields.io/badge/Version-1.0.4--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
 ## Upstream References
 
-* <https://github.com/istio-ecosystem/authservice>
+- <https://github.com/istio-ecosystem/authservice>
 
 ## Upstream Release Notes
 
@@ -61,7 +61,7 @@ helm install authservice chart/
 | networkPolicies.additionalPolicies | list | `[]` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.tag | string | `"1.0.3-ubi9"` | Overrides the image tag whose default is the chart appVersion. |
+| image.tag | string | `"1.0.4-ubi9"` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` |  |
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
