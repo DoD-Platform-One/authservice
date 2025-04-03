@@ -1,3 +1,5 @@
+{{- range $v := .Values.chains }}
+{{- if hasKey $v "client_secret_ref" }}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -17,4 +19,7 @@ roleRef:
   name: authservice-secrets
 subjects:
   - kind: ServiceAccount
-    name: {{ include "authservice.serviceAccountName" . }}
+    name: {{ include "authservice.serviceAccountName" $ }}
+{{- break }}
+{{- end }}
+{{- end }}
