@@ -2,9 +2,16 @@
 
 ---
 
+## [1.0.4-bb.3] (2025-04-29)
+
+### Changed
+
+- ironbank/bitnami/redis updated from 7.4.2 to 7.4.3
+
 ## [1.0.4-bb.2] - 2025-03-05
 
 ### Added
+
 - Added the ability to reference Kubernetes secrets in place of the OIDC `client_secret` value by using `client_secret_ref` under `templates/secret.yaml`.
 - Added Role and RoleBinding for the Authservice service account to access secrets in the release namespace under `templates/rbac.yaml`.
 - Added corresponding example `chains.full.client_secret_ref` entry in `chart/values.yaml`.

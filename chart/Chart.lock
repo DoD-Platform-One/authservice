@@ -1,6 +1,6 @@
 dependencies:
 - name: redis
   repository: oci://registry1.dso.mil/bigbang
-  version: 20.6.2-bb.2
-digest: sha256:3ba50408f55db604b1244c7991be6ca2b42511c57848c0cfebe05ec7c79f0cb8
-generated: "2025-02-07T15:11:37.04655-05:00"
+  version: 20.13.2-bb.0
+digest: sha256:f25ec5dc99bac831d848d4b2b01213cc96273895d3a3a8626828502b87be0166
+generated: "2025-05-08T19:45:01.81177586-05:00"
