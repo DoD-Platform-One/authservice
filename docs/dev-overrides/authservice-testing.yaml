@@ -15,24 +15,32 @@ sso:
   # This is needed because test-values.yaml overrides it to reference the internal keycloak
   url: https://login.dso.mil/auth/realms/baby-yoda
 
-istio:
-  enabled: true
-  ingressGateways:
-    passthrough-ingressgateway:
-      enabled: false
-  gateways:
-    passthrough:
-      enabled: false
-
-istioOperator:
+istioCRDs:
   enabled: true
 
-# Enable jaeger and prometheus (within monitoring) for testing
-jaeger:
+istiod:
   enabled: true
+
+istioGateway:
+  enabled: true
+  values:
+    gateways:
+      passthrough: {} # Disable the default passthrough gateway
+
+grafana:
+  enabled: true
+  sso:
+    enabled: true
+
+kiali:
+  enabled: true
+  sso:
+    enabled: true
 
 monitoring:
   enabled: true
+  sso:
+    enabled: true
 
 addons:
   authservice:

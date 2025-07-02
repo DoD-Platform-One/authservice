@@ -2,6 +2,12 @@
 # Notably, the following have not been disabled
 # - networkPolicies - not disabled due to ease of use when deploying via k3d_dev
 
+bbctl:
+  enabled: false
+
+alloy:
+  enabled: false
+
 eckOperator:
   enabled: false
 
@@ -14,17 +20,14 @@ fluentbit:
 gatekeeper:
   enabled: false
 
-grafana:
-  enabled: false
+istioCRDs:
+  enabled: true
 
-istio:
-  enabled: false
+istiod:
+  enabled: true
 
-istioOperator:
-  enabled: false
-
-kiali:
-  enabled: false
+istioGateway:
+  enabled: true
 
 kyverno:
   enabled: false

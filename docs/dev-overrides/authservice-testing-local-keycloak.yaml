@@ -10,14 +10,21 @@
 # -f docs/dev-overrides/minimal.yaml \
 # -f docs/dev-overrides/authservice-testing-local-keycloak.yaml
 
-istio:
+istioCRDs:
   enabled: true
 
-istioOperator:
+istiod:
   enabled: true
 
-# Enable jaeger and prometheus (within monitoring) for testing
-jaeger:
+istioGateway:
+  enabled: true
+
+grafana:
+  enabled: true
+  sso:
+    enabled: true
+
+kiali:
   enabled: true
   sso:
     enabled: true

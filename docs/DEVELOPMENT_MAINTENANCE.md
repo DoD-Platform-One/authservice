@@ -120,7 +120,7 @@ addons:
     e.g.
 
     ```sh
-    export KUBECONFIG=~/.kube/Christopher.Galloway-dev-config
+    export KUBECONFIG=~/.kube/username-dev-default-config
     ```
 
 1. [Deploy flux to your cluster](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/scripts/install_flux.sh):
@@ -160,8 +160,8 @@ For local `keycloak.dev.bigbang.mil` Keycloak:
 
 This will deploy the following apps for testing (while disabling non-essential apps):
 
-- Istio, Istio operator and Authservice
-- Jaeger and Monitoring (specifically, Prometheus), with SSO enabled
+- Istio and Authservice
+- Monitoring, Grafana, and Kiali with SSO enabled
 - Optionally Keycloak
 
 ## Validation/Testing Steps
@@ -171,8 +171,9 @@ This will deploy the following apps for testing (while disabling non-essential a
 - Create this account in the baby-yoda realm, not in the master realm.
 - Add the user to the "Impact Level 2 Authorized" group.
 
-1. Navigate to [Jaeger](https://tracing.dev.bigbang.mil/) and validate that you are prompted to login with SSO and that the login is successful. This verifies that Authservice is working as an Istio extension.
-1. Navigate to [Prometheus](https://prometheus.dev.bigbang.mil) (also uses Authservice) and validate that you are prompted to login with SSO and that the login is successful.
+1. Navigate to [Grafana](https://grafana.dev.bigbang.mil/) and validate that you are prompted to login with SSO. The login should also be successful. This verifies that Authservice is working as an Istio extension.
+1. Navigate to [Kiali](https://kiali.dev.bigbang.mil/) and validate that you are prompted to login with SSO. Authservice is also used here.
+1. Navigate to [Prometheus](https://prometheus.dev.bigbang.mil) and validate that you are prompted to login with SSO again verifying Authservice.
 
 - If you deployed with local keycloak enabled, make sure it's `keycloak.dev.bigbang.mil` and not `login.dso.mil`.
 
@@ -197,10 +198,16 @@ See the [Big Bang Doc](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/docs
 
 ## automountServiceAccountToken
 
-The mutating Kyverno policy named [update-automountserviceaccounttokens](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads#L679) is leveraged to harden all ServiceAccounts in this package with `automountServiceAccountToken: false`.
+The mutating Kyverno policy named [update-automountserviceaccounttokens](https://repo1.dso.mil/big-bang/bigbang/-/blob/master/chart/templates/kyverno-policies/values.yaml?ref_type=heads#L1092) is leveraged to harden all ServiceAccounts in this package with: `automountServiceAccountToken: false`.
 
 This policy revokes access to the K8s API for Pods utilizing said ServiceAccounts. If a Pod truly requires access to the K8s API (for app functionality), the Pod is added to the `pods:` array of the same mutating policy. This grants the Pod access to the API, and creates a Kyverno PolicyException to prevent an alert.
 
 # Modifications made to upstream chart
 
-This section has nothing in it because this chart is basically all custom.
+This section has nothing in it because this chart is basically all custom. 
+
+# Notes  
+
+The `authservice` chart is slightly derivative of: [https://github.com/istio-ecosystem/authservice](https://github.com/istio-ecosystem/authservice)  
+
+A flow chart diagram of how `authservice` works is available [here](https://miro.com/app/board/o9J_kvus6b4=/) and preserved [here](./authservice-flow.png) in case the former disappears.
