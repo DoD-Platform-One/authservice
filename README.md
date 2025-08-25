@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.0.4-bb.3](https://img.shields.io/badge/Version-1.0.4--bb.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.0.4-bb.4](https://img.shields.io/badge/Version-1.0.4--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -112,28 +112,28 @@ helm install authservice chart/
 | affinity | object | `{}` |  |
 | config | object | `{"logLevel":"trace"}` | Name of the secret to source authservices `config.json` from, created outside of helm chart TODO: Create this as part of the helmchart? |
 | selector | object | `{"key":"protect","value":"keycloak"}` | Label to determine what workloads (pods/deployments) should be protected by authservice. |
-| redis | object | `{"enabled":false,"image":{"tag":"7.4.0"}}` | Conditional for enabling Redis Subchart |
-| redis.image | object | `{"tag":"7.4.0"}` | Values passthrough for redis Subchart |
-| redis-bb.auth.enabled | bool | `false` |  |
-| redis-bb.istio.redis.enabled | bool | `false` |  |
-| redis-bb.image.pullSecrets[0] | string | `"private-registry"` |  |
-| redis-bb.networkPolicies.enabled | bool | `true` |  |
-| redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
-| redis-bb.master.containerSecurityContext.enabled | bool | `true` |  |
-| redis-bb.master.containerSecurityContext.runAsUser | int | `1001` |  |
-| redis-bb.master.containerSecurityContext.runAsGroup | int | `1001` |  |
-| redis-bb.master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
-| redis-bb.master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
-| redis-bb.replica.containerSecurityContext.enabled | bool | `true` |  |
-| redis-bb.replica.containerSecurityContext.runAsUser | int | `1001` |  |
-| redis-bb.replica.containerSecurityContext.runAsGroup | int | `1001` |  |
-| redis-bb.replica.containerSecurityContext.runAsNonRoot | bool | `true` |  |
-| redis-bb.replica.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
-| redis-bb.metrics.enabled | bool | `false` |  |
-| redis-bb.metrics.containerSecurityContext.enabled | bool | `true` |  |
-| redis-bb.metrics.containerSecurityContext.runAsUser | int | `1001` |  |
-| redis-bb.metrics.containerSecurityContext.runAsGroup | int | `1001` |  |
-| redis-bb.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
+| redis | object | `{"enabled":false,"image":{"tag":"8.2.0"}}` | Conditional for enabling Redis Subchart |
+| redis.image | object | `{"tag":"8.2.0"}` | Values passthrough for redis Subchart |
+| redis-bb.upstream.auth.enabled | bool | `false` |  |
+| redis-bb.upstream.istio.redis.enabled | bool | `false` |  |
+| redis-bb.upstream.image.pullSecrets[0] | string | `"private-registry"` |  |
+| redis-bb.upstream.networkPolicies.enabled | bool | `true` |  |
+| redis-bb.upstream.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| redis-bb.upstream.master.containerSecurityContext.enabled | bool | `true` |  |
+| redis-bb.upstream.master.containerSecurityContext.runAsUser | int | `1001` |  |
+| redis-bb.upstream.master.containerSecurityContext.runAsGroup | int | `1001` |  |
+| redis-bb.upstream.master.containerSecurityContext.runAsNonRoot | bool | `true` |  |
+| redis-bb.upstream.master.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| redis-bb.upstream.replica.containerSecurityContext.enabled | bool | `true` |  |
+| redis-bb.upstream.replica.containerSecurityContext.runAsUser | int | `1001` |  |
+| redis-bb.upstream.replica.containerSecurityContext.runAsGroup | int | `1001` |  |
+| redis-bb.upstream.replica.containerSecurityContext.runAsNonRoot | bool | `true` |  |
+| redis-bb.upstream.replica.containerSecurityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| redis-bb.upstream.metrics.enabled | bool | `false` |  |
+| redis-bb.upstream.metrics.containerSecurityContext.enabled | bool | `true` |  |
+| redis-bb.upstream.metrics.containerSecurityContext.runAsUser | int | `1001` |  |
+| redis-bb.upstream.metrics.containerSecurityContext.runAsGroup | int | `1001` |  |
+| redis-bb.upstream.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
 | trigger_rules | list | `[]` | Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io and requestauthentications.security.istio.io for certain endpoints. |
 
