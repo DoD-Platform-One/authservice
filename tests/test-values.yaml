@@ -25,6 +25,18 @@ addons:
 ########################
   authservice:
     enabled: true
+    # Temporary redis passthrough values added for the upgrade pipeline job to pass, 
+    # they will be removed once the BB umbrella test-values.yaml are updated.
+    values:
+      redis-bb:
+        upstream: 
+          master:
+            persistence:
+              size: 256Mi
+          replica:
+            persistence:
+              size: 256Mi
+            
 kyvernoPolicies:
   values:
     bbtests:

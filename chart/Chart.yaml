@@ -1,29 +1,12 @@
 apiVersion: v2
 name: authservice
 description: A Helm chart for Kubernetes
-
-# A chart can be either an 'application' or a 'library' chart.
-#
-# Application charts are a collection of templates that can be packaged into versioned archives
-# to be deployed.
-#
-# Library charts provide useful utilities or functions for the chart developer. They're included as
-# a dependency of application charts to inject those utilities and functions into the rendering
-# pipeline. Library charts do not define any templates and therefore cannot be deployed.
 type: application
-
-# This is the chart version. This version number should be incremented each time you make changes
-# to the chart and its templates, including the app version.
-# Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.0.4-bb.3
-
-# This is the version number of the application being deployed. This version number should be
-# incremented each time you make changes to the application. Versions are not expected to
-# follow Semantic Versioning. They should reflect the version the application is using.
+version: 1.0.4-bb.4
 appVersion: 1.0.4
 dependencies:
   - name: redis
-    version: 20.13.2-bb.0
+    version: 22.0.4-bb.0
     repository: "oci://registry1.dso.mil/bigbang"
     condition: redis.enabled
     alias: redis-bb
@@ -38,6 +21,6 @@ annotations:
       image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.0.4-ubi9
     - name: redis
       condition: redis.enabled
-      image: registry1.dso.mil/ironbank/bitnami/redis:7.4.3
+      image: registry1.dso.mil/ironbank/bitnami/redis:8.2.0
   bigbang.dev/upstreamReleaseNotesMarkdown: |
     - [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)

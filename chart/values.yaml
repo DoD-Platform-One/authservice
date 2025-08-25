@@ -245,51 +245,52 @@ redis:
   enabled: false
   # -- Values passthrough for redis Subchart
   image:
-    tag: 7.4.0
+    tag: 8.2.0
 
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
-  auth:
-    enabled: false
-  istio:
-    redis:
+  upstream:
+    auth:
       enabled: false
-  image:
-    pullSecrets:
-      - private-registry
-  networkPolicies:
-    enabled: true
-    controlPlaneCidr: 0.0.0.0/0
-  master:
-    containerSecurityContext:
+    istio:
+      redis:
+        enabled: false
+    image:
+      pullSecrets:
+        - private-registry
+    networkPolicies:
       enabled: true
-      runAsUser: 1001
-      runAsGroup: 1001
-      runAsNonRoot: true
-      capabilities:
-        drop:
-          - ALL
-  replica:
-    containerSecurityContext:
-      enabled: true
-      runAsUser: 1001
-      runAsGroup: 1001
-      runAsNonRoot: true
-      capabilities:
-        drop:
-          - ALL
-  metrics:
-    enabled: false
-    containerSecurityContext:
-      enabled: true
-      runAsUser: 1001
-      runAsGroup: 1001
-  commonConfiguration: |-
-    # Enable AOF https://redis.io/topics/persistence#append-only-file
-    appendonly no
-    maxmemory 200mb
-    maxmemory-policy allkeys-lru
-    save ""
+      controlPlaneCidr: 0.0.0.0/0
+    master:
+      containerSecurityContext:
+        enabled: true
+        runAsUser: 1001
+        runAsGroup: 1001
+        runAsNonRoot: true
+        capabilities:
+          drop:
+            - ALL
+    replica:
+      containerSecurityContext:
+        enabled: true
+        runAsUser: 1001
+        runAsGroup: 1001
+        runAsNonRoot: true
+        capabilities:
+          drop:
+            - ALL
+    metrics:
+      enabled: false
+      containerSecurityContext:
+        enabled: true
+        runAsUser: 1001
+        runAsGroup: 1001
+    commonConfiguration: |-
+      # Enable AOF https://redis.io/topics/persistence#append-only-file
+      appendonly no
+      maxmemory 200mb
+      maxmemory-policy allkeys-lru
+      save ""
 
 openshift: false
 
