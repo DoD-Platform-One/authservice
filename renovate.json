@@ -1,55 +1,89 @@
 {
-  "baseBranches": ["main"],
+  "baseBranches": [
+    "main"
+  ],
   "configWarningReuseIssue": false,
-  "dependencyDashboard": "true",
+  "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
   "draftPR": true,
-  "labels": ["authservice","Big Bang Core","Package Sustainment","kind::maintenance"],
-  "enabledManagers": ["regex", "helmv3"],
-  "ignorePaths": ["chart/charts/**"],
-  "postUpdateOptions": ["helmUpdateSubChartArchives"],
+  "labels": [
+    "authservice",
+    "Big Bang Core",
+    "Package Sustainment",
+    "kind::maintenance"
+  ],
+  "enabledManagers": [
+    "custom.regex",
+    "helmv3"
+  ],
+  "ignorePaths": [
+    "chart/charts/**"
+  ],
+  "postUpdateOptions": [
+    "helmUpdateSubChartArchives"
+  ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
+      "matchDatasources": [
+        "docker"
+      ],
       "groupName": "Ironbank",
-      "registryUrls": ["https://registry1.dso.mil"],
+      "registryUrls": [
+        "https://registry1.dso.mil"
+      ],
       "postUpgradeTasks": {
         "commands": [
-            "match-chart-yaml-appversion",
-            "regenerate-helm-docs",
-            "bump-changelog '- {{{replace 'registry1.dso.mil/' '' depName}}} updated from {{{currentVersion}}} to {{{newVersion}}}'"
+          "match-chart-yaml-appversion",
+          "regenerate-helm-docs",
+          "bump-changelog '- {{{replace 'registry1.dso.mil/' '' depName}}} updated from {{{currentVersion}}} to {{{newVersion}}}'"
         ],
-        "fileFilters": ["chart/Chart.yaml", "README.md", "CHANGELOG.md"]
+        "fileFilters": [
+          "chart/Chart.yaml",
+          "README.md",
+          "CHANGELOG.md"
+        ]
       }
     }
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["^chart/Chart\\.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/Chart\\.yaml$"
+      ],
       "matchStrings": [
-          "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)"
+        "appVersion:[^\\S\\r\\n]+(?<currentValue>.+)"
       ],
       "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^chart/values\\.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/values\\.yaml$"
+      ],
       "matchStrings": [
-         "tag:\\s+(?<currentValue>.+)"
+        "tag:\\s+(?<currentValue>.+)"
       ],
       "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^chart/Chart\\.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/Chart\\.yaml$"
+      ],
       "matchStrings": [
-         "- Authservice:\\s+(?<currentValue>.+)"
+        "- Authservice:\\s+(?<currentValue>.+)"
       ],
       "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["^chart/Chart\\.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "^chart/Chart\\.yaml$"
+      ],
       "matchStrings": [
         "image:[^\\S\\r\\n]+(?<depName>.+):(?<currentValue>.+)"
       ],
