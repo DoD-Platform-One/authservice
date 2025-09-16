@@ -2,5 +2,8 @@ dependencies:
 - name: redis
   repository: oci://registry1.dso.mil/bigbang
   version: 22.0.4-bb.0
-digest: sha256:898ae35f2fe136b858dfa9349aee42947c8d7dad751add098c1a8114780a85c0
-generated: "2025-08-22T17:31:06.480226-04:00"
+- name: bb-common
+  repository: oci://registry1.dso.mil/bigbang
+  version: 0.5.1
+digest: sha256:402a7fb685f8b90ac642c1a099121939de41b579064084c91010a4f5d4f3f6b7
+generated: "2025-08-26T17:18:48.328713-04:00"
