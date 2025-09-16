@@ -2,7 +2,7 @@ apiVersion: v2
 name: authservice
 description: A Helm chart for Kubernetes
 type: application
-version: 1.0.4-bb.4
+version: 1.0.4-bb.5
 appVersion: 1.0.4
 dependencies:
   - name: redis
@@ -10,6 +10,10 @@ dependencies:
     repository: "oci://registry1.dso.mil/bigbang"
     condition: redis.enabled
     alias: redis-bb
+  - name: bb-common
+    version: "0.5.1"
+    repository: "oci://registry1.dso.mil/bigbang"
+
 sources:
   - https://github.com/istio-ecosystem/authservice
 annotations:

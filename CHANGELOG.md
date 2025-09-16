@@ -2,6 +2,10 @@
 
 ---
 
+## [1.0.4-bb.5] (2025-09-05)
+### Changed
+- Integrate bb-common network policy implementation
+
 ## [1.0.4-bb.4] (2025-08-25)
 ### Changed
 - Redis updated from 20.13.2 to 22.0.4

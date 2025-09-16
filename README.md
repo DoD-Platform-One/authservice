@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.0.4-bb.4](https://img.shields.io/badge/Version-1.0.4--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.0.4-bb.5](https://img.shields.io/badge/Version-1.0.4--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -59,6 +59,17 @@ helm install authservice chart/
 | networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
 | networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
 | networkPolicies.additionalPolicies | list | `[]` |  |
+| networkPolicies.ingress.definitions.protect-keycloak.from[0].namespaceSelector | object | `{}` |  |
+| networkPolicies.ingress.definitions.protect-keycloak.from[0].podSelector.matchLabels.protect | string | `"keycloak"` |  |
+| networkPolicies.ingress.to.authservice:10003.from.definition.protect-keycloak | bool | `false` |  |
+| networkPolicies.ingress.to.redis-bb:6379.from.k8s.monitoring/grafana | bool | `false` |  |
+| networkPolicies.ingress.to.haproxy:8080.from.k8s.istio-gateway/* | bool | `false` |  |
+| networkPolicies.ingress.to.redis-bb:9121.from.k8s.monitoring/prometheus | bool | `false` |  |
+| networkPolicies.egress.definitions.sso.to[0].ipBlock.cidr | string | `"0.0.0.0/0"` |  |
+| networkPolicies.egress.from.authservice.to.definition.sso | bool | `false` |  |
+| networkPolicies.egress.from.authservice.to.k8s.tempo/tempo:9411 | bool | `false` |  |
+| networkPolicies.egress.from.haproxy.to.k8s.monitoring/alertmanager:9093 | bool | `false` |  |
+| networkPolicies.egress.from.haproxy.to.k8s.monitoring/prometheus:9090 | bool | `false` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.tag | string | `"1.0.4-ubi9"` | Overrides the image tag whose default is the chart appVersion. |

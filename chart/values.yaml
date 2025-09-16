@@ -54,6 +54,53 @@ networkPolicies:
   # Additional network policies
   # ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
   additionalPolicies: []
+  ingress:
+    definitions:
+      keycloak-protected-pods:
+        from:
+          - namespaceSelector: {}
+            podSelector:
+              matchLabels:
+                protect: keycloak
+    to:
+      # gRPC connections for pods with protect=keycloak label
+      authservice:10003:
+        from:
+          definition:
+            protect-keycloak: false
+      # Grafana redis client connection
+      redis-bb:6379:
+        from:
+          k8s:
+            monitoring/grafana: false
+      haproxy:8080:
+        from:
+          k8s:
+            "istio-gateway/*": false
+      # Redis exporter metrics      
+      redis-bb:9121:
+        from:
+          k8s:
+            monitoring/prometheus: false
+  egress:
+    definitions:
+      sso:
+        to:
+          - ipBlock:
+              cidr: 0.0.0.0/0
+    from:
+      authservice:
+        to:
+          definition:
+            sso: false 
+          k8s:
+            # Tempo trace data
+            tempo/tempo:9411: false
+      haproxy:
+        to:
+          k8s:
+            monitoring/alertmanager:9093: false
+            monitoring/prometheus:9090: false
 
 image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
