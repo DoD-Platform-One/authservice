@@ -60,7 +60,7 @@ spec:
               mountPath: /etc/authservice
             {{- if .Values.global.certificate_authority }}
             - name: ca-bundle
-              mountPath: /mnt/ca-bundle              
+              mountPath: /mnt/ca-bundle
             {{- end }}
       {{- if .Values.global.certificate_authority }}
       initContainers:
@@ -77,7 +77,7 @@ spec:
             - name: sso-tls-ca
               mountPath: /etc/pki/tls/certs/oidc-ca.crt
               subPath: oidc-ca.crt
-              readOnly: true              
+              readOnly: true
             - name: ca-bundle
               mountPath: /mnt/ca-bundle
       {{- end }}

@@ -106,7 +106,7 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.4-ubi9"
+  tag: "1.1.1-ubi9"
 imagePullSecrets: []
 
 # -- Issuer and jwks URIs if not using Keycloak
@@ -296,18 +296,19 @@ redis:
 
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
+  istio:
+    redis:
+      enabled: false
+  networkPolicies:
+    enabled: true
+    controlPlaneCidr: 0.0.0.0/0
   upstream:
+    fullnameOverride: "authservice-authservice-redis-bb"
+    global:
+      imagePullSecrets:
+      - private-registry
     auth:
       enabled: false
-    istio:
-      redis:
-        enabled: false
-    image:
-      pullSecrets:
-        - private-registry
-    networkPolicies:
-      enabled: true
-      controlPlaneCidr: 0.0.0.0/0
     master:
       containerSecurityContext:
         enabled: true
@@ -349,3 +350,4 @@ trigger_rules: []
 #   included_paths:
 #     - prefix: /
 # See reference: https://github.com/istio-ecosystem/authservice/blob/master/docs/README.md
+# Add these probe configurations to your values.yaml

@@ -29,8 +29,7 @@ Big Bang packages.
 
 ## How it works
 
-First, Authservice must be [enabled](https://repo1.dso.
-mil/platform-one/big-bang/bigbang/-/tree/master/chart/values.yaml#L511) through
+First, Authservice must be [enabled](https://repo1.dso.mil/platform-one/big-bang/bigbang/-/tree/master/chart/values.yaml#L511) through
 the addons functionality of Big Bang. This will cause an instance of Authservice
 to be deployed into the `authservice` namespace. For every workload in the
 cluster that is labeled with the value of
