@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.0.4-bb.5](https://img.shields.io/badge/Version-1.0.4--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.0.4](https://img.shields.io/badge/AppVersion-1.0.4-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.1.1-bb.0](https://img.shields.io/badge/Version-1.1.1--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -59,8 +59,8 @@ helm install authservice chart/
 | networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
 | networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
 | networkPolicies.additionalPolicies | list | `[]` |  |
-| networkPolicies.ingress.definitions.protect-keycloak.from[0].namespaceSelector | object | `{}` |  |
-| networkPolicies.ingress.definitions.protect-keycloak.from[0].podSelector.matchLabels.protect | string | `"keycloak"` |  |
+| networkPolicies.ingress.definitions.keycloak-protected-pods.from[0].namespaceSelector | object | `{}` |  |
+| networkPolicies.ingress.definitions.keycloak-protected-pods.from[0].podSelector.matchLabels.protect | string | `"keycloak"` |  |
 | networkPolicies.ingress.to.authservice:10003.from.definition.protect-keycloak | bool | `false` |  |
 | networkPolicies.ingress.to.redis-bb:6379.from.k8s.monitoring/grafana | bool | `false` |  |
 | networkPolicies.ingress.to.haproxy:8080.from.k8s.istio-gateway/* | bool | `false` |  |
@@ -72,7 +72,7 @@ helm install authservice chart/
 | networkPolicies.egress.from.haproxy.to.k8s.monitoring/prometheus:9090 | bool | `false` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.tag | string | `"1.0.4-ubi9"` | Overrides the image tag whose default is the chart appVersion. |
+| image.tag | string | `"1.1.1-ubi9"` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` |  |
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
@@ -125,11 +125,12 @@ helm install authservice chart/
 | selector | object | `{"key":"protect","value":"keycloak"}` | Label to determine what workloads (pods/deployments) should be protected by authservice. |
 | redis | object | `{"enabled":false,"image":{"tag":"8.2.0"}}` | Conditional for enabling Redis Subchart |
 | redis.image | object | `{"tag":"8.2.0"}` | Values passthrough for redis Subchart |
+| redis-bb.istio.redis.enabled | bool | `false` |  |
+| redis-bb.networkPolicies.enabled | bool | `true` |  |
+| redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
+| redis-bb.upstream.fullnameOverride | string | `"authservice-authservice-redis-bb"` |  |
+| redis-bb.upstream.global.imagePullSecrets[0] | string | `"private-registry"` |  |
 | redis-bb.upstream.auth.enabled | bool | `false` |  |
-| redis-bb.upstream.istio.redis.enabled | bool | `false` |  |
-| redis-bb.upstream.image.pullSecrets[0] | string | `"private-registry"` |  |
-| redis-bb.upstream.networkPolicies.enabled | bool | `true` |  |
-| redis-bb.upstream.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | redis-bb.upstream.master.containerSecurityContext.enabled | bool | `true` |  |
 | redis-bb.upstream.master.containerSecurityContext.runAsUser | int | `1001` |  |
 | redis-bb.upstream.master.containerSecurityContext.runAsGroup | int | `1001` |  |
