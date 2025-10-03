@@ -1,6 +1,12 @@
 # Changelog
 
 ---
+## [1.1.1-bb.1] (2025-09-30)
+### Changed
+- add init container "wait-for-redis" to avoid initial CrashLoopBackOff as redis is starting up.
+- remove unused variable redis.image.tag. If an image change is desired, user can refer to the redis-bb chart to pass in those related options. (See upstream.image.registry, upstream.image.repository, upstream.image.tag in the redis-bb chart)
+- bump bb-common dependency to 0.8.2
+
 ## [1.1.1-bb.0] (2025-09-30)
 ### Changed
 - authservice updated from 1.0.4 to 1.1.1

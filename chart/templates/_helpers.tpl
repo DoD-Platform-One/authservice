@@ -70,3 +70,17 @@ Find hostname from uri
 {{- $host := regexSplit ":" (first $hostWithPort) -1 -}}
 {{- printf "%s" (first $host) -}}
 {{- end -}}
+
+{{/*
+Extract Redis host from redis_server_uri
+*/}}
+{{- define "authservice.redisHost" -}}
+{{- regexReplaceAll "^tcp://([^:]+):.*$" . "$1" -}}
+{{- end -}}
+
+{{/*
+Extract Redis port from redis_server_uri
+*/}}
+{{- define "authservice.redisPort" -}}
+{{- regexReplaceAll ".*:([0-9]+)$" . "$1" -}}
+{{- end -}}
