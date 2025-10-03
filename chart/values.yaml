@@ -290,9 +290,6 @@ selector:
 # -- Conditional for enabling Redis Subchart
 redis:
   enabled: false
-  # -- Values passthrough for redis Subchart
-  image:
-    tag: 8.2.0
 
 # https://repo1.dso.mil/platform-one/big-bang/apps/sandbox/redis/-/blob/main/chart/values.yaml
 redis-bb:
@@ -350,4 +347,3 @@ trigger_rules: []
 #   included_paths:
 #     - prefix: /
 # See reference: https://github.com/istio-ecosystem/authservice/blob/master/docs/README.md
-# Add these probe configurations to your values.yaml

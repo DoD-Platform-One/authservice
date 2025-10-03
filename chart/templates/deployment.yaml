@@ -80,6 +80,24 @@ spec:
               readOnly: true
             - name: ca-bundle
               mountPath: /mnt/ca-bundle
+      {{- if .Values.redis.enabled }}
+        - name: wait-for-redis
+          image: "{{ index .Values "redis-bb" "upstream" "image" "registry" }}/{{ index .Values "redis-bb" "upstream" "image" "repository" }}:{{ index .Values "redis-bb" "upstream" "image" "tag" }}"
+          securityContext:
+            {{- toYaml (index .Values "redis-bb" "upstream" "master" "containerSecurityContext") | nindent 12 }}
+          command:
+            - sh
+            - -c
+            - |
+              {{- $redisHost := include "authservice.redisHost" .Values.global.redis_server_uri }}
+              {{- $redisPort := include "authservice.redisPort" .Values.global.redis_server_uri }}
+              if timeout 2m sh -c 'until /opt/bitnami/redis/bin/redis-cli -h {{ $redisHost }} -p {{ $redisPort }} ping | grep -q PONG; do echo "Waiting for Redis..."; sleep 2; done'; then
+                echo "Redis is ready!"
+              else
+                echo "ERROR: Redis connection timeout after 2 minutes"
+                exit 1
+              fi
+      {{- end }}
       {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
