@@ -301,6 +301,8 @@ redis-bb:
     controlPlaneCidr: 0.0.0.0/0
   upstream:
     fullnameOverride: "authservice-authservice-redis-bb"
+    image:
+      tag: 8.2.2
     global:
       imagePullSecrets:
       - private-registry

@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [1.1.1-bb.2] (2025-10-09)
+### Changed
+- ironbank/bitnami/redis from 8.2.1 to 8.2.2
+
 ## [1.1.1-bb.1] (2025-09-30)
 ### Changed
 - add init container "wait-for-redis" to avoid initial CrashLoopBackOff as redis is starting up.

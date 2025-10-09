@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.1.1-bb.1](https://img.shields.io/badge/Version-1.1.1--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.1.1-bb.2](https://img.shields.io/badge/Version-1.1.1--bb.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -123,12 +123,12 @@ helm install authservice chart/
 | affinity | object | `{}` |  |
 | config | object | `{"logLevel":"trace"}` | Name of the secret to source authservices `config.json` from, created outside of helm chart TODO: Create this as part of the helmchart? |
 | selector | object | `{"key":"protect","value":"keycloak"}` | Label to determine what workloads (pods/deployments) should be protected by authservice. |
-| redis | object | `{"enabled":false,"image":{"tag":"8.2.0"}}` | Conditional for enabling Redis Subchart |
-| redis.image | object | `{"tag":"8.2.0"}` | Values passthrough for redis Subchart |
+| redis | object | `{"enabled":false}` | Conditional for enabling Redis Subchart |
 | redis-bb.istio.redis.enabled | bool | `false` |  |
 | redis-bb.networkPolicies.enabled | bool | `true` |  |
 | redis-bb.networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | redis-bb.upstream.fullnameOverride | string | `"authservice-authservice-redis-bb"` |  |
+| redis-bb.upstream.image.tag | string | `"8.2.2"` |  |
 | redis-bb.upstream.global.imagePullSecrets[0] | string | `"private-registry"` |  |
 | redis-bb.upstream.auth.enabled | bool | `false` |  |
 | redis-bb.upstream.master.containerSecurityContext.enabled | bool | `true` |  |
