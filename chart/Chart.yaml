@@ -2,7 +2,7 @@ apiVersion: v2
 name: authservice
 description: A Helm chart for Kubernetes
 type: application
-version: 1.1.1-bb.1
+version: 1.1.1-bb.2
 appVersion: 1.1.1
 dependencies:
   - name: redis
@@ -24,6 +24,6 @@ annotations:
       image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.1.1-ubi9
     - name: redis
       condition: redis.enabled
-      image: registry1.dso.mil/ironbank/bitnami/redis:8.2.1
+      image: registry1.dso.mil/ironbank/bitnami/redis:8.2.2
   bigbang.dev/upstreamReleaseNotesMarkdown: |
     - [Find upstream chart's release notes and CHANGELOG here](https://github.com/istio-ecosystem/authservice/releases)
