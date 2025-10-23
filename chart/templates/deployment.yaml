@@ -91,7 +91,7 @@ spec:
             - |
               {{- $redisHost := include "authservice.redisHost" .Values.global.redis_server_uri }}
               {{- $redisPort := include "authservice.redisPort" .Values.global.redis_server_uri }}
-              if timeout 2m sh -c 'until /opt/bitnami/redis/bin/redis-cli -h {{ $redisHost }} -p {{ $redisPort }} ping | grep -q PONG; do echo "Waiting for Redis..."; sleep 2; done'; then
+              if timeout 2m sh -c 'until /bin/redis-cli -h {{ $redisHost }} -p {{ $redisPort }} ping | grep -q PONG; do echo "Waiting for Redis..."; sleep 2; done'; then
                 echo "Redis is ready!"
               else
                 echo "ERROR: Redis connection timeout after 2 minutes"
