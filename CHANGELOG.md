@@ -1,6 +1,11 @@
 # Changelog
 
 ---
+## [1.1.1-bb.3] (2025-10-22)
+### Changed
+- Redis updated from 22.0.7 to 23.1.1
+- bb-common updated from 0.8.2 to 0.9.1
+
 ## [1.1.1-bb.2] (2025-10-09)
 ### Changed
 - ironbank/bitnami/redis from 8.2.1 to 8.2.2
