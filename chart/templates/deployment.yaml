@@ -80,6 +80,10 @@ spec:
               readOnly: true
             - name: ca-bundle
               mountPath: /mnt/ca-bundle
+            {{- if .Values.serviceAccount.create }}
+            - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+              name: serviceaccount-info
+            {{- end }}
       {{- if .Values.redis.enabled }}
         - name: wait-for-redis
           image: "{{ index .Values "redis-bb" "upstream" "image" "registry" }}/{{ index .Values "redis-bb" "upstream" "image" "repository" }}:{{ index .Values "redis-bb" "upstream" "image" "tag" }}"
@@ -122,4 +126,16 @@ spec:
         - name: ca-bundle
           emptyDir:
             sizeLimit: 5Mi
-        {{- end}}
+        {{- end }}
+        {{- if .Values.serviceAccount.create }}
+        - name: serviceaccount-info
+          projected:
+            sources:
+            - serviceAccountToken:
+                path: token
+            - downwardAPI:
+                items:
+                - path: namespace
+                  fieldRef:
+                    fieldPath: metadata.namespace
+        {{- end }}
