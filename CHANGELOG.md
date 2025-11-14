@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [1.1.1-bb.4] (2025-11-14)
+### Changed
+- modified serviceAccount to define automountServiceAccountToken to false, and modified deployment to use volumeProjection and downwardApi to mount the token.
+
 ## [1.1.1-bb.3] (2025-10-22)
 ### Changed
 - Redis updated from 22.0.7 to 23.1.1
