@@ -1,27 +1,9 @@
-apiVersion: security.istio.io/v1beta1
-kind: AuthorizationPolicy
-metadata:
-  name: authservice
-  namespace: istio-system
-spec:
-  selector:
-    matchLabels:
-      {{ .Values.selector.key | default "protect" }}: {{ .Values.selector.value | default "keycloak" | quote }}
-  action: CUSTOM
-  provider:
-    name: authservice
-  rules:
-  {{- if .Values.allow_unmatched_requests }}
-  - {}
-  {{- else if .Values.custom_authpolicy_rules }}
-{{ .Values.custom_authpolicy_rules | toYaml | indent 2 }}
-  {{- else }}
-  - to:
-    - operation:
-        hosts:
-        - "*.{{ .Values.domain }}"
-  {{- end }}
----
+{{- $hasHostRestrictions := false }}
+{{- range .Values.additionalIssuers }}
+{{- if .hosts }}
+{{- $hasHostRestrictions = true }}
+{{- end }}
+{{- end }}
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
@@ -41,3 +23,49 @@ spec:
         {{- else }}
         - "https://{{ .Values.global.oidc.host }}/auth/realms/{{ .Values.global.oidc.realm }}/*"
         {{- end }}
+{{- if $hasHostRestrictions }}
+    to:
+    - operation:
+        notHosts:
+        {{- range .Values.additionalIssuers }}
+        {{- if .hosts }}
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+        {{- end }}
+        {{- end }}
+{{- end }}
+{{- range .Values.additionalIssuers }}
+{{- if not .hosts }}
+  - from:
+    - source:
+        requestPrincipals:
+        - "{{ .issuer }}/*"
+{{- if $hasHostRestrictions }}
+    to:
+    - operation:
+        notHosts:
+        {{- range $.Values.additionalIssuers }}
+        {{- if .hosts }}
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+        {{- end }}
+        {{- end }}
+{{- end }}
+{{- end }}
+{{- end }}
+{{- range .Values.additionalIssuers }}
+{{- if .hosts }}
+  - from:
+    - source:
+        requestPrincipals:
+        - "{{ .issuer }}/*"
+    to:
+    - operation:
+        hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+{{- end }}
+{{- end }}

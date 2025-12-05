@@ -22,3 +22,10 @@ spec:
       jwksUri: https://{{ .Values.global.oidc.host }}/auth/realms/{{ .Values.global.oidc.realm }}/protocol/openid-connect/certs
     {{- end }}
       forwardOriginalToken: true
+
+    {{- range .Values.additionalIssuers }}
+    - issuer: {{ .issuer }}
+      jwksUri: {{ .jwks_uri }}
+      forwardOriginalToken: true
+    {{- end }}
+

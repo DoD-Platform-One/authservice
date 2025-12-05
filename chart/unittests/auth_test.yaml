@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
+suite: test istio authentication and authorization resources
+templates:
+  - authz.yaml
+  - authn.yaml
+tests:
+  - it: should create jwt-authz AuthorizationPolicy
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authz.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authz
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authz
+      - equal:
+          path: spec
+          value:
+            action: ALLOW
+            selector:
+              matchLabels:
+                protect: keycloak
+            rules:
+              - from:
+                  - source:
+                      requestPrincipals:
+                        - https://login.dso.mil/auth/realms/baby-yoda/*
+
+  - it: should create jwt-authn RequestAuthentication
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authn.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authn
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authn
+      - equal:
+          path: spec
+          value:
+            selector:
+              matchLabels:
+                protect: keycloak
+            jwtRules:
+              - issuer: https://login.dso.mil/auth/realms/baby-yoda
+                jwksUri: https://login.dso.mil/auth/realms/baby-yoda/protocol/openid-connect/certs
+                forwardOriginalToken: true

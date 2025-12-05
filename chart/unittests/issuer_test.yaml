@@ -1,0 +1,282 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
+suite: test issuer configuration
+templates:
+  - authn.yaml
+  - authz.yaml
+  - bigbang/istio/additionalIssuersServiceEntry.yaml
+tests:
+  - it: should use issuer_uri when provided in RequestAuthentication
+    set:
+      issuer_uri: https://custom-sso.example.com/issuer
+      jwks_uri: https://custom-sso.example.com/.well-known/jwks.json
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authn.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authn
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authn
+      - equal:
+          path: spec.jwtRules[0].issuer
+          value: https://custom-sso.example.com/issuer
+      - equal:
+          path: spec.jwtRules[0].jwksUri
+          value: https://custom-sso.example.com/.well-known/jwks.json
+
+  - it: should construct issuer from global.oidc when issuer_uri not provided
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authn.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authn
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authn
+      - equal:
+          path: spec.jwtRules[0].issuer
+          value: https://login.dso.mil/auth/realms/baby-yoda
+      - equal:
+          path: spec.jwtRules[0].jwksUri
+          value: https://login.dso.mil/auth/realms/baby-yoda/protocol/openid-connect/certs
+
+  - it: should include additionalIssuers in RequestAuthentication
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      additionalIssuers:
+        - issuer: https://issuer1.example.com
+          jwks_uri: https://issuer1.example.com/.well-known/jwks.json
+        - issuer: https://issuer2.example.com
+          jwks_uri: https://issuer2.example.com/.well-known/jwks.json
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authn.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authn
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authn
+      - equal:
+          path: spec.jwtRules[0].issuer
+          value: https://login.dso.mil/auth/realms/baby-yoda
+      - equal:
+          path: spec.jwtRules[1].issuer
+          value: https://issuer1.example.com
+      - equal:
+          path: spec.jwtRules[1].jwksUri
+          value: https://issuer1.example.com/.well-known/jwks.json
+      - equal:
+          path: spec.jwtRules[1].forwardOriginalToken
+          value: true
+      - equal:
+          path: spec.jwtRules[2].issuer
+          value: https://issuer2.example.com
+      - equal:
+          path: spec.jwtRules[2].jwksUri
+          value: https://issuer2.example.com/.well-known/jwks.json
+      - equal:
+          path: spec.jwtRules[2].forwardOriginalToken
+          value: true
+
+  - it: should use issuer_uri in AuthorizationPolicy requestPrincipals
+    set:
+      issuer_uri: https://custom-sso.example.com/issuer
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authz.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authz
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authz
+      - equal:
+          path: spec.rules[0].from[0].source.requestPrincipals[0]
+          value: https://custom-sso.example.com/issuer/*
+
+  - it: should create separate rules for additionalIssuers without hosts
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      additionalIssuers:
+        - issuer: https://issuer1.example.com
+          jwks_uri: https://issuer1.example.com/.well-known/jwks.json
+        - issuer: https://issuer2.example.com
+          jwks_uri: https://issuer2.example.com/.well-known/jwks.json
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authz.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authz
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authz
+      - equal:
+          path: spec.rules
+          value:
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://login.dso.mil/auth/realms/baby-yoda/*"
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://issuer1.example.com/*"
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://issuer2.example.com/*"
+
+  - it: should create ServiceEntry for additionalIssuer with matching host
+    set:
+      istio:
+        enabled: true
+        hardened:
+          enabled: true
+      additionalIssuers:
+        - issuer: https://issuer1.example.com
+          jwks_uri: https://issuer1.example.com/.well-known/jwks.json
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: bigbang/istio/additionalIssuersServiceEntry.yaml
+    asserts:
+      - hasDocuments:
+          count: 1
+      - equal:
+          path: kind
+          value: ServiceEntry
+      - equal:
+          path: metadata.name
+          value: issuer1-example-com-issuer
+      - equal:
+          path: spec
+          value:
+            hosts:
+              - issuer1.example.com
+            location: MESH_EXTERNAL
+            ports:
+              - number: 443
+                protocol: TLS
+                name: https
+
+  - it: should create separate rule for additionalIssuer with hosts array and exclude from main rule
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      additionalIssuers:
+        - issuer: https://issuer1.example.com
+          jwks_uri: https://issuer1.example.com/.well-known/jwks.json
+          hosts:
+            - app.example.com
+            - api.example.com
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authz.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authz
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authz
+      - equal:
+          path: spec.rules
+          value:
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://login.dso.mil/auth/realms/baby-yoda/*"
+              to:
+              - operation:
+                  notHosts:
+                  - "app.example.com"
+                  - "api.example.com"
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://issuer1.example.com/*"
+              to:
+              - operation:
+                  hosts:
+                  - "app.example.com"
+                  - "api.example.com"
+
+  - it: should create separate rules for additionalIssuer without hosts and exclude restricted hosts
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+      additionalIssuers:
+        - issuer: https://issuer1.example.com
+          jwks_uri: https://issuer1.example.com/.well-known/jwks.json
+        - issuer: https://issuer2.example.com
+          jwks_uri: https://issuer2.example.com/.well-known/jwks.json
+          hosts:
+            - specific.example.com
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: authz.yaml
+    documentSelector:
+      path: metadata.name
+      value: jwt-authz
+    asserts:
+      - equal:
+          path: metadata.name
+          value: jwt-authz
+      - equal:
+          path: spec.rules
+          value:
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://login.dso.mil/auth/realms/baby-yoda/*"
+              to:
+              - operation:
+                  notHosts:
+                  - "specific.example.com"
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://issuer1.example.com/*"
+              to:
+              - operation:
+                  notHosts:
+                  - "specific.example.com"
+            - from:
+              - source:
+                  requestPrincipals:
+                  - "https://issuer2.example.com/*"
+              to:
+              - operation:
+                  hosts:
+                  - "specific.example.com"

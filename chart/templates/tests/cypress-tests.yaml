@@ -1,0 +1,13 @@
+{{- include "gluon.tests.cypress-configmap.overrides" (list . "authservice-test.cypress-configmap") }}
+{{- define "authservice-test.cypress-configmap" }}
+metadata:
+  labels:
+    app: alloy
+{{- end }}
+---
+{{- include "gluon.tests.cypress-runner.overrides" (list . "authservice-test.cypress-runner") -}}
+{{- define "authservice-test.cypress-runner" -}}
+metadata:
+  labels:
+    app: alloy
+{{- end }}

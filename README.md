@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.1.1-bb.4](https://img.shields.io/badge/Version-1.1.1--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.1.1-bb.5](https://img.shields.io/badge/Version-1.1.1--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.1](https://img.shields.io/badge/AppVersion-1.1.1-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -76,6 +76,7 @@ helm install authservice chart/
 | imagePullSecrets | list | `[]` |  |
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |
+| additionalIssuers | list | `[]` |  |
 | allow_unmatched_requests | bool | `true` | If true will allow the requests even no filter chain match is found |
 | custom_authpolicy_rules | list | `[{"when":[{"key":"request.headers[authorization]","notValues":["*"]}]}]` | Extra Ruleset for AuthorizationPolicy CUSTOM action to forward to Authservice. To enable `allow_unmatched_requests` must be `false`. These custom rules mean that only these requests will be routed and will break default BigBang setup for `prometheus/alertmanager/tempo` unless added. Path specific Operations are not supported, it is recommended to use only hosts, notHosts, & method operations. See reference: https://istio.io/latest/docs/reference/config/security/authorization-policy/ |
 | global.client_id | string | `"global_id"` | Global Authorization URI value to set if not using Keycloak authorization_uri: "" Global Token URI Value to set if not using Keycloak token_uri: "" Default client_id to be used in each chain |
@@ -148,6 +149,11 @@ helm install authservice chart/
 | redis-bb.upstream.commonConfiguration | string | `"# Enable AOF https://redis.io/topics/persistence#append-only-file\nappendonly no\nmaxmemory 200mb\nmaxmemory-policy allkeys-lru\nsave \"\""` |  |
 | openshift | bool | `false` |  |
 | trigger_rules | list | `[]` | Values to bypass OIDC chains in favor or using istio authorizationpolicies.security.istio.io and requestauthentications.security.istio.io for certain endpoints. |
+| bbtests.enabled | bool | `false` |  |
+| bbtests.cypress.artifacts | bool | `true` |  |
+| bbtests.cypress.envs.cypress_prometheus_url | string | `"https://prometheus.dev.bigbang.mil"` |  |
+| bbtests.cypress.envs.cypress_tnr_username | string | `"cypress"` |  |
+| bbtests.cypress.envs.cypress_tnr_password | string | `"tnr_w!G33ZyAt@C8"` |  |
 
 ## Contributing
 

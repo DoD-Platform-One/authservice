@@ -1,0 +1,107 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
+suite: test authservice config.json structure
+templates:
+  - secret.yaml
+postRenderer:
+  cmd: "yq"
+  args:
+    - "eval"
+    - '.stringData."config.json" | @json | fromjson'
+    - "-"
+tests:
+  - it: should have minimal chain in config.json
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+        client_id: test_client_id
+        client_secret: test_client_secret
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: secret.yaml
+    documentIndex: 0
+    asserts:
+      # chains are sorted alphabetically, so "local" (from defaults) comes before "minimal"
+      - equal:
+          path: chains[1].name
+          value: minimal
+      - equal:
+          path: chains[1].filters[0].oidc_override.callback_uri
+          value: https://example.com/callback
+      - equal:
+          path: default_oidc_config.client_id
+          value: test_client_id
+      - equal:
+          path: default_oidc_config.client_secret
+          value: test_client_secret
+
+  - it: should create default_oidc_config with correct values
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+        client_id: test_client_id
+        client_secret: test_client_secret
+        skip_verify_peer_cert: false
+        periodic_fetch_interval_sec: 60
+        absolute_session_timeout: 0
+        idle_session_timeout: 0
+        logout_path: /globallogout
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: secret.yaml
+    documentIndex: 0
+    asserts:
+      - equal:
+          path: default_oidc_config
+          value:
+            skip_verify_peer_cert: false
+            authorization_uri: https://login.dso.mil/auth/realms/baby-yoda/protocol/openid-connect/auth
+            token_uri: https://login.dso.mil/auth/realms/baby-yoda/protocol/openid-connect/token
+            jwks_fetcher:
+              jwks_uri: https://login.dso.mil/auth/realms/baby-yoda/protocol/openid-connect/certs
+              periodic_fetch_interval_sec: 60
+              skip_verify_peer_cert: "false"
+            client_id: test_client_id
+            client_secret: test_client_secret
+            id_token:
+              preamble: Bearer
+              header: Authorization
+            access_token:
+              header: JWT
+            trusted_certificate_authority: ""
+            logout:
+              path: /globallogout
+              redirect_uri: https://login.dso.mil/auth/realms/baby-yoda/protocol/openid-connect/token/logout
+            absolute_session_timeout: "0"
+            idle_session_timeout: "0"
+            scopes: []
+
+  - it: should include trigger_rules when configured
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+        client_id: test_client_id
+        client_secret: test_client_secret
+      trigger_rules:
+        - excluded_paths:
+            - /healthz
+            - /metrics
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    template: secret.yaml
+    documentIndex: 0
+    asserts:
+      - equal:
+          path: trigger_rules
+          value:
+            - excluded_paths:
+                - /healthz
+                - /metrics

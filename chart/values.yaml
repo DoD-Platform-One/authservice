@@ -113,6 +113,12 @@ imagePullSecrets: []
 issuer_uri: ""
 jwks_uri: ""
 
+additionalIssuers: []
+  # - issuer: "https://example.com/issuer"
+  #   jwks_uri: "https://example.com/issuer/.well-known/jwks.json"
+  #   hosts:
+  #     - "app.bigbang.dev"
+
 # -- If true will allow the requests even no filter chain match is found
 allow_unmatched_requests: true
 
@@ -349,3 +355,12 @@ trigger_rules: []
 #   included_paths:
 #     - prefix: /
 # See reference: https://github.com/istio-ecosystem/authservice/blob/master/docs/README.md
+
+bbtests:
+  enabled: false
+  cypress:
+    artifacts: true
+    envs:
+      cypress_prometheus_url: 'https://prometheus.dev.bigbang.mil'
+      cypress_tnr_username: cypress
+      cypress_tnr_password: tnr_w!G33ZyAt@C8
