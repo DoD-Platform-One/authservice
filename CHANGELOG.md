@@ -1,6 +1,12 @@
 # Changelog
 
 ---
+## [1.1.1-bb.5] (2025-12-05)
+### Changed
+- Added support for additional issuers
+- Add helm unit tests
+- Added cypress e2e test
+
 ## [1.1.1-bb.4] (2025-11-21)
 ### Added
 - Added support for `cookie_attributes` configuration in authservice Helm template to allow setting SameSite cookie attributes for OIDC chains

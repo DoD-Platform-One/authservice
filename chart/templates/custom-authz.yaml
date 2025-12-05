@@ -1,0 +1,23 @@
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: authservice
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      {{ .Values.selector.key | default "protect" }}: {{ .Values.selector.value | default "keycloak" | quote }}
+  action: CUSTOM
+  provider:
+    name: authservice
+  rules:
+  {{- if .Values.allow_unmatched_requests }}
+  - {}
+  {{- else if .Values.custom_authpolicy_rules }}
+{{ .Values.custom_authpolicy_rules | toYaml | indent 2 }}
+  {{- else }}
+  - to:
+    - operation:
+        hosts:
+        - "*.{{ .Values.domain }}"
+  {{- end }}

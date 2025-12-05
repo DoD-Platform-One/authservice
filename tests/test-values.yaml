@@ -3,14 +3,15 @@
 #########################
 bbctl:
   enabled: false
-monitoring:
-  enabled: false
 grafana:
   enabled: false
 neuvector:
   enabled: false
 loki:
-  enabled: false
+  enabled: true
+  values:
+    bbtests:
+      enabled: false
 tempo:
   enabled: false
 kyvernoReporter:
@@ -25,7 +26,23 @@ addons:
 ########################
   authservice:
     enabled: true
-            
+
+    values:
+      bbtests:
+        enabled: true
+
+  keycloak:
+    enabled: true
+    values:
+      bbtests:
+        enabled: true
+monitoring:
+  enabled: true
+  sso:
+    enabled: true
+  values:
+    bbtests:
+      enabled: false
 kyvernoPolicies:
   values:
     bbtests:

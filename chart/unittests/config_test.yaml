@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json
+suite: test authservice secret creation
+templates:
+  - secret.yaml
+tests:
+  - it: should create a secret named authservice
+    set:
+      global:
+        oidc:
+          host: login.dso.mil
+          realm: baby-yoda
+        client_id: test_client_id
+        client_secret: test_client_secret
+      chains:
+        minimal:
+          callback_uri: https://example.com/callback
+    asserts:
+      - isKind:
+          of: Secret
+      - equal:
+          path: metadata.name
+          value: authservice
+      - isNotEmpty:
+          path: stringData["config.json"]
+      - matchRegex:
+          path: stringData["config.json"]
+          pattern: '"name":\s*"minimal"'
+      - matchRegex:
+          path: stringData["config.json"]
+          pattern: '"callback_uri":\s*"https://example.com/callback"'
