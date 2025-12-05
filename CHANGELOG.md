@@ -1,6 +1,10 @@
 # Changelog
 
 ---
+## [1.1.1-bb.4] (2025-11-21)
+### Added
+- Added support for `cookie_attributes` configuration in authservice Helm template to allow setting SameSite cookie attributes for OIDC chains
+
 ## [1.1.1-bb.3] (2025-10-22)
 ### Changed
 - Redis updated from 22.0.7 to 23.1.1
