@@ -106,7 +106,7 @@ image:
   repository: registry1.dso.mil/ironbank/istio-ecosystem/authservice
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart appVersion.
-  tag: "1.1.1-ubi9"
+  tag: "1.1.4"
 imagePullSecrets: []
 
 # -- Issuer and jwks URIs if not using Keycloak
@@ -308,7 +308,7 @@ redis-bb:
   upstream:
     fullnameOverride: "authservice-authservice-redis-bb"
     image:
-      tag: 8.2.2
+      tag: 8.4.0
     global:
       imagePullSecrets:
       - private-registry
