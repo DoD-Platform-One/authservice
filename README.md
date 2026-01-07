@@ -72,7 +72,7 @@ helm install authservice chart/
 | networkPolicies.egress.from.haproxy.to.k8s.monitoring/prometheus:9090 | bool | `false` |  |
 | image.repository | string | `"registry1.dso.mil/ironbank/istio-ecosystem/authservice"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
-| image.tag | string | `"1.1.4-ubi9"` | Overrides the image tag whose default is the chart appVersion. |
+| image.tag | string | `"1.1.4"` | Overrides the image tag whose default is the chart appVersion. |
 | imagePullSecrets | list | `[]` |  |
 | issuer_uri | string | `""` | Issuer and jwks URIs if not using Keycloak |
 | jwks_uri | string | `""` |  |

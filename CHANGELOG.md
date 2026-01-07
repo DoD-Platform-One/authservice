@@ -3,18 +3,10 @@
 ---
 ## [1.1.4-bb.0] (2025-12-02)
 ### Changed
+- Authservice updated from 1.1.1 -> 1.1.4
+- updated Authservice image from 1.1.1-ubi9 to 1.1.4
 - bb-common updated from 0.9.1 to 0.10.0
 - redis updated from 23.1.1 to 23.2.12
-
-## [1.1.1-bb.5] (2025-12-05)
-### Changed
-- Added support for additional issuers
-- Add helm unit tests
-- Added cypress e2e test
-
-## [1.1.1-bb.4] (2025-11-21)
-### Added
-- Added support for `cookie_attributes` configuration in authservice Helm template to allow setting SameSite cookie attributes for OIDC chains
 
 ## [1.1.1-bb.5] (2025-12-05)
 ### Changed
