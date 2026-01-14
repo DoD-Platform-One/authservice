@@ -2,29 +2,29 @@ apiVersion: v2
 name: authservice
 description: A Helm chart for Kubernetes
 type: application
-version: 1.1.4-bb.0
-appVersion: 1.1.4
+version: 1.1.5-bb.0
+appVersion: 1.1.5
 dependencies:
   - name: redis
-    version: 23.2.12-bb.0
+    version: 24.0.0-bb.0
     repository: "oci://registry1.dso.mil/bigbang/maintained"
     condition: redis.enabled
     alias: redis-bb
   - name: gluon
-    version: "0.9.6"
+    version: "0.9.7"
     repository: "oci://registry1.dso.mil/bigbang"
   - name: bb-common
-    version: 0.10.0
+    version: 0.12.2
     repository: "oci://registry1.dso.mil/bigbang"
 sources:
   - https://github.com/istio-ecosystem/authservice
 annotations:
   bigbang.dev/maintenanceTrack: bb_integrated
   bigbang.dev/applicationVersions: |
-    - Authservice: 1.1.4
+    - Authservice: 1.1.5
   helm.sh/images: |
     - name: authservice
-      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.1.4
+      image: registry1.dso.mil/ironbank/istio-ecosystem/authservice:1.1.5
     - name: redis
       condition: redis.enabled
       image: registry1.dso.mil/ironbank/opensource/redis/redis8-slim:8.4.0
