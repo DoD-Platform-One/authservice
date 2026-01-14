@@ -1,6 +1,13 @@
 # Changelog
 
 ---
+## [1.1.5-bb.0] (2026-01-07)
+### Changed
+- Authservice updated from 1.1.4 -> 1.1.5
+- bb-common updated from 0.10.0 to 0.12.2
+- gluon updated from 0.9.6 to 0.9.7
+- redis updated to 24.0.0-bb.0
+
 ## [1.1.4-bb.0] (2025-12-02)
 ### Changed
 - Authservice updated from 1.1.1 -> 1.1.4
