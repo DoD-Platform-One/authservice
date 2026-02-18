@@ -1,7 +1,7 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # authservice
 
-![Version: 1.1.5-bb.0](https://img.shields.io/badge/Version-1.1.5--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.5](https://img.shields.io/badge/AppVersion-1.1.5-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
+![Version: 1.1.5-bb.1](https://img.shields.io/badge/Version-1.1.5--bb.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.1.5](https://img.shields.io/badge/AppVersion-1.1.5-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -43,25 +43,21 @@ helm install authservice chart/
 |-----|------|---------|-------------|
 | replicaCount | int | `1` | When setting this above 1, a redis configuration is required.  See globals.redis_server_uri |
 | istio.enabled | bool | `false` |  |
+| istio.sidecar.enabled | bool | `false` |  |
+| istio.sidecar.outboundTrafficPolicyMode | string | `"REGISTRY_ONLY"` |  |
+| istio.serviceEntries.custom | list | `[]` |  |
+| istio.authorizationPolicies.enabled | bool | `false` |  |
+| istio.authorizationPolicies.custom | list | `[]` |  |
+| istio.mtls.mode | string | `"STRICT"` |  |
 | istio.hardened.enabled | bool | `false` |  |
-| istio.hardened.outboundTrafficPolicyMode | string | `"REGISTRY_ONLY"` |  |
-| istio.hardened.customServiceEntries | list | `[]` |  |
-| istio.hardened.customAuthorizationPolicies | list | `[]` |  |
 | istio.hardened.kiali.enabled | bool | `true` |  |
 | istio.hardened.kiali.namespaces[0] | string | `"kiali"` |  |
 | istio.hardened.kiali.principals[0] | string | `"cluster.local/ns/kiali/sa/kiali-service-account"` |  |
-| istio.namespace | string | `"istio-system"` |  |
-| istio.clusterWideHardeningEnabled | bool | `false` |  |
-| istio.mtls | object | `{"mode":"STRICT"}` | Default authservice peer authentication |
-| istio.mtls.mode | string | `"STRICT"` | Two mtls modes allowed STRICT = Allow only mutual TLS traffic PERMISSIVE = Allow both plain text and mutual TLS traffic |
 | monitoring.enabled | bool | `false` |  |
 | networkPolicies.enabled | bool | `false` |  |
-| networkPolicies.ingressLabels.app | string | `"istio-ingressgateway"` |  |
-| networkPolicies.ingressLabels.istio | string | `"ingressgateway"` |  |
 | networkPolicies.additionalPolicies | list | `[]` |  |
-| networkPolicies.ingress.definitions.keycloak-protected-pods.from[0].namespaceSelector | object | `{}` |  |
-| networkPolicies.ingress.definitions.keycloak-protected-pods.from[0].podSelector.matchLabels.protect | string | `"keycloak"` |  |
-| networkPolicies.ingress.to.authservice:10003.from.definition.protect-keycloak | bool | `false` |  |
+| networkPolicies.ingress.definitions.keycloak-protected.from.k8s.*/keycloak-protected.podSelector.matchLabels.protect | string | `"keycloak"` |  |
+| networkPolicies.ingress.to.authservice:10003.from.definition.keycloak-protected | bool | `false` |  |
 | networkPolicies.ingress.to.redis-bb:6379.from.k8s.monitoring/grafana | bool | `false` |  |
 | networkPolicies.ingress.to.haproxy:8080.from.k8s.istio-gateway/* | bool | `false` |  |
 | networkPolicies.ingress.to.redis-bb:9121.from.k8s.monitoring/prometheus | bool | `false` |  |

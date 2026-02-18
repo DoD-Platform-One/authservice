@@ -1,6 +1,12 @@
 # Changelog
 
 ---
+## [1.1.5-bb.1] (2026-02-18)
+### Changed
+- bb-common updated from 0.12.2 to 0.14.0
+- gluon updated from 0.9.7 to 0.9.8
+- completed integration with bb-common
+
 ## [1.1.5-bb.0] (2026-01-07)
 ### Changed
 - Authservice updated from 1.1.4 -> 1.1.5
