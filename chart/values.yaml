@@ -8,66 +8,57 @@ replicaCount: 1
 
 istio:
   enabled: false
-  hardened:
+
+  sidecar:
     enabled: false
     outboundTrafficPolicyMode: "REGISTRY_ONLY"
-    customServiceEntries:
-      []
-      # - name: "allow-google"
-      #   enabled: true
-      #   spec:
-      #     hosts:
-      #       - google.com
-      #     location: MESH_EXTERNAL
-      #     ports:
-      #       - number: 443
-      #         protocol: TLS
-      #         name: https
-      #     resolution: DNS
-    customAuthorizationPolicies: []
-    # - name: "allow-nothing"
-    #   enabled: true
-    #   spec: {}
+
+  serviceEntries:
+    custom: []
+
+  authorizationPolicies:
+    enabled: false
+    custom: []
+
+  # Default peer authentication
+  mtls:
+    # STRICT = Allow only mutual TLS traffic
+    # PERMISSIVE = Allow both plain text and mutual TLS traffic
+    mode: STRICT
+
+  # used by local chart -- not used by bb-common
+  hardened:
+    enabled: false
     kiali:
       enabled: true
       namespaces:
         - kiali
       principals:
         - cluster.local/ns/kiali/sa/kiali-service-account
-  namespace: istio-system
-  clusterWideHardeningEnabled: false
-  # -- Default authservice peer authentication
-  mtls:
-    # -- Two mtls modes allowed
-    # STRICT = Allow only mutual TLS traffic
-    # PERMISSIVE = Allow both plain text and mutual TLS traffic
-    mode: STRICT
 
 monitoring:
   enabled: false
 
 networkPolicies:
   enabled: false
-  ingressLabels:
-    app: istio-ingressgateway
-    istio: ingressgateway
   # Additional network policies
   # ref: https://kubernetes.io/docs/concepts/services-networking/network-policies/
   additionalPolicies: []
   ingress:
     definitions:
-      keycloak-protected-pods:
+      keycloak-protected:
         from:
-          - namespaceSelector: {}
-            podSelector:
-              matchLabels:
-                protect: keycloak
+          k8s:
+            "*/keycloak-protected":
+              podSelector:
+                matchLabels:
+                  protect: keycloak
     to:
       # gRPC connections for pods with protect=keycloak label
       authservice:10003:
         from:
           definition:
-            protect-keycloak: false
+            keycloak-protected: false
       # Grafana redis client connection
       redis-bb:6379:
         from:

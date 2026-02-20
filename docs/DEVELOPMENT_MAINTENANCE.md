@@ -180,15 +180,9 @@ This will deploy the following apps for testing (while disabling non-essential a
 ## Files That Require Integration Testing
 
 - ./chart/templates/bigbang/authservice-clusterrolebinding-openshift-scc.yaml
-- ./chart/templates/bigbang/istio/authorizationPolicies/allow-any-to-auth-authz-policy.yaml
-- ./chart/templates/bigbang/istio/authorizationPolicies/allow-intranamespace.yaml
 - ./chart/templates/bigbang/istio/authorizationPolicies/shared-kiali-authz-policy.yaml
-- ./chart/templates/bigbang/istio/authorizationPolicies/template.yaml
 - ./chart/templates/bigbang/istio/jwksEndpointServiceEntry.yaml
 - ./chart/templates/bigbang/istio/oidcHostServiceEntry.yaml
-- ./chart/templates/bigbang/istio/peerAuthentication.yaml
-- ./chart/templates/bigbang/istio/serviceEntry.yaml
-- ./chart/templates/bigbang/istio/sidecar.yaml
 - ./chart/templates/bigbang/network-attachment-definition.yaml
 - ./chart/templates/bigbang/networkpolicies/additional-networkpolicies.yaml
 
