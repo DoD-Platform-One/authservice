@@ -2,12 +2,12 @@
   "baseBranches": [
     "main"
   ],
-  "configWarningReuseIssue": false,
   "dependencyDashboard": true,
-  "dependencyDashboardTitle": "Renovate: Upgrade AuthService Package Dependencies",
+  "dependencyDashboardTitle": "Renovate: Update Authservice Dependencies",
   "draftPR": true,
   "labels": [
     "authservice",
+    "renovate",
     "Big Bang Core",
     "Package Sustainment",
     "kind::maintenance"
@@ -16,34 +16,32 @@
     "custom.regex",
     "helmv3"
   ],
-  "ignorePaths": [
-    "chart/charts/**"
-  ],
-  "postUpdateOptions": [
-    "helmUpdateSubChartArchives"
-  ],
   "packageRules": [
     {
       "matchDatasources": [
-        "docker"
+        "docker",
+        "git-tags",
+        "helm"
       ],
-      "groupName": "Ironbank",
-      "registryUrls": [
-        "https://registry1.dso.mil"
-      ],
+      "groupName": "Authservice Dependencies",
       "postUpgradeTasks": {
         "commands": [
           "match-chart-yaml-appversion",
           "regenerate-helm-docs",
-          "bump-changelog '- {{{replace 'registry1.dso.mil/' '' depName}}} updated from {{{currentVersion}}} to {{{newVersion}}}'"
+          "bump-changelog '{{#each upgrades}}- {{depName}} {{currentVersion}} -> {{newVersion}}\\n{{/each}}'"
         ],
         "fileFilters": [
           "chart/Chart.yaml",
           "README.md",
           "CHANGELOG.md"
-        ]
+        ],
+        "executionMode": "branch"
       }
     }
+  ],
+  "separateMajorMinor": false,
+  "postUpdateOptions": [
+    "helmUpdateSubChartArchives"
   ],
   "customManagers": [
     {
@@ -63,9 +61,20 @@
         "/^chart/values\\.yaml$/"
       ],
       "matchStrings": [
-        "tag:\\s+(?<currentValue>.+)"
+        "tag:\\s+\"?(?<currentValue>[^\"\\s]+)\"?"
       ],
       "depNameTemplate": "registry1.dso.mil/ironbank/istio-ecosystem/authservice",
+      "datasourceTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/^chart/values\\.yaml$/"
+      ],
+      "matchStrings": [
+        "redis-bb:\\n[\\s\\S]*?tag:\\s+\"?(?<currentValue>[^\"\\s]+)\"?"
+      ],
+      "depNameTemplate": "registry1.dso.mil/ironbank/opensource/redis/redis8-slim",
       "datasourceTemplate": "docker"
     },
     {
